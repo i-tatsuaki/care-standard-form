@@ -5,8 +5,13 @@ import org.springframework.web.bind.annotation.GetMapping
 
 @Controller
 class InputFileController() {
-    @GetMapping
-    fun init(): String {
+    @GetMapping("servicePlan")
+    fun servicePlan(): String {
         return "servicePlan"
+    }
+
+    @GetMapping("servicePlanAppendix")
+    fun servicePlanAppendix(): String {
+        return "servicePlanAppendix"
     }
 }

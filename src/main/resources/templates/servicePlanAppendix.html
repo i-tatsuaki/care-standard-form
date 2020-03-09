@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="jp" xmlns:th="http://www.thymeleaf.org">
+<link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>
+<head>
+    <meta charset="UTF-8">
+    <title>提供票別表</title>
+</head>
+<body>
+<div id="table-service-plan">
+    <table>
+        <colgroup>
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;"> <!-- 10 -->
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;"> <!-- 10 -->
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;"> <!-- 10 -->
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;"> <!-- 10 -->
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;"> <!-- 10 -->
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+            <col style="width: 1%;">
+        </colgroup>
+        <tbody>
+        <tr>
+            <td colspan="3">
+                <font>第７票</font>
+            </td>
+            <td colspan="52">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="55">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="18" rowspan="2">
+            </td>
+            <td colspan="19" rowspan="2">
+                <font>サービス提供票別表</font>
+            </td>
+            <td colspan="4" rowspan="2">
+            </td>
+            <td colspan="5" rowspan="1">
+                <font>作成年月日</font>
+            </td>
+            <td colspan="9" rowspan="1">
+                <font>2020</font><font>年</font><font>3</font><font>月</font><font>3</font><font>日</font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5" rowspan="1">
+            </td>
+            <td colspan="9" rowspan="1">
+                <font>(</font><font>3</font><font>月分)</font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="9">
+                <font>区分支給限度管理・利用者負担計算</font>
+            </td>
+            <td colspan="18">
+            </td>
+            <td colspan="6">
+                <font>被保険者番号：</font>
+            </td>
+            <td colspan="6">
+                <font>H123456789</font>
+            </td>
+            <td colspan="2">
+            </td>
+            <td colspan="5">
+                <font>利用者名:</font>
+            </td>
+            <td colspan="9">
+                <font>xxxさん</font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5" rowspan="2">
+                <font>事業所名</font>
+            </td>
+            <td colspan="4" rowspan="2">
+                <font>事業所番号</font>
+            </td>
+            <td colspan="5" rowspan="2">
+                <font>サービス内容/種類</font>
+            </td>
+            <td colspan="2" rowspan="2">
+                <font>サービスコード</font>
+            </td>
+            <td colspan="2" rowspan="2">
+                <font>単位数</font>
+            </td>
+            <td colspan="4" rowspan="1">
+                <font>割引後</font>
+            </td>
+            <td colspan="2" rowspan="2">
+                <font>回数</font>
+            </td>
+            <td colspan="3" rowspan="2">
+                <font>サービス</font><br><font>単位/金額</font>
+            </td>
+            <td colspan="3" rowspan="2">
+                <font>種類支給限度</font><br><font>基準を超える</font><br><font>単位数</font>
+            </td>
+            <td colspan="3" rowspan="2">
+                <font>種類支給限度</font><br><font>基準内単位数</font>
+            </td>
+            <td colspan="3" rowspan="2">
+                <font>区分支給限度</font><br><font>基準を超える</font><br><font>単位数</font>
+            </td>
+            <td colspan="3" rowspan="2">
+                <font>区分支給限度</font><br><font>基準内単位数</font>
+            </td>
+            <td colspan="2" rowspan="2">
+                <font>単位数</font><br><font>単価</font>
+            </td>
+            <td colspan="3" rowspan="2">
+                <font>費用総額</font><br><font>（保険対象分）</font>
+            </td>
+            <td colspan="2" rowspan="2">
+                <font>給付率</font><br><font>（%）</font>
+            </td>
+            <td colspan="3" rowspan="2">
+                <font>保険給付額</font>
+            </td>
+            <td colspan="3" rowspan="2">
+                <font>利用者負担</font><br><font>（保険対象分）</font>
+            </td>
+            <td colspan="3" rowspan="2">
+                <font>利用者負担</font><br><font>（全額負担分）</font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" rowspan="1">
+                <font>率%</font>
+            </td>
+            <td colspan="2" rowspan="1">
+                <font>単位数</font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <font>xx事業所</font>
+            </td>
+            <td colspan="4">
+                <font>1234567890</font>
+            </td>
+            <td colspan="5">
+                <font>通所介護１</font>
+            </td>
+            <td colspan="2">
+                <font>161111</font>
+            </td>
+            <td colspan="2">
+                <font>132</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="2">
+                <font>122</font>
+            </td>
+            <td colspan="2">
+                <font>4</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="2">
+                <font>10.0</font>
+            </td>
+            <td colspan="3">
+                <font>4880</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="3">
+                <font>4392</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <font>xx事業所</font>
+            </td>
+            <td colspan="4">
+                <font>1234567890</font>
+            </td>
+            <td colspan="5">
+                <font>通所介護１</font>
+            </td>
+            <td colspan="2">
+                <font>161111</font>
+            </td>
+            <td colspan="2">
+                <font>132</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="2">
+                <font>122</font>
+            </td>
+            <td colspan="2">
+                <font>4</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="2">
+                <font>10.0</font>
+            </td>
+            <td colspan="3">
+                <font>4880</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="3">
+                <font>4392</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <font>xx事業所</font>
+            </td>
+            <td colspan="4">
+                <font>1234567890</font>
+            </td>
+            <td colspan="5">
+                <font>通所介護１</font>
+            </td>
+            <td colspan="2">
+                <font>161111</font>
+            </td>
+            <td colspan="2">
+                <font>132</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="2">
+                <font>122</font>
+            </td>
+            <td colspan="2">
+                <font>4</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="2">
+                <font>10.0</font>
+            </td>
+            <td colspan="3">
+                <font>4880</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="3">
+                <font>4392</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <font>xx事業所</font>
+            </td>
+            <td colspan="4">
+                <font>1234567890</font>
+            </td>
+            <td colspan="5">
+                <font>通所介護１</font>
+            </td>
+            <td colspan="2">
+                <font>161111</font>
+            </td>
+            <td colspan="2">
+                <font>132</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="2">
+                <font>122</font>
+            </td>
+            <td colspan="2">
+                <font>4</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="2">
+                <font>10.0</font>
+            </td>
+            <td colspan="3">
+                <font>4880</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="3">
+                <font>4392</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <font>xx事業所</font>
+            </td>
+            <td colspan="4">
+                <font>1234567890</font>
+            </td>
+            <td colspan="5">
+                <font>通所介護１</font>
+            </td>
+            <td colspan="2">
+                <font>161111</font>
+            </td>
+            <td colspan="2">
+                <font>132</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="2">
+                <font>122</font>
+            </td>
+            <td colspan="2">
+                <font>4</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="2">
+                <font>10.0</font>
+            </td>
+            <td colspan="3">
+                <font>4880</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="3">
+                <font>4392</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <font>xx事業所</font>
+            </td>
+            <td colspan="4">
+                <font>1234567890</font>
+            </td>
+            <td colspan="5">
+                <font>通所介護１</font>
+            </td>
+            <td colspan="2">
+                <font>161111</font>
+            </td>
+            <td colspan="2">
+                <font>132</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="2">
+                <font>122</font>
+            </td>
+            <td colspan="2">
+                <font>4</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="2">
+                <font>10.0</font>
+            </td>
+            <td colspan="3">
+                <font>4880</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="3">
+                <font>4392</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <font>xx事業所</font>
+            </td>
+            <td colspan="4">
+                <font>1234567890</font>
+            </td>
+            <td colspan="5">
+                <font>通所介護１</font>
+            </td>
+            <td colspan="2">
+                <font>161111</font>
+            </td>
+            <td colspan="2">
+                <font>132</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="2">
+                <font>122</font>
+            </td>
+            <td colspan="2">
+                <font>4</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="2">
+                <font>10.0</font>
+            </td>
+            <td colspan="3">
+                <font>4880</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="3">
+                <font>4392</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <font>xx事業所</font>
+            </td>
+            <td colspan="4">
+                <font>1234567890</font>
+            </td>
+            <td colspan="5">
+                <font>通所介護１</font>
+            </td>
+            <td colspan="2">
+                <font>161111</font>
+            </td>
+            <td colspan="2">
+                <font>132</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="2">
+                <font>122</font>
+            </td>
+            <td colspan="2">
+                <font>4</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="2">
+                <font>10.0</font>
+            </td>
+            <td colspan="3">
+                <font>4880</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="3">
+                <font>4392</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <font>xx事業所</font>
+            </td>
+            <td colspan="4">
+                <font>1234567890</font>
+            </td>
+            <td colspan="5">
+                <font>通所介護１</font>
+            </td>
+            <td colspan="2">
+                <font>161111</font>
+            </td>
+            <td colspan="2">
+                <font>132</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="2">
+                <font>122</font>
+            </td>
+            <td colspan="2">
+                <font>4</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="2">
+                <font>10.0</font>
+            </td>
+            <td colspan="3">
+                <font>4880</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="3">
+                <font>4392</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <font>xx事業所</font>
+            </td>
+            <td colspan="4">
+                <font>1234567890</font>
+            </td>
+            <td colspan="5">
+                <font>通所介護１</font>
+            </td>
+            <td colspan="2">
+                <font>161111</font>
+            </td>
+            <td colspan="2">
+                <font>132</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="2">
+                <font>122</font>
+            </td>
+            <td colspan="2">
+                <font>4</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="2">
+                <font>10.0</font>
+            </td>
+            <td colspan="3">
+                <font>4880</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="3">
+                <font>4392</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <font>xx事業所</font>
+            </td>
+            <td colspan="4">
+                <font>1234567890</font>
+            </td>
+            <td colspan="5">
+                <font>通所介護１</font>
+            </td>
+            <td colspan="2">
+                <font>161111</font>
+            </td>
+            <td colspan="2">
+                <font>132</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="2">
+                <font>122</font>
+            </td>
+            <td colspan="2">
+                <font>4</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="2">
+                <font>10.0</font>
+            </td>
+            <td colspan="3">
+                <font>4880</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="3">
+                <font>4392</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <font>xx事業所</font>
+            </td>
+            <td colspan="4">
+                <font>1234567890</font>
+            </td>
+            <td colspan="5">
+                <font>通所介護１</font>
+            </td>
+            <td colspan="2">
+                <font>161111</font>
+            </td>
+            <td colspan="2">
+                <font>132</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="2">
+                <font>122</font>
+            </td>
+            <td colspan="2">
+                <font>4</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="2">
+                <font>10.0</font>
+            </td>
+            <td colspan="3">
+                <font>4880</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="3">
+                <font>4392</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <font>xx事業所</font>
+            </td>
+            <td colspan="4">
+                <font>1234567890</font>
+            </td>
+            <td colspan="5">
+                <font>通所介護１</font>
+            </td>
+            <td colspan="2">
+                <font>161111</font>
+            </td>
+            <td colspan="2">
+                <font>132</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="2">
+                <font>122</font>
+            </td>
+            <td colspan="2">
+                <font>4</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="2">
+                <font>10.0</font>
+            </td>
+            <td colspan="3">
+                <font>4880</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="3">
+                <font>4392</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <font>xx事業所</font>
+            </td>
+            <td colspan="4">
+                <font>1234567890</font>
+            </td>
+            <td colspan="5">
+                <font>通所介護１</font>
+            </td>
+            <td colspan="2">
+                <font>161111</font>
+            </td>
+            <td colspan="2">
+                <font>132</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="2">
+                <font>122</font>
+            </td>
+            <td colspan="2">
+                <font>4</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="2">
+                <font>10.0</font>
+            </td>
+            <td colspan="3">
+                <font>4880</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="3">
+                <font>4392</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <font>xx事業所</font>
+            </td>
+            <td colspan="4">
+                <font>1234567890</font>
+            </td>
+            <td colspan="5">
+                <font>通所介護１</font>
+            </td>
+            <td colspan="2">
+                <font>161111</font>
+            </td>
+            <td colspan="2">
+                <font>132</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="2">
+                <font>122</font>
+            </td>
+            <td colspan="2">
+                <font>4</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="2">
+                <font>10.0</font>
+            </td>
+            <td colspan="3">
+                <font>4880</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="3">
+                <font>4392</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <font>xx事業所</font>
+            </td>
+            <td colspan="4">
+                <font>1234567890</font>
+            </td>
+            <td colspan="5">
+                <font>通所介護１</font>
+            </td>
+            <td colspan="2">
+                <font>161111</font>
+            </td>
+            <td colspan="2">
+                <font>132</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="2">
+                <font>122</font>
+            </td>
+            <td colspan="2">
+                <font>4</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="2">
+                <font>10.0</font>
+            </td>
+            <td colspan="3">
+                <font>4880</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="3">
+                <font>4392</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <font>xx事業所</font>
+            </td>
+            <td colspan="4">
+                <font>1234567890</font>
+            </td>
+            <td colspan="5">
+                <font>通所介護１</font>
+            </td>
+            <td colspan="2">
+                <font>161111</font>
+            </td>
+            <td colspan="2">
+                <font>132</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="2">
+                <font>122</font>
+            </td>
+            <td colspan="2">
+                <font>4</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="2">
+                <font>10.0</font>
+            </td>
+            <td colspan="3">
+                <font>4880</font>
+            </td>
+            <td colspan="2">
+                <font>90</font>
+            </td>
+            <td colspan="3">
+                <font>4392</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="14">
+            </td>
+            <td colspan="4">
+                <font>区分支給限度</font><br><font>基準額（単位）</font>
+            </td>
+            <td colspan="4">
+                <font>16392</font>
+            </td>
+            <td colspan="2">
+                <font>合計</font>
+            </td>
+            <td colspan="3">
+                <font>488</font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font>0</font>
+            </td>
+            <td colspan="2">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="2">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+            <td colspan="3">
+                <font></font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="55">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="9">
+                <font>種類別支給限度額管理</font>
+            </td>
+            <td colspan="46">
+                <font></font>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="9">
+                <font>サービス種類</font>
+            </td>
+            <td colspan="5">
+                <font>種類支給限度</font><br><font>基準額（単位）</font>
+            </td>
+            <td colspan="2">
+                <font>合計単位数</font>
+            </td>
+            <td colspan="4">
+                <font>種類支給限度基準</font><br><font>を超える単位数</font>
+            </td>
+            <td colspan="9">
+                <font>サービス種類</font>
+            </td>
+            <td colspan="5">
+                <font>種類支給限度</font><br><font>基準額（単位）</font>
+            </td>
+            <td colspan="2">
+                <font>合計単位数</font>
+            </td>
+            <td colspan="4">
+                <font>種類支給限度基準</font><br><font>を超える単位数</font>
+            </td>
+            <td colspan="15">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="9">
+                <font>訪問介護</font>
+            </td>
+            <td colspan="5">
+                <font></font>
+            </td>
+            <td colspan="2">
+                <font></font>
+            </td>
+            <td colspan="4">
+                <font></font>
+            </td>
+            <td colspan="9">
+                <font>福祉用具貸与</font>
+            </td>
+            <td colspan="5">
+                <font></font>
+            </td>
+            <td colspan="2">
+                <font></font>
+            </td>
+            <td colspan="4">
+                <font></font>
+            </td>
+            <td colspan="15">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="9">
+                <font>訪問入浴介護</font>
+            </td>
+            <td colspan="5">
+                <font></font>
+            </td>
+            <td colspan="2">
+                <font></font>
+            </td>
+            <td colspan="4">
+                <font></font>
+            </td>
+            <td colspan="9">
+                <font>短期入所生活介護</font>
+            </td>
+            <td colspan="5">
+                <font></font>
+            </td>
+            <td colspan="2">
+                <font></font>
+            </td>
+            <td colspan="4">
+                <font></font>
+            </td>
+            <td colspan="15">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="9">
+                <font>訪問看護</font>
+            </td>
+            <td colspan="5">
+                <font></font>
+            </td>
+            <td colspan="2">
+                <font></font>
+            </td>
+            <td colspan="4">
+                <font></font>
+            </td>
+            <td colspan="9">
+                <font>短期入所療養介護</font>
+            </td>
+            <td colspan="5">
+                <font></font>
+            </td>
+            <td colspan="2">
+                <font></font>
+            </td>
+            <td colspan="4">
+                <font></font>
+            </td>
+            <td colspan="15">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="9">
+                <font>訪問リハビリテーション</font>
+            </td>
+            <td colspan="5">
+                <font></font>
+            </td>
+            <td colspan="2">
+                <font></font>
+            </td>
+            <td colspan="4">
+                <font></font>
+            </td>
+            <td colspan="9">
+                <font>夜間対応型訪問介護</font>
+            </td>
+            <td colspan="5">
+                <font></font>
+            </td>
+            <td colspan="2">
+                <font></font>
+            </td>
+            <td colspan="4">
+                <font></font>
+            </td>
+            <td colspan="15">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="9">
+                <font>通所介護</font>
+            </td>
+            <td colspan="5">
+                <font></font>
+            </td>
+            <td colspan="2">
+                <font></font>
+            </td>
+            <td colspan="4">
+                <font></font>
+            </td>
+            <td colspan="9">
+                <font>小規模多機能型居宅介護</font>
+            </td>
+            <td colspan="5">
+                <font></font>
+            </td>
+            <td colspan="2">
+                <font></font>
+            </td>
+            <td colspan="4">
+                <font></font>
+            </td>
+            <td colspan="15">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="9">
+                <font>認知症対応型通所介護</font>
+            </td>
+            <td colspan="5">
+                <font></font>
+            </td>
+            <td colspan="2">
+                <font></font>
+            </td>
+            <td colspan="4">
+                <font></font>
+            </td>
+            <td colspan="9">
+                <font>定期巡回・随時対応型訪問介護看護</font>
+            </td>
+            <td colspan="5">
+                <font></font>
+            </td>
+            <td colspan="2">
+                <font></font>
+            </td>
+            <td colspan="4">
+                <font></font>
+            </td>
+            <td colspan="15">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="9">
+                <font>認知症対応型共同生活介護</font>
+            </td>
+            <td colspan="5">
+                <font></font>
+            </td>
+            <td colspan="2">
+                <font></font>
+            </td>
+            <td colspan="4">
+                <font></font>
+            </td>
+            <td colspan="9">
+                <font>複合型サービス</font>
+            </td>
+            <td colspan="5">
+                <font></font>
+            </td>
+            <td colspan="2">
+                <font></font>
+            </td>
+            <td colspan="4">
+                <font></font>
+            </td>
+            <td colspan="15">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="9">
+                <font>通所リハビリテーション</font>
+            </td>
+            <td colspan="5">
+                <font></font>
+            </td>
+            <td colspan="2">
+                <font></font>
+            </td>
+            <td colspan="4">
+                <font></font>
+            </td>
+            <td colspan="9">
+                <font>合計</font>
+            </td>
+            <td colspan="5">
+                <font></font>
+            </td>
+            <td colspan="2">
+                <font></font>
+            </td>
+            <td colspan="4">
+                <font></font>
+            </td>
+            <td colspan="15">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="55">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="55">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="9">
+                <font>要介護認定期間中の短期入所利用日数</font>
+            </td>
+            <td colspan="46">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <font>前月までの利用日数</font>
+            </td>
+            <td colspan="5">
+                <font>当月の計画利用日数</font>
+            </td>
+            <td colspan="5">
+                <font>累積利用日数</font>
+            </td>
+            <td colspan="40">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <font></font>
+            </td>
+            <td colspan="5">
+                <font></font>
+            </td>
+            <td colspan="5">
+                <font></font>
+            </td>
+            <td colspan="40">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
