@@ -76,13 +76,13 @@
                     <td colspan="8">
                     </td>
                     <td colspan="3">
-                        <font>1</font>
+                        <font th:text=${servicePlan.serviceProvisionYearMonth.year}></font>
                     </td>
                     <td colspan="1">
                         <font>年</font>
                     </td>
                     <td colspan="1">
-                        <font>12</font>
+                        <font th:text=${servicePlan.serviceProvisionYearMonth.monthValue}></font>
                     </td>
                     <td colspan="2">
                         <font>月分</font>
@@ -107,36 +107,36 @@
                     <td colspan="4" rowspan="2">
                     </td>
                     <td colspan="6" rowspan="2">
-                        <font>123456</font>
+                        <font th:text=${servicePlan.insure.number}></font>
                     </td>
                     <td colspan="3" rowspan="2">
                     </td>
                     <td colspan="5" rowspan="2">
-                        <font>立川市</font>
+                        <font th:text=${servicePlan.insure.name}></font>
                     </td>
                     <td colspan="4" rowspan="2">
                         <font>居宅介護支援</font><br><font>事業者事業所名</font><br><font>担当者名</font>
                     </td>
                     <td colspan="11" rowspan="1">
-                        <font>xx居宅介護支援事業所</font>
+                        <font th:text=${servicePlan.careManager.office.name}></font>
                     </td>
                     <td colspan="3" rowspan="2">
                         <font>作生年月日</font>
                     </td>
                     <td colspan="3" rowspan="2">
-                        <font>2020</font>
+                        <font th:text=${servicePlan.creationDate.year}></font>
                     </td>
                     <td colspan="1" rowspan="2">
                         <font>年</font>
                     </td>
                     <td colspan="1" rowspan="2">
-                        <font>2</font>
+                        <font th:text=${servicePlan.creationDate.monthValue}></font>
                     </td>
                     <td colspan="1" rowspan="2">
                         <font>月</font>
                     </td>
                     <td colspan="1" rowspan="2">
-                        <font>28</font>
+                        <font th:text=${servicePlan.creationDate.dayOfMonth}></font>
                     </td>
                     <td colspan="1" rowspan="2">
                         <font>日</font>
@@ -144,10 +144,10 @@
                 </tr>
                 <tr>
                     <td colspan="5">
-                        <font>xxさん</font>
+                        <font th:text=${servicePlan.careManager.name}></font>
                     </td>
                     <td colspan="6">
-                        <font>TEL</font><font>00-1234-5678</font>
+                        <font>TEL </font><font th:text=${servicePlan.careManager.office.telephoneNumber}></font>
                     </td>
                 </tr>
                 <tr>
@@ -155,13 +155,13 @@
                         <font>被保険者</font><br><font>番号</font>
                     </td>
                     <td colspan="10" rowspan="2">
-                        <font>H123456789</font>
+                        <font th:text=${servicePlan.insuredPerson.insureLicense.number}></font>
                     </td>
                     <td colspan="3" rowspan="2">
                         <font>フリガナ</font><br><font>被保険者氏名</font>
                     </td>
                     <td colspan="9" rowspan="1">
-                        <font>アイウエオ</font>
+                        <font th:text=${servicePlan.insuredPerson.nameKana}></font>
                     </td>
                     <td colspan="4" rowspan="2">
                         <font>保険者確認印</font>
@@ -172,19 +172,19 @@
                         <font>届出年月日</font>
                     </td>
                     <td colspan="3" rowspan="2">
-                        <font>2020</font>
+                        <font th:text=${servicePlan.notificationDate.year}></font>
                     </td>
                     <td colspan="1" rowspan="2">
                         <font>年</font>
                     </td>
                     <td colspan="1" rowspan="2">
-                        <font>2</font>
+                        <font th:text=${servicePlan.notificationDate.monthValue}></font>
                     </td>
                     <td colspan="1" rowspan="2">
                         <font>月</font>
                     </td>
                     <td colspan="1" rowspan="2">
-                        <font>28</font>
+                        <font th:text=${servicePlan.notificationDate.dayOfMonth}></font>
                     </td>
                     <td colspan="1" rowspan="2">
                         <font>日</font>
@@ -192,7 +192,7 @@
                 </tr>
                 <tr>
                     <td colspan="8">
-                        <font>あいうえお</font>
+                        <font th:text=${servicePlan.insuredPerson.name}></font>
                     </td>
                     <td colspan="1">
                         <font>様</font>
@@ -206,25 +206,25 @@
                         <font>(年号)</font>
                     </td>
                     <td colspan="3" rowspan="1">
-                        <font>令和</font>
+                        <font th:text=${servicePlan.insuredPerson.birthDate.era}></font>
                     </td>
                     <td colspan="1" rowspan="3">
                         <font>性別</font>
                     </td>
                     <td colspan="1" rowspan="3">
-                        <font>男</font>
+                        <font th:text=${servicePlan.insuredPerson.sex}></font>
                     </td>
                     <td colspan="3" rowspan="1">
                         <font>要介護状態区分</font>
                     </td>
                     <td colspan="7" rowspan="1">
-                        <font>要介護3</font>
+                        <font th:text=${servicePlan.insuredPerson.insureLicense.careLevel}></font>
                     </td>
                     <td colspan="4" rowspan="3">
                         <font>区分支給</font><br><font>限度基準額</font>
                     </td>
                     <td colspan="8" rowspan="3">
-                        <font>16327</font><font>単位 / 月</font>
+                        <font th:text=${servicePlan.insuredPerson.insureLicense.creditLimit}></font><font> 単位 / 月</font>
                     </td>
                     <td colspan="3" rowspan="3">
                         <font>限度額</font><br><font>適用期間</font>
@@ -235,24 +235,24 @@
                         <font>前月までの</font><br><font>短期入所</font><br><font>利用日数</font>
                     </td>
                     <td colspan="2" rowspan="2">
-                        <font>11</font>
+                        <font th:text=${servicePlan.shortStayUseDaysOfPreviousMonth}></font>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="1" rowspan="2">
-                        <font>2</font>
+                        <font th:text=${servicePlan.insuredPerson.birthDate.year}></font>
                     </td>
                     <td colspan="1" rowspan="2">
                         <font>年</font>
                     </td>
                     <td colspan="1" rowspan="2">
-                        <font>3</font>
+                        <font th:text=${servicePlan.insuredPerson.birthDate.monthValue}></font>
                     </td>
                     <td colspan="1" rowspan="2">
                         <font>月</font>
                     </td>
                     <td colspan="1" rowspan="2">
-                        <font>2</font>
+                        <font th:text=${servicePlan.insuredPerson.birthDate.dayOfMonth}></font>
                     </td>
                     <td colspan="1" rowspan="2">
                         <font>日</font>
@@ -261,18 +261,18 @@
                         <font>変更後<br></font><font>要介護状態区分</font><br><font>変更日</font>
                     </td>
                     <td colspan="7" rowspan="1">
-                        <font>要介護2</font>
+                        <font th:text=${servicePlan.insuredPerson.insureLicense.previousCareLevel}></font>
                     </td>
                     <td colspan="6" rowspan="1">
-                        <font>2020</font><font>年</font><font>1</font><font>月から</font>
+                        <font th:text=${servicePlan.insuredPerson.insureLicense.creditLimitFrom.year}></font><font>年</font><font th:text=${servicePlan.insuredPerson.insureLicense.creditLimitFrom.monthValue}></font><font>月から</font>
                     </td>
                  </tr>
                 <tr>
                     <td colspan="7" rowspan="1">
-                        <font>2020</font><font>年</font><font>1</font><font>月</font><font>30</font><font>日</font>
+                        <font th:text=${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate.year}></font><font>年</font><font th:text=${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate.monthValue}></font><font>月</font><font th:text=${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate.dayOfMonth}></font><font>日</font>
                     </td>
                     <td colspan="6" rowspan="1">
-                        <font>2020</font><font>年</font><font>12</font><font>月まで</font>
+                        <font th:text=${servicePlan.insuredPerson.insureLicense.creditLimitTo.year}></font><font>年</font><font th:text=${servicePlan.insuredPerson.insureLicense.creditLimitTo.monthValue}></font><font>月まで</font>
                     </td>
                     <td colspan="2" rowspan="1">
                         <font>日</font>
