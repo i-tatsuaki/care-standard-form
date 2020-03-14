@@ -9,13 +9,13 @@ class CareManagerTest {
 
     @Test
     fun getMethodTest() {
-        // when
+        // given
         val careManager = CareManager(
             "ケアマネ氏名",
             Office("ある居宅介護支援事業所", "03-1234-5678")
         )
 
-        // then
+        // expect
         assertEquals("ケアマネ氏名", careManager.name)
         assertEquals("ある居宅介護支援事業所", careManager.office.name)
         assertEquals("03-1234-5678", careManager.office.telephoneNumber)

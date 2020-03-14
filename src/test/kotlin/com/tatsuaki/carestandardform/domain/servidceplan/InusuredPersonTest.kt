@@ -11,7 +11,7 @@ class InusuredPersonTest {
 
     @Test
     fun getMethodTest() {
-        // when
+        // given
         val insuredPerson = InsuredPerson(
             "利用者名",
             "リヨウシャメイ",
@@ -28,7 +28,7 @@ class InusuredPersonTest {
             )
         )
 
-        // then
+        // expect
         assertEquals("利用者名", insuredPerson.name)
         assertEquals("リヨウシャメイ", insuredPerson.nameKana)
         assertEquals("男", insuredPerson.sex)

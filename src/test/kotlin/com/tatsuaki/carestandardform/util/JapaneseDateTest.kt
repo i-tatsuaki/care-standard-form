@@ -8,12 +8,12 @@ class JapaneseDateTest {
 
     @Test
     fun getMethodTest() {
-        // when
+        // given
         val japaneseDate = JapaneseDate(
             LocalDate.of(2019, 12, 1)
         )
 
-        // then
+        // expect
         assertEquals(2019, japaneseDate.getYear())
         assertEquals(12, japaneseDate.getMonthValue())
         assertEquals(1, japaneseDate.getDayOfMonth())

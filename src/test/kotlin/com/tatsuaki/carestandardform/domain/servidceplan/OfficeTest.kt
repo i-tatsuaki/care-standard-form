@@ -8,10 +8,10 @@ class OfficeTest {
 
     @Test
     fun getMethodTest() {
-        // when
+        // given
         val office = Office("ある居宅介護支援事業所", "03-1234-5678")
 
-        // then
+        // expect
         assertEquals("ある居宅介護支援事業所", office.name)
         assertEquals( "03-1234-5678", office.telephoneNumber)
     }

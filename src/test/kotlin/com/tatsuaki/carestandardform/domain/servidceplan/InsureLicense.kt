@@ -9,7 +9,7 @@ class InsureLicense {
 
     @Test
     fun getMethodTest() {
-        // when
+        // given
         val insureLicense = InsureLicense(
                 "H123456789",
                 "要介護1",
@@ -20,7 +20,7 @@ class InsureLicense {
                 LocalDate.of(2020, 11, 30)
         )
 
-        // then
+        // expect
         assertEquals("H123456789", insureLicense.number)
         assertEquals("要介護1", insureLicense.careLevel)
         assertEquals("要支援1", insureLicense.previousCareLevel)

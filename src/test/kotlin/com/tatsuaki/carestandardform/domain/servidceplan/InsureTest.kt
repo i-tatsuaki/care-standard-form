@@ -8,10 +8,10 @@ class InsureTest {
 
     @Test
     fun getMethodTest() {
-        // when
+        // given
         val insure = Insure("123456", "江戸川区")
 
-        // then
+        // expect
         assertEquals("123456", insure.number)
         assertEquals("江戸川区", insure.name)
     }

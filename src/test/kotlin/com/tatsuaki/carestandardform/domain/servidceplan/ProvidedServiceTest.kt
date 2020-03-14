@@ -9,7 +9,7 @@ import kotlin.test.assertEquals
 class ProvidedServiceTest {
     @Test
     fun getMethodTest() {
-        // when
+        // given
         val office = Office("とある通所介護事業所", "03-1234-5678")
         val providedService = ProvidedService(
             LocalTime.of(10, 0),
@@ -20,7 +20,7 @@ class ProvidedServiceTest {
             setOf(1, 5)
         )
 
-        // then
+        // expect
         val expected1 = Int::class.javaObjectType
         val expected : Int? = expected1.cast(Integer.valueOf(1))
         assertEquals(LocalTime.of(10, 0), providedService.from)
