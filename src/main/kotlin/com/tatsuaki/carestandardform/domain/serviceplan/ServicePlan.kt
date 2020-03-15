@@ -47,7 +47,7 @@ class ServicePlan() {
             ProvidedService(
                 LocalTime.of(10, 0),
                 LocalTime.of(12, 0),
-                "通所介護１",
+                CareService("通所介護１"),
                 Office("とある通所介護事業所", "03-1234-5678"),
                 setOf(1, 3, 5),
                 setOf(1, 5)
@@ -55,7 +55,7 @@ class ServicePlan() {
             ProvidedService(
                 LocalTime.of(10, 0),
                 LocalTime.of(12, 0),
-                "通所介護２",
+                CareService("通所介護２"),
                 Office("とある通所介護事業所", "03-1234-5678"),
                 setOf(1, 3, 5),
                 setOf(1, 5)
@@ -63,7 +63,7 @@ class ServicePlan() {
             ProvidedService(
                 LocalTime.of(10, 0),
                 LocalTime.of(12, 0),
-                "通所介護３",
+                CareService("通所介護３"),
                 Office("とある通所介護事業所", "03-1234-5678"),
                 setOf(1, 3, 5),
                 setOf(1, 5)

@@ -1,5 +1,6 @@
 package com.tatsuaki.carestandardform.domain.servidceplan
 
+import com.tatsuaki.carestandardform.domain.model.CareService
 import org.junit.Test
 import java.time.LocalTime
 import com.tatsuaki.carestandardform.domain.model.ProvidedService
@@ -14,7 +15,7 @@ class ProvidedServiceTest {
         val providedService = ProvidedService(
             LocalTime.of(10, 0),
             LocalTime.of(12, 0),
-            "通所介護１",
+            CareService("通所介護１"),
             office,
             setOf(1, 3, 5),
             setOf(1, 5)
@@ -25,7 +26,7 @@ class ProvidedServiceTest {
         val expected : Int? = expected1.cast(Integer.valueOf(1))
         assertEquals(LocalTime.of(10, 0), providedService.from)
         assertEquals(LocalTime.of(12, 0), providedService.to)
-        assertEquals("通所介護１", providedService.serviceName)
+        assertEquals("通所介護１", providedService.careService.name)
         assertEquals(office, providedService.office)
         assertEquals(setOf(1, 3, 5), providedService.provideDaysPlan)
         assertEquals(setOf(1, 5), providedService.provideDaysResult)
