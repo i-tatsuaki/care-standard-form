@@ -1,9 +1,9 @@
 package com.tatsuaki.carestandardform.domain.serviceplan
 
+import com.tatsuaki.carestandardform.util.JapaneseDate
 import java.time.LocalDate
 import java.time.LocalTime
 import java.time.YearMonth
-import java.time.chrono.JapaneseDate
 
 class ServicePlan() {
 
@@ -29,7 +29,7 @@ class ServicePlan() {
             "利用者氏名",
             "リヨウシャシメイ",
             "男",
-            com.tatsuaki.carestandardform.util.JapaneseDate(LocalDate.of(1988, 12, 22)),
+            JapaneseDate(LocalDate.of(1988, 12, 22)),
             InsureLicense(
                 "H123456789",
                 "要介護3",
