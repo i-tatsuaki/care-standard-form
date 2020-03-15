@@ -1,7 +1,7 @@
 package com.tatsuaki.carestandardform.domain.serviceplanappendix
 
-import com.tatsuaki.carestandardform.domain.serviceplan.InsureLicense
-import com.tatsuaki.carestandardform.domain.serviceplan.InsuredPerson
+import com.tatsuaki.carestandardform.domain.model.InsureLicense
+import com.tatsuaki.carestandardform.domain.model.InsuredPerson
 import com.tatsuaki.carestandardform.util.JapaneseDate
 import java.time.LocalDate
 import java.time.YearMonth

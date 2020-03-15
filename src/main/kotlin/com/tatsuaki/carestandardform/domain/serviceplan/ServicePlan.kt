@@ -1,5 +1,6 @@
 package com.tatsuaki.carestandardform.domain.serviceplan
 
+import com.tatsuaki.carestandardform.domain.model.*
 import com.tatsuaki.carestandardform.util.JapaneseDate
 import java.time.LocalDate
 import java.time.LocalTime
@@ -43,9 +44,30 @@ class ServicePlan() {
         this.notificationDate = LocalDate.of(2020, 1, 1)
         this.shortStayUseDaysOfPreviousMonth = 13
         this.providedServices = listOf(
-            ProvidedService(LocalTime.of(10, 0), LocalTime.of(12, 0), "通所介護１", Office("とある通所介護事業所", "03-1234-5678"), setOf(1, 3, 5), setOf(1, 5)),
-            ProvidedService(LocalTime.of(10, 0), LocalTime.of(12, 0), "通所介護２", Office("とある通所介護事業所", "03-1234-5678"), setOf(1, 3, 5), setOf(1, 5)),
-            ProvidedService(LocalTime.of(10, 0), LocalTime.of(12, 0), "通所介護３", Office("とある通所介護事業所", "03-1234-5678"), setOf(1, 3, 5), setOf(1, 5))
+            ProvidedService(
+                LocalTime.of(10, 0),
+                LocalTime.of(12, 0),
+                "通所介護１",
+                Office("とある通所介護事業所", "03-1234-5678"),
+                setOf(1, 3, 5),
+                setOf(1, 5)
+            ),
+            ProvidedService(
+                LocalTime.of(10, 0),
+                LocalTime.of(12, 0),
+                "通所介護２",
+                Office("とある通所介護事業所", "03-1234-5678"),
+                setOf(1, 3, 5),
+                setOf(1, 5)
+            ),
+            ProvidedService(
+                LocalTime.of(10, 0),
+                LocalTime.of(12, 0),
+                "通所介護３",
+                Office("とある通所介護事業所", "03-1234-5678"),
+                setOf(1, 3, 5),
+                setOf(1, 5)
+            )
         )
     }
 }

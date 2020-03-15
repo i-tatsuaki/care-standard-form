@@ -1,4 +1,4 @@
-package com.tatsuaki.carestandardform.domain.serviceplan
+package com.tatsuaki.carestandardform.domain.model
 
 import java.time.LocalTime
 

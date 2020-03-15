@@ -1,6 +1,6 @@
 package com.tatsuaki.carestandardform.domain.servidceplan
 
-import com.tatsuaki.carestandardform.domain.serviceplan.Insure
+import com.tatsuaki.carestandardform.domain.model.Insure
 import org.junit.Test
 import kotlin.test.assertEquals
 

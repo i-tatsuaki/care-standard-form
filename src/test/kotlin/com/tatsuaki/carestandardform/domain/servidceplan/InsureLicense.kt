@@ -1,6 +1,6 @@
 package com.tatsuaki.carestandardform.domain.servidceplan
 
-import com.tatsuaki.carestandardform.domain.serviceplan.InsureLicense
+import com.tatsuaki.carestandardform.domain.model.InsureLicense
 import org.junit.Test
 import java.time.LocalDate
 import kotlin.test.assertEquals
@@ -11,13 +11,13 @@ class InsureLicense {
     fun getMethodTest() {
         // given
         val insureLicense = InsureLicense(
-                "H123456789",
-                "要介護1",
-                "要支援1",
-                LocalDate.of(2019, 12, 1),
-                12345,
-                LocalDate.of(2019, 12, 2),
-                LocalDate.of(2020, 11, 30)
+            "H123456789",
+            "要介護1",
+            "要支援1",
+            LocalDate.of(2019, 12, 1),
+            12345,
+            LocalDate.of(2019, 12, 2),
+            LocalDate.of(2020, 11, 30)
         )
 
         // expect

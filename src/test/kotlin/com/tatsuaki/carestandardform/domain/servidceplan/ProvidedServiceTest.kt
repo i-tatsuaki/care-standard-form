@@ -2,8 +2,8 @@ package com.tatsuaki.carestandardform.domain.servidceplan
 
 import org.junit.Test
 import java.time.LocalTime
-import com.tatsuaki.carestandardform.domain.serviceplan.ProvidedService
-import com.tatsuaki.carestandardform.domain.serviceplan.Office
+import com.tatsuaki.carestandardform.domain.model.ProvidedService
+import com.tatsuaki.carestandardform.domain.model.Office
 import kotlin.test.assertEquals
 
 class ProvidedServiceTest {
