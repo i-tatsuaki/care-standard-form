@@ -88,14 +88,14 @@
                 <font>作成年月日</font>
             </td>
             <td colspan="9" rowspan="1">
-                <font>2020</font><font>年</font><font>3</font><font th:text=${servicePlan.creationDate.month}>月</font><font th:text=${servicePlan.creationDate.day}>3</font><font>日</font>
+                <font th:text=${servicePlanAppendix.creationDate.year}></font><font>年</font><font th:text=${servicePlanAppendix.creationDate.monthValue}></font><font>月</font><font th:text=${servicePlanAppendix.creationDate.dayOfMonth}></font><font>日</font>
             </td>
         </tr>
         <tr>
             <td colspan="5" rowspan="1">
             </td>
             <td colspan="9" rowspan="1">
-                <font>(</font><font>3</font><font>月分)</font>
+                <font>(</font><font th:text=${servicePlanAppendix.creationDate.monthValue}></font><font>月分)</font>
             </td>
         </tr>
         <tr>
@@ -108,7 +108,7 @@
                 <font>被保険者番号：</font>
             </td>
             <td colspan="6">
-                <font>H123456789</font>
+                <font th:text=${servicePlanAppendix.insuredPerson.insureLicense.number}></font>
             </td>
             <td colspan="2">
             </td>
@@ -116,7 +116,7 @@
                 <font>利用者名:</font>
             </td>
             <td colspan="9">
-                <font>xxxさん</font>
+                <font th:text=${servicePlanAppendix.insuredPerson.name}></font>
             </td>
         </tr>
         <tr>
