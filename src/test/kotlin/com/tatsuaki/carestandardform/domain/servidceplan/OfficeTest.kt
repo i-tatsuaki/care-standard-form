@@ -9,7 +9,7 @@ class OfficeTest {
     @Test
     fun getMethodTest() {
         // given
-        val office = Office("ある居宅介護支援事業所", "03-1234-5678")
+        val office = Office("ある居宅介護支援事業所", "1234567890", "03-1234-5678")
 
         // expect
         assertEquals("ある居宅介護支援事業所", office.name)

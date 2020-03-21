@@ -318,40 +318,42 @@
                     </td>
                 </tr>
                 <div th:each="providedService : ${servicePlan.providedServices}">
-                    <tr>
-                        <td colspan="3" rowspan="1">
-                            <font th:text=${providedService.from}></font><font>〜</font>
-                        </td>
-                        <td colspan="5" rowspan="2">
-                            <font th:text=${providedService.careService.name}></font>
-                        </td>
-                        <td colspan="5" rowspan="2">
-                            <font th:text=${providedService.office.name}></font>
-                        </td>
-                        <td colspan="1" rowspan="1">
-                            <font>予定</font>
-                        </td>
-                        <td colspan="1" rowspan="1" th:each="day : ${#numbers.sequence(1, 31)}">
-                            <font th:text=${providedService.getPlanDay(day)}></font>
-                        </td>
-                        <td colspan="2" rowspan="1">
-                            <font th:text=${providedService.provideDaysPlan.size()}></font>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" rowspan="1">
-                            <font th:text=${providedService.to}></font>
-                        </td>
-                        <td colspan="1" rowspan="1">
-                            <font>実績</font>
-                        </td>
-                        <td colspan="1" rowspan="1" th:each="day : ${#numbers.sequence(1, 31)}">
-                            <font th:text=${providedService.getResultDay(day)}></font>
-                        </td>
-                        <td colspan="2" rowspan="1">
-                            <font th:text=${providedService.provideDaysResult.size()}></font>
-                        </td>
-                    </tr>
+                    <div th:each="planResult : ${providedService.providedTime.planResults}">
+                        <tr>
+                            <td colspan="3" rowspan="1">
+                                <font th:text=${planResult.key.from}></font><font>〜</font>
+                            </td>
+                            <td colspan="5" rowspan="2">
+                                <font th:text=${providedService.careService.name}></font>
+                            </td>
+                            <td colspan="5" rowspan="2">
+                                <font th:text=${providedService.office.name}></font>
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                <font>予定</font>
+                            </td>
+                            <td colspan="1" rowspan="1" th:each="day : ${#numbers.sequence(1, 31)}">
+                                <font th:text=${planResult.value.getPlanDay(day)}></font>
+                            </td>
+                            <td colspan="2" rowspan="1">
+                                <font th:text=${planResult.value.getPlanDays().size()}></font>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" rowspan="1">
+                                <font th:text=${planResult.key.from}></font>
+                            </td>
+                            <td colspan="1" rowspan="1">
+                                <font>実績</font>
+                            </td>
+                            <td colspan="1" rowspan="1" th:each="day : ${#numbers.sequence(1, 31)}">
+                                <font th:text=${planResult.value.getResultDay(day)}></font>
+                            </td>
+                            <td colspan="2" rowspan="1">
+                                <font th:text=${planResult.value.getResultDays().size()}></font>
+                            </td>
+                        </tr>
+                    </div>
                 </div>
             </tbody>
         </table>

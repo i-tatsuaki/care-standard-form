@@ -12,7 +12,7 @@ class CareManagerTest {
         // given
         val careManager = CareManager(
             "ケアマネ氏名",
-            Office("ある居宅介護支援事業所", "03-1234-5678")
+            Office("ある居宅介護支援事業所", "1234567890", "03-1234-5678")
         )
 
         // expect
