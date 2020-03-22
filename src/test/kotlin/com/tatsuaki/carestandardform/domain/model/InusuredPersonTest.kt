@@ -1,7 +1,5 @@
-package com.tatsuaki.carestandardform.domain.servidceplan
+package com.tatsuaki.carestandardform.domain.model
 
-import com.tatsuaki.carestandardform.domain.model.InsureLicense
-import com.tatsuaki.carestandardform.domain.model.InsuredPerson
 import com.tatsuaki.carestandardform.util.JapaneseDate
 import org.junit.Test
 import java.time.LocalDate

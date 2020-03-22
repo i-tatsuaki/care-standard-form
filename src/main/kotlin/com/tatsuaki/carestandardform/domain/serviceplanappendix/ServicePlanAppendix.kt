@@ -13,6 +13,11 @@ class ServicePlanAppendix {
     val creationDate: LocalDate
     val insuredPerson: InsuredPerson
     val providedServices: List<ProvidedService>
+    val limitDivisionUnitNumber: Int
+    val totalUnitNumber: TotalUnitNumber
+    val kindUnitNumberManagements: Map<CareServiceKind, KindUnitNumberManagement>
+    val totalKindUnitNumberManagement: KindUnitNumberManagement
+    val useCountShortStay: UserCountShortStay
 
     init {
         // TODO 仮実装
@@ -70,6 +75,27 @@ class ServicePlanAppendix {
                     .addResult(time, 9)
             )
         )
+        this.limitDivisionUnitNumber = 16390
+        this.totalUnitNumber = TotalUnitNumber(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        this.kindUnitNumberManagements = mapOf(
+            CareServiceKind.HOME_VISIT_CARE to KindUnitNumberManagement(1, 2, 3),
+            CareServiceKind.HOME_VISIT_BATHING_CARE to KindUnitNumberManagement(4, 5, 6),
+            CareServiceKind.HOME_VISIT_NURSING_CARE to KindUnitNumberManagement(7, 8, 9),
+            CareServiceKind.HOME_VISIT_REHABILITATION to KindUnitNumberManagement(10, 11, 12),
+            CareServiceKind.DAY_CARE to KindUnitNumberManagement(13, 14, 15),
+            CareServiceKind.DAY_CARE_FOR_DEMENTIA to KindUnitNumberManagement(16, 17, 18),
+            CareServiceKind.LIFE_CARE_FOR_DEMENTIA to KindUnitNumberManagement(19, 20, 21),
+            CareServiceKind.DAY_REHABILITATION to KindUnitNumberManagement(22, 23, 24),
+            CareServiceKind.RENTAL_CARE_EQUIPMENT to KindUnitNumberManagement(25, 26, 27),
+            CareServiceKind.SHORT_TERM_LIFE_CARE to KindUnitNumberManagement(28, 29, 30),
+            CareServiceKind.SHORT_TERM_MEDICAL_CARE to KindUnitNumberManagement(31, 32, 33),
+            CareServiceKind.NIGHTLY_HOME_VISIT_CARE to KindUnitNumberManagement(34, 35, 36),
+            CareServiceKind.MULTIFUNCTIONAL_HOME_CARE to KindUnitNumberManagement(37, 38, 39),
+            CareServiceKind.REGULAR_PATROL to KindUnitNumberManagement(40, 41, 42),
+            CareServiceKind.COMPOSITE_SERVICE to KindUnitNumberManagement(43, 44, 45)
+        )
+        this.totalKindUnitNumberManagement = KindUnitNumberManagement(46, 47, 48)
+        this.useCountShortStay = UserCountShortStay(5, 10, 15)
     }
 
 

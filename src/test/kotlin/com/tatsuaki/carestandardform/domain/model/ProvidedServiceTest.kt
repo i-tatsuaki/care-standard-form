@@ -1,4 +1,4 @@
-package com.tatsuaki.carestandardform.domain.servidceplan
+package com.tatsuaki.carestandardform.domain.model
 
 import com.tatsuaki.carestandardform.domain.model.CareService
 import org.junit.Test

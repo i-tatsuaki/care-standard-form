@@ -253,43 +253,43 @@
                 <font>区分支給限度</font><br><font>基準額（単位）</font>
             </td>
             <td colspan="4">
-                <font>16392</font>
+                <font th:text=${servicePlanAppendix.limitDivisionUnitNumber}></font>
             </td>
             <td colspan="2">
                 <font>合計</font>
             </td>
             <td colspan="3">
-                <font>488</font>
+                <font th:text=${servicePlanAppendix.totalUnitNumber.totalUnitNumber}>488</font>
             </td>
             <td colspan="3">
-                <font></font>
+                <font th:text=${servicePlanAppendix.totalUnitNumber.overKindUnitNumber}></font>
             </td>
             <td colspan="3">
-                <font></font>
+                <font th:text=${servicePlanAppendix.totalUnitNumber.kindUnitNumber}></font>
             </td>
             <td colspan="3">
-                <font></font>
+                <font th:text=${servicePlanAppendix.totalUnitNumber.overDivisionUnitNumber}></font>
             </td>
             <td colspan="3">
-                <font>0</font>
+                <font th:text=${servicePlanAppendix.totalUnitNumber.divisionUnitNumber}></font>
             </td>
             <td colspan="2">
                 <font></font>
             </td>
             <td colspan="3">
-                <font></font>
+                <font th:text=${servicePlanAppendix.totalUnitNumber.totalInsuranceDemand}></font>
             </td>
             <td colspan="2">
                 <font></font>
             </td>
             <td colspan="3">
-                <font></font>
+                <font th:text=${servicePlanAppendix.totalUnitNumber.paidInsuranceDemandFromInsurance}></font>
             </td>
             <td colspan="3">
-                <font></font>
+                <font th:text=${servicePlanAppendix.totalUnitNumber.paidInsuranceDemandFromInsuredPerson}></font>
             </td>
             <td colspan="3">
-                <font></font>
+                <font th:text=${servicePlanAppendix.totalUnitNumber.totalInsuredPersonDemand}></font>
             </td>
         </tr>
         <tr>
@@ -337,25 +337,25 @@
                 <font>訪問介護</font>
             </td>
             <td colspan="5">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_CARE].baseUnitNumber}></font>
             </td>
             <td colspan="2">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_CARE].totalUnitNumber}></font>
             </td>
             <td colspan="4">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_CARE].overUnitNumber}></font>
             </td>
             <td colspan="9">
                 <font>福祉用具貸与</font>
             </td>
             <td colspan="5">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).RENTAL_CARE_EQUIPMENT].baseUnitNumber}></font>
             </td>
             <td colspan="2">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).RENTAL_CARE_EQUIPMENT].totalUnitNumber}></font>
             </td>
             <td colspan="4">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).RENTAL_CARE_EQUIPMENT].overUnitNumber}></font>
             </td>
             <td colspan="15">
             </td>
@@ -365,25 +365,25 @@
                 <font>訪問入浴介護</font>
             </td>
             <td colspan="5">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_BATHING_CARE].baseUnitNumber}></font>
             </td>
             <td colspan="2">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_BATHING_CARE].totalUnitNumber}></font>
             </td>
             <td colspan="4">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_BATHING_CARE].overUnitNumber}></font>
             </td>
             <td colspan="9">
                 <font>短期入所生活介護</font>
             </td>
             <td colspan="5">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).SHORT_TERM_LIFE_CARE].baseUnitNumber}></font>
             </td>
             <td colspan="2">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).SHORT_TERM_LIFE_CARE].totalUnitNumber}></font>
             </td>
             <td colspan="4">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).SHORT_TERM_LIFE_CARE].overUnitNumber}></font>
             </td>
             <td colspan="15">
             </td>
@@ -393,25 +393,25 @@
                 <font>訪問看護</font>
             </td>
             <td colspan="5">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_NURSING_CARE].baseUnitNumber}></font>
             </td>
             <td colspan="2">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_NURSING_CARE].totalUnitNumber}></font>
             </td>
             <td colspan="4">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_NURSING_CARE].overUnitNumber}></font>
             </td>
             <td colspan="9">
                 <font>短期入所療養介護</font>
             </td>
             <td colspan="5">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).SHORT_TERM_MEDICAL_CARE].baseUnitNumber}></font>
             </td>
             <td colspan="2">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).SHORT_TERM_MEDICAL_CARE].totalUnitNumber}></font>
             </td>
             <td colspan="4">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).SHORT_TERM_MEDICAL_CARE].overUnitNumber}></font>
             </td>
             <td colspan="15">
             </td>
@@ -421,25 +421,25 @@
                 <font>訪問リハビリテーション</font>
             </td>
             <td colspan="5">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_REHABILITATION].baseUnitNumber}></font>
             </td>
             <td colspan="2">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_REHABILITATION].totalUnitNumber}></font>
             </td>
             <td colspan="4">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_REHABILITATION].overUnitNumber}></font>
             </td>
             <td colspan="9">
                 <font>夜間対応型訪問介護</font>
             </td>
             <td colspan="5">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).NIGHTLY_HOME_VISIT_CARE].baseUnitNumber}></font>
             </td>
             <td colspan="2">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).NIGHTLY_HOME_VISIT_CARE].totalUnitNumber}></font>
             </td>
             <td colspan="4">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).NIGHTLY_HOME_VISIT_CARE].overUnitNumber}></font>
             </td>
             <td colspan="15">
             </td>
@@ -449,25 +449,25 @@
                 <font>通所介護</font>
             </td>
             <td colspan="5">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).DAY_CARE].baseUnitNumber}></font>
             </td>
             <td colspan="2">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).DAY_CARE].totalUnitNumber}></font>
             </td>
             <td colspan="4">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).DAY_CARE].overUnitNumber}></font>
             </td>
             <td colspan="9">
                 <font>小規模多機能型居宅介護</font>
             </td>
             <td colspan="5">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).MULTIFUNCTIONAL_HOME_CARE].baseUnitNumber}></font>
             </td>
             <td colspan="2">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).MULTIFUNCTIONAL_HOME_CARE].totalUnitNumber}></font>
             </td>
             <td colspan="4">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).MULTIFUNCTIONAL_HOME_CARE].overUnitNumber}></font>
             </td>
             <td colspan="15">
             </td>
@@ -477,25 +477,25 @@
                 <font>認知症対応型通所介護</font>
             </td>
             <td colspan="5">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).DAY_CARE_FOR_DEMENTIA].baseUnitNumber}></font>
             </td>
             <td colspan="2">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).DAY_CARE_FOR_DEMENTIA].totalUnitNumber}></font>
             </td>
             <td colspan="4">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).DAY_CARE_FOR_DEMENTIA].overUnitNumber}></font>
             </td>
             <td colspan="9">
                 <font>定期巡回・随時対応型訪問介護看護</font>
             </td>
             <td colspan="5">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).REGULAR_PATROL].baseUnitNumber}></font>
             </td>
             <td colspan="2">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).REGULAR_PATROL].totalUnitNumber}></font>
             </td>
             <td colspan="4">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).REGULAR_PATROL].overUnitNumber}></font>
             </td>
             <td colspan="15">
             </td>
@@ -505,25 +505,25 @@
                 <font>認知症対応型共同生活介護</font>
             </td>
             <td colspan="5">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).LIFE_CARE_FOR_DEMENTIA].baseUnitNumber}></font>
             </td>
             <td colspan="2">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).LIFE_CARE_FOR_DEMENTIA].totalUnitNumber}></font>
             </td>
             <td colspan="4">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).LIFE_CARE_FOR_DEMENTIA].overUnitNumber}></font>
             </td>
             <td colspan="9">
                 <font>複合型サービス</font>
             </td>
             <td colspan="5">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).COMPOSITE_SERVICE].baseUnitNumber}></font>
             </td>
             <td colspan="2">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).COMPOSITE_SERVICE].totalUnitNumber}></font>
             </td>
             <td colspan="4">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).COMPOSITE_SERVICE].overUnitNumber}></font>
             </td>
             <td colspan="15">
             </td>
@@ -533,25 +533,25 @@
                 <font>通所リハビリテーション</font>
             </td>
             <td colspan="5">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).DAY_REHABILITATION].baseUnitNumber}></font>
             </td>
             <td colspan="2">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).DAY_REHABILITATION].totalUnitNumber}></font>
             </td>
             <td colspan="4">
-                <font></font>
+                <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).DAY_REHABILITATION].overUnitNumber}></font>
             </td>
             <td colspan="9">
                 <font>合計</font>
             </td>
             <td colspan="5">
-                <font></font>
+                <font th:text=${servicePlanAppendix.totalKindUnitNumberManagement.baseUnitNumber}></font>
             </td>
             <td colspan="2">
-                <font></font>
+                <font th:text=${servicePlanAppendix.totalKindUnitNumberManagement.totalUnitNumber}></font>
             </td>
             <td colspan="4">
-                <font></font>
+                <font th:text=${servicePlanAppendix.totalKindUnitNumberManagement.overUnitNumber}></font>
             </td>
             <td colspan="15">
             </td>
@@ -586,13 +586,13 @@
         </tr>
         <tr>
             <td colspan="5">
-                <font></font>
+                <font th:text=${servicePlanAppendix.useCountShortStay.previousMonthCount}></font>
             </td>
             <td colspan="5">
-                <font></font>
+                <font th:text=${servicePlanAppendix.useCountShortStay.thisMonthCount}></font>
             </td>
             <td colspan="5">
-                <font></font>
+                <font th:text=${servicePlanAppendix.useCountShortStay.accumulateCount}></font>
             </td>
             <td colspan="40">
             </td>

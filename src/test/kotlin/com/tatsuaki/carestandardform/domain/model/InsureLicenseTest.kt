@@ -1,11 +1,10 @@
-package com.tatsuaki.carestandardform.domain.servidceplan
+package com.tatsuaki.carestandardform.domain.model
 
-import com.tatsuaki.carestandardform.domain.model.InsureLicense
 import org.junit.Test
 import java.time.LocalDate
 import kotlin.test.assertEquals
 
-class InsureLicense {
+class InsureLicenseTest {
 
     @Test
     fun getMethodTest() {
