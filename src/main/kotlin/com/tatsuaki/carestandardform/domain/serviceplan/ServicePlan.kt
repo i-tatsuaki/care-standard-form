@@ -9,9 +9,9 @@ import java.time.LocalTime
 import java.time.YearMonth
 
 class ServicePlan(
-    file1: MultipartFile,
-    file2: MultipartFile,
-    file3: MultipartFile
+    insuredPersonAppendixFile: MultipartFile,
+    servicePlanFile: MultipartFile,
+    servicePlanAppendixFile: MultipartFile
 ) {
 
     val serviceProvisionYearMonth: YearMonth

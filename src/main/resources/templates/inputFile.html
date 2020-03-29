@@ -34,18 +34,18 @@
             <form action="import" th:action="@{/servicePlan}" method="post" enctype="multipart/form-data">
                 <p>手順１：利用者補足情報csvファイルを選択する</p>
                 <div class="custom-file">
-                    <input type="file" name="insuredPersonAppdendix" class="custom-file-input" id="insuredPersonAppdendix">
-                    <label class="custom-file-label" for="insuredPersonAppdendix" data-browse="参照">ファイル選択...</label>
+                    <input type="file" name="insuredPersonAppendixFile" class="custom-file-input" id="insuredPersonAppendixFile">
+                    <label class="custom-file-label" for="insuredPersonAppendixFile" data-browse="参照">ファイル選択...</label>
                 </div>
                 <p>手順２：第6表（サービス利用票）csvファイルを選択する</p>
                 <div class="custom-file">
-                    <input type="file" name="servicePlanfile" class="custom-file-input" id="servicePlanfile">
-                    <label class="custom-file-label" for="servicePlanfile" data-browse="参照">ファイル選択...</label>
+                    <input type="file" name="servicePlanFile" class="custom-file-input" id="servicePlanFile">
+                    <label class="custom-file-label" for="servicePlanFile" data-browse="参照">ファイル選択...</label>
                 </div>
                 <p>手順３：第7表（サービス利用票別表）csvファイルを選択する</p>
                 <div class="custom-file">
-                    <input type="file" name="servicePlanAppendixfile" class="custom-file-input" id="servicePlanAppendixfile">
-                    <label class="custom-file-label" for="servicePlanAppendixfile" data-browse="参照">ファイル選択...</label>
+                    <input type="file" name="servicePlanAppendixFile" class="custom-file-input" id="servicePlanAppendixFile">
+                    <label class="custom-file-label" for="servicePlanAppendixFile" data-browse="参照">ファイル選択...</label>
                 </div>
                 <p>手順４：以下の「確認する」ボタンをおす</p>
                 <button type="submit" class="btn btn-outline-secondary">確認する</button>

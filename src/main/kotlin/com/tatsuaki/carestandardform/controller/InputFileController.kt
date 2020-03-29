@@ -13,13 +13,13 @@ import org.springframework.web.multipart.MultipartFile
 class InputFileController() {
     @PostMapping("servicePlan")
     fun servicePlan(
-        @RequestParam("insuredPersonAppdendix") insuredPersonAppdendix: MultipartFile,
-        @RequestParam("servicePlanfile") servicePlanfile: MultipartFile,
-        @RequestParam("servicePlanAppendixfile") servicePlanAppendixfile: MultipartFile,
+        @RequestParam("insuredPersonAppendixFile") insuredPersonAppendix: MultipartFile,
+        @RequestParam("servicePlanFile") servicePlanFile: MultipartFile,
+        @RequestParam("servicePlanAppendixFile") servicePlanAppendixFile: MultipartFile,
         model: Model
     ): String {
 
-        val servicePlan1 = ServicePlan(insuredPersonAppdendix, servicePlanfile, servicePlanAppendixfile)
+        val servicePlan1 = ServicePlan(insuredPersonAppendix, servicePlanFile, servicePlanAppendixFile)
         model.addAttribute("servicePlan", servicePlan1)
         return "servicePlan"
     }
