@@ -25,9 +25,9 @@ body {
   border-collapse: collapse;
   table-layout: fixed;
 }
-#table-service-plan td, #table-service-plan th {
-  border:1px solid #333;
-}
 #table-service-plan font {
   font-size: 10px;
+}
+#table-service-plan .collapse-on {
+  border:1px solid #333;
 }
