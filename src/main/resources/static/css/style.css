@@ -31,3 +31,10 @@ body {
 #table-service-plan .collapse-on {
   border:1px solid #333;
 }
+
+/* footer */
+.footer {
+  font-size: 60%;
+  color: #777777;
+  text-align: right;
+}

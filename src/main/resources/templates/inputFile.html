@@ -26,13 +26,12 @@
     <main class="main-block" role="main">
         <div id="description" class="custom-block">
             <h3><i class="fas fa-comment" style="font-size:30px;"></i> 当サイトの説明</h3>
-            <p>本ページは、介護保険法で定められている「介護予防・日常生活支援総合事業」において、<br>
-                各自治体が提供している介護予防・日常生活支援総合事業単位数表マスタ（csv）をブラウザ上で確認することができるサービスになります。<br>
-                厚生労働省により定められているフォーマットに準じているかどうかのチェックを行うことができます。</p>
+            <p>本ページは介護において定められている標準様式に基づいた提供票、提供票（別表）のcsvについて、<br>
+               ウェブ上で内容を確認することができるサービスを提供しています
         </div>
         <div id="csvconfirm" class="custom-block">
             <h3><i class="fas fa-file-csv" style="font-size:30px;"></i> csvを確認する</h3>
-            <form action="import" th:action="@{/import}" method="post" enctype="multipart/form-data">
+            <form action="import" th:action="@{/servicePlan}" method="post" enctype="multipart/form-data">
                 <p>手順１：ファイルを選択する</p>
                 <div class="custom-file">
                     <input type="file" name="upload_file" class="custom-file-input" id="customFile">
@@ -42,12 +41,6 @@
                 <button type="submit" class="btn btn-outline-secondary">確認する</button>
             </form>
         </div>
-        <!-- coming soon
-        <h2>仕様の詳細</h2>
-        <p>対応しているエラーの種類<br>
-        </p>
-        <hr>
-        -->
         <div id="disclaimer" class="custom-block">
             <h3><i class="fas fa-exclamation-circle" style="font-size:30px;"></i> 免責事項</h3>
             <p>
