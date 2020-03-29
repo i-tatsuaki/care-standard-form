@@ -32,6 +32,15 @@ body {
   border:1px solid #333;
 }
 
+/* input */
+.custom-file {
+  overflow: hidden;
+  padding-bottom: 60px;
+}
+.custom-file-label {
+  white-space: nowrap;
+}
+
 /* footer */
 .footer {
   font-size: 60%;

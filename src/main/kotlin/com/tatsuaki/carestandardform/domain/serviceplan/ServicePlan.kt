@@ -2,12 +2,17 @@ package com.tatsuaki.carestandardform.domain.serviceplan
 
 import com.tatsuaki.carestandardform.domain.model.*
 import com.tatsuaki.carestandardform.util.JapaneseDate
+import org.springframework.web.multipart.MultipartFile
 import java.math.BigDecimal
 import java.time.LocalDate
 import java.time.LocalTime
 import java.time.YearMonth
 
-class ServicePlan() {
+class ServicePlan(
+    file1: MultipartFile,
+    file2: MultipartFile,
+    file3: MultipartFile
+) {
 
     val serviceProvisionYearMonth: YearMonth
     val creationDate: LocalDate

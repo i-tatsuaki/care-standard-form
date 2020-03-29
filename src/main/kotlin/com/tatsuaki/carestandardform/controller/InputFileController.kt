@@ -6,13 +6,21 @@ import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestParam
+import org.springframework.web.multipart.MultipartFile
 
 @Controller
 class InputFileController() {
     @PostMapping("servicePlan")
-    fun servicePlan(model: Model): String {
-        val servicePlan = ServicePlan()
-        model.addAttribute("servicePlan", servicePlan)
+    fun servicePlan(
+        @RequestParam("insuredPersonAppdendix") insuredPersonAppdendix: MultipartFile,
+        @RequestParam("servicePlanfile") servicePlanfile: MultipartFile,
+        @RequestParam("servicePlanAppendixfile") servicePlanAppendixfile: MultipartFile,
+        model: Model
+    ): String {
+
+        val servicePlan1 = ServicePlan(insuredPersonAppdendix, servicePlanfile, servicePlanAppendixfile)
+        model.addAttribute("servicePlan", servicePlan1)
         return "servicePlan"
     }
 
