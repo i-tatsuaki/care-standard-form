@@ -25,7 +25,7 @@ class InputFileController() {
             InsuredPersonAppendixCsvLineFactory().create(insuredPersonAppendix),
             ServicePlanCsvLineFactory().create(servicePlanFile)
         )
-        model.addAttribute("servicePlan", servicePlans[0])
+        model.addAttribute("servicePlan", servicePlans[0]) // TODO 複数行対応
         return "servicePlan"
     }
 
