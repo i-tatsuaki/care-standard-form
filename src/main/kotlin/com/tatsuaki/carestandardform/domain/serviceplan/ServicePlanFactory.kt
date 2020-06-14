@@ -10,6 +10,7 @@ import java.time.LocalTime
 import java.time.YearMonth
 import java.time.format.DateTimeFormatter
 import java.util.*
+import java.util.stream.Collectors
 import kotlin.streams.toList
 
 class ServicePlanFactory {
@@ -29,24 +30,16 @@ class ServicePlanFactory {
     }
 
     private fun create(
-        insuredPersonAppendixCsvLine : InsuredPersonAppendixCsvLine,
-        ServicePlanCsvLines : List<ServicePlanCsvLine>
+        insuredPersonAppendixCsvLine: InsuredPersonAppendixCsvLine,
+        servicePlanCsvLines: List<ServicePlanCsvLine>
     ): ServicePlan {
-        // TODO 仮実装
-        val serviceProvisionYearMonth = YearMonth.of(2020, 3)
-        val creationDate = LocalDate.of(2020, 3, 1)
-        val insure = Insure(insuredPersonAppendixCsvLine.insureNumber, "江戸川区") // TODO 保険者名をどこから取得するか
-        val careManager = CareManager(
-            "ケアマネ氏名",
-            Office("ある居宅介護支援事業所", "1234567890", "03-1234-5678")
-        )
         val insuredPerson = InsuredPerson(
             insuredPersonAppendixCsvLine.name,
             insuredPersonAppendixCsvLine.nameKana,
             Sex.fromDivision(insuredPersonAppendixCsvLine.sex),
-            JapaneseDate(LocalDate.of(1988, 12, 22)),
+            JapaneseDate(LocalDate.parse(insuredPersonAppendixCsvLine.birth, DateTimeFormatter.ofPattern("yyyyMMdd"))),
             InsureLicense(
-                "H123456789",
+                insuredPersonAppendixCsvLine.insuredNumber,
                 CareLevel.fromDivision(insuredPersonAppendixCsvLine.careLevel),
                 "要介護1", // TODO どこの項目を入れるか確認
                 LocalDate.of(2019, 11, 30), // TODO どこの項目を入れるか確認
@@ -59,105 +52,69 @@ class ServicePlanFactory {
                 )
             )
         )
-        val notificationDate = LocalDate.of(2019, 12, 30) // TODO どこの項目を入れるか確認
-        val shortStayUseDaysOfPreviousMonth = insuredPersonAppendixCsvLine.stayDaysPreviousMonth.toInt()
 
-        val time = ProvidedTime.Time(
-            LocalTime.of(10, 0),
-            LocalTime.of(12, 0)
+        val serviceProvidedMap = servicePlanCsvLines.stream().collect(
+            Collectors.groupingBy(ServicePlanCsvLine::getProvidedServiceKey)
         )
-        val providedServices = listOf(
-            ProvidedService(
-                CareService(
-                    "通所介護１",
-                    "131111",
-                    132,
-                    90,
-                    119,
-                    488,
-                    30,
-                    458,
-                    58,
-                    400,
-                    BigDecimal(10.0),
-                    4880,
-                    90,
-                    4392,
-                    488,
-                    488
-                ),
-                Office("とある通所介護事業所", "1234567890", "03-1234-5678"),
-                ProvidedTime()
-                    .addPlan(time, 1)
-                    .addPlan(time, 3)
-                    .addPlan(time, 5)
-                    .addResult(time, 1)
-                    .addResult(time, 5)
-            ),
-            ProvidedService(
-                CareService(
-                    "通所介護２",
-                    "131111",
-                    132,
-                    90,
-                    119,
-                    488,
-                    30,
-                    458,
-                    58,
-                    400,
-                    BigDecimal(10.0),
-                    4880,
-                    90,
-                    4392,
-                    488,
-                    488
-                ),
-                Office("とある通所介護事業所", "1234567890", "03-1234-5678"),
-                ProvidedTime()
-                    .addPlan(time, 2)
-                    .addPlan(time, 4)
-                    .addPlan(time, 6)
-                    .addResult(time, 2)
-                    .addResult(time, 4)
-            ),
-            ProvidedService(
-                CareService(
-                    "通所介護３",
-                    "131111",
-                    132,
-                    90,
-                    119,
-                    488,
-                    30,
-                    458,
-                    58,
-                    400,
-                    BigDecimal(10.0),
-                    4880,
-                    90,
-                    4392,
-                    488,
-                    488
-                ),
-                Office("とある通所介護事業所", "1234567890", "03-1234-5678"),
-                ProvidedTime()
-                    .addPlan(time, 3)
-                    .addPlan(time, 6)
-                    .addPlan(time, 9)
-                    .addResult(time, 3)
-                    .addResult(time, 9)
+
+        val providedServices = arrayListOf<ProvidedService>()
+        serviceProvidedMap.forEach {
+
+            val providedTime = ProvidedTime()
+            it.value.stream().forEach { eachDay ->
+                providedTime.addPlan(
+                    ProvidedTime.Time(
+                        LocalTime.of(eachDay.serviceStartTime.substring(0, 2).toInt(), eachDay.serviceStartTime.substring(2, 4).toInt()),
+                        LocalTime.of(eachDay.serviceEndTime.substring(0, 2).toInt(), eachDay.serviceEndTime.substring(2, 4).toInt())
+                    ),
+                    LocalDate.parse(eachDay.serviceDate, DateTimeFormatter.ofPattern("yyyyMMdd")).dayOfMonth
+                )
+            }
+
+            providedServices.add(
+                ProvidedService(
+                    CareService(
+                        "通所介護１", // TODO どこから取得するか（masterが必要そう）
+                        it.value.get(0).serviceCode,
+                        it.value.get(0).unitNumber.toInt(),
+                        90, // TODO 7票が必要
+                        119, // TODO 7票が必要
+                        488, // TODO 7票が必要
+                        30, // TODO 7票が必要
+                        458, // TODO 7票が必要
+                        58, // TODO 7票が必要
+                        400, // TODO 7票が必要
+                        BigDecimal(10.0), // TODO 7票が必要
+                        4880, // TODO 7票が必要
+                        90, // TODO 7票が必要
+                        4392, // TODO 7票が必要
+                        488, // TODO 7票が必要
+                        488 // TODO 7票が必要
+                    ),
+                    Office(it.value.get(0).serviceOfficeName, it.value.get(0).serviceOfficeCode, "03-1234-5678"),
+                    // TODO サービス事業所の電話番号はどこから取得するか
+                    providedTime
+                )
             )
-        )
+        }
 
         return ServicePlan(
-            serviceProvisionYearMonth,
-            creationDate,
-            insure,
-            careManager,
+            YearMonth.parse(
+                insuredPersonAppendixCsvLine.serviceYearMonth,
+                DateTimeFormatter.ofPattern("yyyyMM")
+            ),
+            LocalDate.parse(
+                servicePlanCsvLines.get(0).creationDate,
+                DateTimeFormatter.ofPattern("yyyyMMdd")
+            ),
+            Insure(insuredPersonAppendixCsvLine.insureNumber, ""), // TODO 保険者名をどこから取得するか
+            CareManager(
+                servicePlanCsvLines.get(0).creationPersonName,
+                Office("", insuredPersonAppendixCsvLine.agreementOffice, "")
+            ), // TODO ケアマネ事業所名、ケアマネ電話番号はどこから取得するか
             insuredPerson,
-            notificationDate,
-            shortStayUseDaysOfPreviousMonth,
+            LocalDate.of(2019, 12, 30), // TODO どこの項目を入れるか確認
+            insuredPersonAppendixCsvLine.stayDaysPreviousMonth.toInt(),
             providedServices
         )
     }

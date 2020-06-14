@@ -50,7 +50,7 @@ class ServicePlanCsvLineTest {
         assertEquals("0000000000000000000011111111", servicePlanCsvLine.proratedDays)
         assertEquals("1000", servicePlanCsvLine.serviceStartTime)
         assertEquals("1100", servicePlanCsvLine.serviceEndTime)
-        assertEquals("4", servicePlanCsvLine.servideCount)
+        assertEquals("4", servicePlanCsvLine.serviceCount)
         assertEquals("112233", servicePlanCsvLine.serviceCode)
         assertEquals("1", servicePlanCsvLine.serviceIdentification)
         assertEquals("0987654321", servicePlanCsvLine.serviceOfficeCode)

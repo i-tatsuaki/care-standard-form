@@ -16,7 +16,7 @@ class ServicePlanCsvLine (
     val proratedDays: String
     val serviceStartTime: String
     val serviceEndTime: String
-    val servideCount: String
+    val serviceCount: String
     val serviceCode: String
     val serviceIdentification: String
     val serviceOfficeCode: String
@@ -40,7 +40,7 @@ class ServicePlanCsvLine (
         proratedDays = csvLine[10]
         serviceStartTime = csvLine[11]
         serviceEndTime = csvLine[12]
-        servideCount = csvLine[13]
+        serviceCount = csvLine[13]
         serviceCode = csvLine[14]
         serviceIdentification = csvLine[15]
         serviceOfficeCode = csvLine[16]
@@ -56,5 +56,10 @@ class ServicePlanCsvLine (
                 && this.insureNumber.equals(insuredPersonAppendixCsvLine.insureNumber)
                 && this.insuredNumber.equals(insuredPersonAppendixCsvLine.insuredNumber)
                 && this.serviceYearMonth.equals(insuredPersonAppendixCsvLine.serviceYearMonth)
+    }
+
+    fun getProvidedServiceKey() : String {
+        return csvVersion + insureNumber + insuredNumber + serviceYearMonth +
+                serviceStartTime + serviceEndTime + serviceCode + serviceOfficeCode + numberOfSatellite
     }
 }
