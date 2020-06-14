@@ -49,8 +49,7 @@ class ServicePlanFactory {
                                 insuredPersonAppendixCsvLine.creditLimitApplyEndDate, DateTimeFormatter.ofPattern("yyyyMMdd"))
                         )
                     )
-                    val notificationDate = LocalDate.parse(
-                        insuredPersonAppendixCsvLine.servicePlanNotificationDate, DateTimeFormatter.ofPattern("yyyyMMdd"))
+                    val notificationDate = LocalDate.of(2019, 12, 30) // TODO どこの項目を入れるか確認
                     val shortStayUseDaysOfPreviousMonth = insuredPersonAppendixCsvLine.stayDaysPreviousMonth.toInt()
 
                     val time = ProvidedTime.Time(

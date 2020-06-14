@@ -1,7 +1,6 @@
 package com.tatsuaki.carestandardform.domain.model.csv
 
 import org.junit.Test
-import java.util.Arrays.asList
 import kotlin.test.assertEquals
 
 class InsuredPersonAppendixCsvLineTest {
@@ -12,6 +11,7 @@ class InsuredPersonAppendixCsvLineTest {
         val insuredPersonAppendixCsvLine =
             InsuredPersonAppendixCsvLine(
                 arrayListOf<String>(
+                    "201910",
                     "123456",
                     "H123456789",
                     "20200101",
@@ -30,63 +30,56 @@ class InsuredPersonAppendixCsvLineTest {
                     "20200105",
                     "11",
                     "99999",
+                    "サービス種類1",
                     "11",
                     "12",
                     "13",
+                    "サービス種類2",
                     "21",
                     "22",
                     "23",
+                    "サービス種類3",
                     "31",
                     "32",
                     "33",
+                    "サービス種類4",
                     "41",
                     "42",
                     "43",
+                    "サービス種類5",
                     "51",
                     "52",
                     "53",
+                    "サービス種類6",
                     "61",
                     "62",
                     "63",
+                    "サービス種類7",
                     "71",
                     "72",
                     "73",
+                    "サービス種類8",
                     "81",
                     "82",
                     "83",
+                    "サービス種類9",
                     "91",
                     "92",
                     "93",
-                    "101",
-                    "102",
-                    "103",
-                    "111",
-                    "112",
-                    "113",
-                    "121",
-                    "122",
-                    "123",
-                    "131",
-                    "132",
-                    "133",
                     "88888",
-                    "80000",
                     "15",
                     "30",
                     "13",
                     "2222233333",
                     "20200106",
-                    "202001071200",
                     "2222244444",
-                    "20200108",
-                    "20200109",
-                    "20200110",
                     "1",
                     "202002"
                 ).toTypedArray()
             )
 
         // expect
+        assertEquals("201910", insuredPersonAppendixCsvLine.csvVersion)
         assertEquals("123456", insuredPersonAppendixCsvLine.insureNumber)
         assertEquals("H123456789", insuredPersonAppendixCsvLine.insuredNumber)
         assertEquals("20200101", insuredPersonAppendixCsvLine.carePlanCreationDate)
@@ -105,57 +98,49 @@ class InsuredPersonAppendixCsvLineTest {
         assertEquals("20200105", insuredPersonAppendixCsvLine.careLevelChangedDate)
         assertEquals("11", insuredPersonAppendixCsvLine.careLevel)
         assertEquals("99999", insuredPersonAppendixCsvLine.creditLimit)
-        assertEquals("11", insuredPersonAppendixCsvLine.creditLimitVisitCare)
-        assertEquals("12", insuredPersonAppendixCsvLine.totalUnitVisitCare)
-        assertEquals("13", insuredPersonAppendixCsvLine.unitOverCreditLimitVisitCare)
-        assertEquals("21", insuredPersonAppendixCsvLine.creditLimitVisitCareBathing)
-        assertEquals("22", insuredPersonAppendixCsvLine.totalUnitVisitCareBathing)
-        assertEquals("23", insuredPersonAppendixCsvLine.unitOverCreditLimitVisitCareBathing)
-        assertEquals("31", insuredPersonAppendixCsvLine.creditLimitVisitNursing)
-        assertEquals("32", insuredPersonAppendixCsvLine.totalUnitVisitNursing)
-        assertEquals("33", insuredPersonAppendixCsvLine.unitOverCreditLimitVisitNursing)
-        assertEquals("41", insuredPersonAppendixCsvLine.creditLimitVisitRehabilitation)
-        assertEquals("42", insuredPersonAppendixCsvLine.totalUnitVisitRehabilitation)
-        assertEquals("43", insuredPersonAppendixCsvLine.unitOverCreditLimitVisitRehabilitation)
-        assertEquals("51", insuredPersonAppendixCsvLine.creditLimitDayCare)
-        assertEquals("52", insuredPersonAppendixCsvLine.totalUnitDayCare)
-        assertEquals("53", insuredPersonAppendixCsvLine.unitOverCreditLimitDayCare)
-        assertEquals("61", insuredPersonAppendixCsvLine.creditLimitDayCareRehabilitation)
-        assertEquals("62", insuredPersonAppendixCsvLine.totalUnitDayCareRehabilitation)
-        assertEquals("63", insuredPersonAppendixCsvLine.unitOverCreditLimitDayCareRehabilitation)
-        assertEquals("71", insuredPersonAppendixCsvLine.creditLimitWelfareEquipment)
-        assertEquals("72", insuredPersonAppendixCsvLine.totalUnitWelfareEquipment)
-        assertEquals("73", insuredPersonAppendixCsvLine.unitOverCreditLimitWelfareEquipment)
-        assertEquals("81", insuredPersonAppendixCsvLine.creditLimitStayLifeCare)
-        assertEquals("82", insuredPersonAppendixCsvLine.totalUnitStayLifeCare)
-        assertEquals("83", insuredPersonAppendixCsvLine.unitOverCreditLimitStayLifeCare)
-        assertEquals("91", insuredPersonAppendixCsvLine.creditLimitStayMedicalCare)
-        assertEquals("92", insuredPersonAppendixCsvLine.totalUnitStayMedicalCare)
-        assertEquals("93", insuredPersonAppendixCsvLine.unitOverCreditLimitStayMedicalCare)
-        assertEquals("101", insuredPersonAppendixCsvLine.creditLimitNightlyVisitCare)
-        assertEquals("102", insuredPersonAppendixCsvLine.totalUnitNightlyVisitCare)
-        assertEquals("103", insuredPersonAppendixCsvLine.unitOverCreditLimitNightlyVisitCare)
-        assertEquals("111", insuredPersonAppendixCsvLine.creditLimitDementiaDayCare)
-        assertEquals("112", insuredPersonAppendixCsvLine.totalUnitDementiaDayCare)
-        assertEquals("113", insuredPersonAppendixCsvLine.unitOverCreditLimitDementiaDayCare)
-        assertEquals("121", insuredPersonAppendixCsvLine.creditLimitDementiaLifeCare)
-        assertEquals("122", insuredPersonAppendixCsvLine.totalUnitDementiaLifeCare)
-        assertEquals("123", insuredPersonAppendixCsvLine.unitOverCreditLimitDementiaLifeCare)
-        assertEquals("131", insuredPersonAppendixCsvLine.creditLimitCommunityVisitCare)
-        assertEquals("132", insuredPersonAppendixCsvLine.totalUnitCommunityVisitCare)
-        assertEquals("133", insuredPersonAppendixCsvLine.unitOverCreditLimitCommunityVisitCare)
+        assertEquals("サービス種類1", insuredPersonAppendixCsvLine.serviceDivision1)
+        assertEquals("11", insuredPersonAppendixCsvLine.creditLimit1)
+        assertEquals("12", insuredPersonAppendixCsvLine.totalUnit1)
+        assertEquals("13", insuredPersonAppendixCsvLine.unitOverCreditLimit1)
+        assertEquals("サービス種類2", insuredPersonAppendixCsvLine.serviceDivision2)
+        assertEquals("21", insuredPersonAppendixCsvLine.creditLimit2)
+        assertEquals("22", insuredPersonAppendixCsvLine.totalUnit2)
+        assertEquals("23", insuredPersonAppendixCsvLine.unitOverCreditLimit2)
+        assertEquals("サービス種類3", insuredPersonAppendixCsvLine.serviceDivision3)
+        assertEquals("31", insuredPersonAppendixCsvLine.creditLimit3)
+        assertEquals("32", insuredPersonAppendixCsvLine.totalUnit3)
+        assertEquals("33", insuredPersonAppendixCsvLine.unitOverCreditLimit3)
+        assertEquals("サービス種類4", insuredPersonAppendixCsvLine.serviceDivision4)
+        assertEquals("41", insuredPersonAppendixCsvLine.creditLimit4)
+        assertEquals("42", insuredPersonAppendixCsvLine.totalUnit4)
+        assertEquals("43", insuredPersonAppendixCsvLine.unitOverCreditLimit4)
+        assertEquals("サービス種類5", insuredPersonAppendixCsvLine.serviceDivision5)
+        assertEquals("51", insuredPersonAppendixCsvLine.creditLimit5)
+        assertEquals("52", insuredPersonAppendixCsvLine.totalUnit5)
+        assertEquals("53", insuredPersonAppendixCsvLine.unitOverCreditLimit5)
+        assertEquals("サービス種類6", insuredPersonAppendixCsvLine.serviceDivision6)
+        assertEquals("61", insuredPersonAppendixCsvLine.creditLimit6)
+        assertEquals("62", insuredPersonAppendixCsvLine.totalUnit6)
+        assertEquals("63", insuredPersonAppendixCsvLine.unitOverCreditLimit6)
+        assertEquals("サービス種類7", insuredPersonAppendixCsvLine.serviceDivision7)
+        assertEquals("71", insuredPersonAppendixCsvLine.creditLimit7)
+        assertEquals("72", insuredPersonAppendixCsvLine.totalUnit7)
+        assertEquals("73", insuredPersonAppendixCsvLine.unitOverCreditLimit7)
+        assertEquals("サービス種類8", insuredPersonAppendixCsvLine.serviceDivision8)
+        assertEquals("81", insuredPersonAppendixCsvLine.creditLimit8)
+        assertEquals("82", insuredPersonAppendixCsvLine.totalUnit8)
+        assertEquals("83", insuredPersonAppendixCsvLine.unitOverCreditLimit8)
+        assertEquals("サービス種類9", insuredPersonAppendixCsvLine.serviceDivision9)
+        assertEquals("91", insuredPersonAppendixCsvLine.creditLimit9)
+        assertEquals("92", insuredPersonAppendixCsvLine.totalUnit9)
+        assertEquals("93", insuredPersonAppendixCsvLine.unitOverCreditLimit9)
         assertEquals("88888", insuredPersonAppendixCsvLine.totalUnitOverCreditLimit)
-        assertEquals("80000", insuredPersonAppendixCsvLine.stayOverUnitCreditLimit)
         assertEquals("15", insuredPersonAppendixCsvLine.stayDaysPreviousMonth)
-        assertEquals("30", insuredPersonAppendixCsvLine.stayAccumlationDays)
+        assertEquals("30", insuredPersonAppendixCsvLine.stayAccumulationDays)
         assertEquals("13", insuredPersonAppendixCsvLine.previousCareLevel)
         assertEquals("2222233333", insuredPersonAppendixCsvLine.agreementOffice)
         assertEquals("20200106", insuredPersonAppendixCsvLine.registrationDate)
-        assertEquals("202001071200", insuredPersonAppendixCsvLine.timeStamp)
         assertEquals("2222244444", insuredPersonAppendixCsvLine.updatedOffice)
-        assertEquals("20200108", insuredPersonAppendixCsvLine.servicePlanCreatedDate)
-        assertEquals("20200109", insuredPersonAppendixCsvLine.servicePlanAppendixCreatedDate)
-        assertEquals("20200110", insuredPersonAppendixCsvLine.servicePlanNotificationDate)
         assertEquals("1", insuredPersonAppendixCsvLine.identification)
         assertEquals("202002", insuredPersonAppendixCsvLine.targetDate)
     }

@@ -3,6 +3,7 @@ package com.tatsuaki.carestandardform.domain.model.csv
 class InsuredPersonAppendixCsvLine (
     csvLine: Array<String>
 ) {
+    val csvVersion: String
     val insureNumber: String
     val insuredNumber: String
     val carePlanCreationDate: String
@@ -22,159 +23,135 @@ class InsuredPersonAppendixCsvLine (
     val careLevel: String
     val creditLimit: String
 
-    // 訪問
-    val creditLimitVisitCare: String
-    val totalUnitVisitCare: String
-    val unitOverCreditLimitVisitCare: String
+    val serviceDivision1: String
+    val creditLimit1: String
+    val totalUnit1: String
+    val unitOverCreditLimit1: String
 
-    // 訪問入浴
-    val creditLimitVisitCareBathing: String
-    val totalUnitVisitCareBathing: String
-    val unitOverCreditLimitVisitCareBathing: String
+    val serviceDivision2: String
+    val creditLimit2: String
+    val totalUnit2: String
+    val unitOverCreditLimit2: String
 
-    // 訪問看護
-    val creditLimitVisitNursing: String
-    val totalUnitVisitNursing: String
-    val unitOverCreditLimitVisitNursing: String
+    val serviceDivision3: String
+    val creditLimit3: String
+    val totalUnit3: String
+    val unitOverCreditLimit3: String
 
-    // 訪問リハビリ
-    val creditLimitVisitRehabilitation: String
-    val totalUnitVisitRehabilitation: String
-    val unitOverCreditLimitVisitRehabilitation: String
+    val serviceDivision4: String
+    val creditLimit4: String
+    val totalUnit4: String
+    val unitOverCreditLimit4: String
 
-    // 通所介護
-    val creditLimitDayCare: String
-    val totalUnitDayCare: String
-    val unitOverCreditLimitDayCare: String
+    val serviceDivision5: String
+    val creditLimit5: String
+    val totalUnit5: String
+    val unitOverCreditLimit5: String
 
-    // 通所リハビリ
-    val creditLimitDayCareRehabilitation: String
-    val totalUnitDayCareRehabilitation: String
-    val unitOverCreditLimitDayCareRehabilitation: String
+    val serviceDivision6: String
+    val creditLimit6: String
+    val totalUnit6: String
+    val unitOverCreditLimit6: String
 
-    // 福祉用具貸与
-    val creditLimitWelfareEquipment: String
-    val totalUnitWelfareEquipment: String
-    val unitOverCreditLimitWelfareEquipment: String
+    val serviceDivision7: String
+    val creditLimit7: String
+    val totalUnit7: String
+    val unitOverCreditLimit7: String
 
-    // 入所生活介護
-    val creditLimitStayLifeCare: String
-    val totalUnitStayLifeCare: String
-    val unitOverCreditLimitStayLifeCare: String
+    val serviceDivision8: String
+    val creditLimit8: String
+    val totalUnit8: String
+    val unitOverCreditLimit8: String
 
-    // 入所療養介護
-    val creditLimitStayMedicalCare: String
-    val totalUnitStayMedicalCare: String
-    val unitOverCreditLimitStayMedicalCare: String
-
-    // 夜間対応型訪問介護
-    val creditLimitNightlyVisitCare: String
-    val totalUnitNightlyVisitCare: String
-    val unitOverCreditLimitNightlyVisitCare: String
-
-    // 認知症対応型通所介護
-    val creditLimitDementiaDayCare: String
-    val totalUnitDementiaDayCare: String
-    val unitOverCreditLimitDementiaDayCare: String
-
-    // 認知症対応型共同生活介護
-    val creditLimitDementiaLifeCare: String
-    val totalUnitDementiaLifeCare: String
-    val unitOverCreditLimitDementiaLifeCare: String
-
-    // 地域密着型通所介護
-    val creditLimitCommunityVisitCare: String
-    val totalUnitCommunityVisitCare: String
-    val unitOverCreditLimitCommunityVisitCare: String
+    val serviceDivision9: String
+    val creditLimit9: String
+    val totalUnit9: String
+    val unitOverCreditLimit9: String
 
     val totalUnitOverCreditLimit: String
-    val stayOverUnitCreditLimit: String
     val stayDaysPreviousMonth: String
-    val stayAccumlationDays: String
+    val stayAccumulationDays: String
     val previousCareLevel: String
     val agreementOffice: String
     val registrationDate: String
-    val timeStamp: String
     val updatedOffice: String
-    val servicePlanCreatedDate: String
-    val servicePlanAppendixCreatedDate: String
-    val servicePlanNotificationDate: String
     val identification: String
     val targetDate: String
 
     init {
+        csvVersion = csvLine[0]
+        insureNumber = csvLine[1]
+        insuredNumber = csvLine[2]
+        carePlanCreationDate = csvLine[3]
+        nameKana = csvLine[4]
+        name = csvLine[5]
+        sex = csvLine[6]
+        birth = csvLine[7]
+        postalCode = csvLine[8]
+        address1 = csvLine[9]
+        address2 = csvLine[10]
+        phoneNumber = csvLine[11]
+        certifiedDate = csvLine[12]
+        creditLimitApplyStartDate = csvLine[13]
+        creditLimitApplyEndDate = csvLine[14]
+        certifiedStatus = csvLine[15]
+        careLevelChangedDate = csvLine[16]
+        careLevel = csvLine[17]
+        creditLimit = csvLine[18]
 
-        insureNumber = csvLine[0]
-        insuredNumber = csvLine[1]
-        carePlanCreationDate = csvLine[2]
-        nameKana = csvLine[3]
-        name = csvLine[4]
-        sex = csvLine[5]
-        birth = csvLine[6]
-        postalCode = csvLine[7]
-        address1 = csvLine[8]
-        address2 = csvLine[9]
-        phoneNumber = csvLine[10]
-        certifiedDate = csvLine[11]
-        creditLimitApplyStartDate = csvLine[12]
-        creditLimitApplyEndDate = csvLine[13]
-        certifiedStatus = csvLine[14]
-        careLevelChangedDate = csvLine[15]
-        careLevel = csvLine[16]
-        creditLimit = csvLine[17]
-        creditLimitVisitCare = csvLine[18]
-        totalUnitVisitCare = csvLine[19]
-        unitOverCreditLimitVisitCare = csvLine[20]
-        creditLimitVisitCareBathing = csvLine[21]
-        totalUnitVisitCareBathing = csvLine[22]
-        unitOverCreditLimitVisitCareBathing = csvLine[23]
-        creditLimitVisitNursing = csvLine[24]
-        totalUnitVisitNursing = csvLine[25]
-        unitOverCreditLimitVisitNursing = csvLine[26]
-        creditLimitVisitRehabilitation = csvLine[27]
-        totalUnitVisitRehabilitation = csvLine[28]
-        unitOverCreditLimitVisitRehabilitation = csvLine[29]
-        creditLimitDayCare = csvLine[30]
-        totalUnitDayCare = csvLine[31]
-        unitOverCreditLimitDayCare = csvLine[32]
-        creditLimitDayCareRehabilitation = csvLine[33]
-        totalUnitDayCareRehabilitation = csvLine[34]
-        unitOverCreditLimitDayCareRehabilitation = csvLine[35]
-        creditLimitWelfareEquipment = csvLine[36]
-        totalUnitWelfareEquipment = csvLine[37]
-        unitOverCreditLimitWelfareEquipment = csvLine[38]
-        creditLimitStayLifeCare = csvLine[39]
-        totalUnitStayLifeCare = csvLine[40]
-        unitOverCreditLimitStayLifeCare = csvLine[41]
-        creditLimitStayMedicalCare = csvLine[42]
-        totalUnitStayMedicalCare = csvLine[43]
-        unitOverCreditLimitStayMedicalCare = csvLine[44]
-        creditLimitNightlyVisitCare = csvLine[45]
-        totalUnitNightlyVisitCare = csvLine[46]
-        unitOverCreditLimitNightlyVisitCare = csvLine[47]
-        creditLimitDementiaDayCare = csvLine[48]
-        totalUnitDementiaDayCare = csvLine[49]
-        unitOverCreditLimitDementiaDayCare = csvLine[50]
-        creditLimitDementiaLifeCare = csvLine[51]
-        totalUnitDementiaLifeCare = csvLine[52]
-        unitOverCreditLimitDementiaLifeCare = csvLine[53]
-        creditLimitCommunityVisitCare = csvLine[54]
-        totalUnitCommunityVisitCare = csvLine[55]
-        unitOverCreditLimitCommunityVisitCare = csvLine[56]
-        totalUnitOverCreditLimit = csvLine[57]
-        stayOverUnitCreditLimit = csvLine[58]
-        stayDaysPreviousMonth = csvLine[59]
-        stayAccumlationDays = csvLine[60]
-        previousCareLevel = csvLine[61]
-        agreementOffice = csvLine[62]
-        registrationDate = csvLine[63]
-        timeStamp = csvLine[64]
-        updatedOffice = csvLine[65]
-        servicePlanCreatedDate = csvLine[66]
-        servicePlanAppendixCreatedDate = csvLine[67]
-        servicePlanNotificationDate = csvLine[68]
-        identification = csvLine[69]
-        targetDate = csvLine[70]
+        serviceDivision1 = csvLine[19]
+        creditLimit1 = csvLine[20]
+        totalUnit1 = csvLine[21]
+        unitOverCreditLimit1 = csvLine[22]
+
+        serviceDivision2 = csvLine[23]
+        creditLimit2 = csvLine[24]
+        totalUnit2 = csvLine[25]
+        unitOverCreditLimit2 = csvLine[26]
+
+        serviceDivision3 = csvLine[27]
+        creditLimit3 = csvLine[28]
+        totalUnit3 = csvLine[29]
+        unitOverCreditLimit3 = csvLine[30]
+
+        serviceDivision4 = csvLine[31]
+        creditLimit4 = csvLine[32]
+        totalUnit4 = csvLine[33]
+        unitOverCreditLimit4 = csvLine[34]
+
+        serviceDivision5 = csvLine[35]
+        creditLimit5 = csvLine[36]
+        totalUnit5 = csvLine[37]
+        unitOverCreditLimit5 = csvLine[38]
+
+        serviceDivision6 = csvLine[39]
+        creditLimit6 = csvLine[40]
+        totalUnit6 = csvLine[41]
+        unitOverCreditLimit6 = csvLine[42]
+
+        serviceDivision7 = csvLine[43]
+        creditLimit7 = csvLine[44]
+        totalUnit7 = csvLine[45]
+        unitOverCreditLimit7 = csvLine[46]
+
+        serviceDivision8 = csvLine[47]
+        creditLimit8 = csvLine[48]
+        totalUnit8 = csvLine[49]
+        unitOverCreditLimit8 = csvLine[50]
+
+        serviceDivision9 = csvLine[51]
+        creditLimit9 = csvLine[52]
+        totalUnit9 = csvLine[53]
+        unitOverCreditLimit9 = csvLine[54]
+        totalUnitOverCreditLimit = csvLine[55]
+        stayDaysPreviousMonth = csvLine[56]
+        stayAccumulationDays = csvLine[57]
+        previousCareLevel = csvLine[58]
+        agreementOffice = csvLine[59]
+        registrationDate = csvLine[60]
+        updatedOffice = csvLine[61]
+        identification = csvLine[62]
+        targetDate = csvLine[63]
     }
 
 }
