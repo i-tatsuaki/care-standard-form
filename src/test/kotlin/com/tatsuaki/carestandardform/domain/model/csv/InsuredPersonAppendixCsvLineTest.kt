@@ -142,6 +142,6 @@ class InsuredPersonAppendixCsvLineTest {
         assertEquals("20200106", insuredPersonAppendixCsvLine.registrationDate)
         assertEquals("2222244444", insuredPersonAppendixCsvLine.updatedOffice)
         assertEquals("1", insuredPersonAppendixCsvLine.identification)
-        assertEquals("202002", insuredPersonAppendixCsvLine.targetDate)
+        assertEquals("202002", insuredPersonAppendixCsvLine.serviceYearMonth)
     }
 }

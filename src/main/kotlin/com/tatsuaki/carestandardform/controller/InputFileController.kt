@@ -1,6 +1,7 @@
 package com.tatsuaki.carestandardform.controller
 
-import com.tatsuaki.carestandardform.domain.serviceplan.ServicePlan
+import com.tatsuaki.carestandardform.domain.model.csv.InsuredPersonAppendixCsvLineFactory
+import com.tatsuaki.carestandardform.domain.model.csv.ServicePlanCsvLineFactory
 import com.tatsuaki.carestandardform.domain.serviceplan.ServicePlanFactory
 import com.tatsuaki.carestandardform.domain.serviceplanappendix.ServicePlanAppendix
 import org.springframework.stereotype.Controller
@@ -20,7 +21,10 @@ class InputFileController() {
         model: Model
     ): String {
 
-        val servicePlans = ServicePlanFactory().create(insuredPersonAppendix, servicePlanFile)
+        val servicePlans = ServicePlanFactory().createServicePlans(
+            InsuredPersonAppendixCsvLineFactory().create(insuredPersonAppendix),
+            ServicePlanCsvLineFactory().create(servicePlanFile)
+        )
         model.addAttribute("servicePlan", servicePlans[0])
         return "servicePlan"
     }

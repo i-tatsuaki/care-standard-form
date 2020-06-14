@@ -76,7 +76,7 @@ class InsuredPersonAppendixCsvLine (
     val registrationDate: String
     val updatedOffice: String
     val identification: String
-    val targetDate: String
+    val serviceYearMonth: String
 
     init {
         csvVersion = csvLine[0]
@@ -151,7 +151,7 @@ class InsuredPersonAppendixCsvLine (
         registrationDate = csvLine[60]
         updatedOffice = csvLine[61]
         identification = csvLine[62]
-        targetDate = csvLine[63]
+        serviceYearMonth = csvLine[63]
     }
 
 }
