@@ -214,13 +214,13 @@
                         <font>性別</font>
                     </td>
                     <td colspan="1" rowspan="3" class="collapse-on">
-                        <font th:text=${servicePlan.insuredPerson.sex}></font>
+                        <font th:text=${servicePlan.insuredPerson.sex.name()}></font>
                     </td>
                     <td colspan="3" rowspan="1" class="collapse-on">
                         <font>要介護状態区分</font>
                     </td>
                     <td colspan="7" rowspan="1" class="collapse-on">
-                        <font th:text=${servicePlan.insuredPerson.insureLicense.careLevel}></font>
+                        <font th:text=${servicePlan.insuredPerson.insureLicense.careLevel.name()}></font>
                     </td>
                     <td colspan="4" rowspan="3" class="collapse-on">
                         <font>区分支給</font><br><font>限度基準額</font>

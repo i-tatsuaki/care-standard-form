@@ -4,7 +4,7 @@ import java.time.LocalDate
 
 data class InsureLicense(
     val number: String,
-    val careLevel: String,
+    val careLevel: CareLevel,
     val previousCareLevel: String,
     val careLevelUpdateDate: LocalDate,
     val creditLimit: Int,

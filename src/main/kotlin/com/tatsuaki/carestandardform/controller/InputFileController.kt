@@ -20,8 +20,8 @@ class InputFileController() {
         model: Model
     ): String {
 
-        val servicePlan1 = ServicePlanFactory().create(insuredPersonAppendix, servicePlanFile)
-        model.addAttribute("servicePlan", servicePlan1)
+        val servicePlans = ServicePlanFactory().create(insuredPersonAppendix, servicePlanFile)
+        model.addAttribute("servicePlan", servicePlans[0])
         return "servicePlan"
     }
 
