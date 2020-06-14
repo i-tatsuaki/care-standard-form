@@ -1,6 +1,7 @@
 package com.tatsuaki.carestandardform.controller
 
 import com.tatsuaki.carestandardform.domain.serviceplan.ServicePlan
+import com.tatsuaki.carestandardform.domain.serviceplan.ServicePlanFactory
 import com.tatsuaki.carestandardform.domain.serviceplanappendix.ServicePlanAppendix
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
@@ -19,7 +20,7 @@ class InputFileController() {
         model: Model
     ): String {
 
-        val servicePlan1 = ServicePlan(insuredPersonAppendix, servicePlanFile, servicePlanAppendixFile)
+        val servicePlan1 = ServicePlanFactory().create(insuredPersonAppendix, servicePlanFile)
         model.addAttribute("servicePlan", servicePlan1)
         return "servicePlan"
     }
