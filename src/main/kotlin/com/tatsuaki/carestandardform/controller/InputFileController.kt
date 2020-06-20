@@ -33,13 +33,6 @@ class InputFileController() {
         return "servicePlan"
     }
 
-    @GetMapping("servicePlanAppendix")
-    fun servicePlanAppendix(model: Model): String {
-        val servicePlanAppendix = ServicePlanAppendix()
-        model.addAttribute("servicePlanAppendix", servicePlanAppendix)
-        return "servicePlanAppendix"
-    }
-
     @GetMapping
     fun inputFile(): String{
         return "inputFile"
