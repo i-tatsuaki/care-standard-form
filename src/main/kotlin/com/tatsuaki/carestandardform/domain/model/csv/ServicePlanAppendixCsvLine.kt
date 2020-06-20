@@ -74,4 +74,12 @@ class ServicePlanAppendixCsvLine (
         updateOfficeCode = csvLine[32]
         identification = csvLine[33]
     }
+
+    fun isCorrespond(insuredPersonAppendixCsvLine: InsuredPersonAppendixCsvLine) : Boolean {
+        return this.csvVersion.equals(insuredPersonAppendixCsvLine.csvVersion)
+                && this.insureNumber.equals(insuredPersonAppendixCsvLine.insureNumber)
+                && this.insuredNumber.equals(insuredPersonAppendixCsvLine.insuredNumber)
+                && this.serviceYearMonth.equals(insuredPersonAppendixCsvLine.serviceYearMonth)
+    }
+
 }
