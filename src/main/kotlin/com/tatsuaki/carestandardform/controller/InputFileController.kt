@@ -1,7 +1,9 @@
 package com.tatsuaki.carestandardform.controller
 
 import com.tatsuaki.carestandardform.domain.model.csv.InsuredPersonAppendixCsvLineFactory
+import com.tatsuaki.carestandardform.domain.model.csv.ServicePlanAppendixCsvLineFactory
 import com.tatsuaki.carestandardform.domain.model.csv.ServicePlanCsvLineFactory
+import com.tatsuaki.carestandardform.domain.serviceplan.ServicePlanAppendixFactory
 import com.tatsuaki.carestandardform.domain.serviceplan.ServicePlanFactory
 import com.tatsuaki.carestandardform.domain.serviceplanappendix.ServicePlanAppendix
 import org.springframework.stereotype.Controller
@@ -21,14 +23,21 @@ class InputFileController() {
         model: Model
     ): String {
 
+        val insuredPersonAppendixCsvLine = InsuredPersonAppendixCsvLineFactory().create(insuredPersonAppendix)
+        val servicePlanCsvLine = ServicePlanCsvLineFactory().create(servicePlanFile)
+        val servicePlanAppendixCsvLine = ServicePlanAppendixCsvLineFactory().create(servicePlanAppendixFile)
+
         val servicePlans = ServicePlanFactory().createServicePlans(
-            InsuredPersonAppendixCsvLineFactory().create(insuredPersonAppendix),
-            ServicePlanCsvLineFactory().create(servicePlanFile)
+            insuredPersonAppendixCsvLine,
+            servicePlanCsvLine
         )
         model.addAttribute("servicePlan", servicePlans[0]) // TODO 複数行対応
 
-        val servicePlanAppendix = ServicePlanAppendix()
-        model.addAttribute("servicePlanAppendix", servicePlanAppendix) // TODO 複数行対応
+        val servicePlanAppendix = ServicePlanAppendixFactory().createServicePlanAppendixes(
+            insuredPersonAppendixCsvLine,
+            servicePlanAppendixCsvLine
+        )
+        model.addAttribute("servicePlanAppendix", servicePlanAppendix[0]) // TODO 複数行対応
 
         return "servicePlan"
     }
