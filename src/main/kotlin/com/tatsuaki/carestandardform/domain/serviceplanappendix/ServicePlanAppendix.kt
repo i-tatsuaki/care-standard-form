@@ -1,5 +1,6 @@
 package com.tatsuaki.carestandardform.domain.serviceplanappendix
 
+import com.tatsuaki.carestandardform.domain.ServiceProvisionYearMonth
 import com.tatsuaki.carestandardform.domain.model.*
 import com.tatsuaki.carestandardform.util.JapaneseDate
 import java.math.BigDecimal
@@ -9,7 +10,7 @@ import java.time.YearMonth
 
 class ServicePlanAppendix {
 
-    val serviceProvisionYearMonth: YearMonth
+    val serviceProvisionYearMonth: ServiceProvisionYearMonth
     val creationDate: LocalDate
     val insuredPerson: InsuredPerson
     val providedServices: List<ProvidedService>
@@ -21,7 +22,7 @@ class ServicePlanAppendix {
 
     init {
         // TODO 仮実装
-        this.serviceProvisionYearMonth = YearMonth.of(2020, 4)
+        this.serviceProvisionYearMonth = ServiceProvisionYearMonth(YearMonth.of(2020, 4))
         this.creationDate = LocalDate.of(2020, 3, 1)
         this.insuredPerson = InsuredPerson(
             "利用者氏名",

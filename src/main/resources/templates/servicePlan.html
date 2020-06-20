@@ -76,13 +76,13 @@
                     <td colspan="8">
                     </td>
                     <td colspan="3">
-                        <font th:text=${servicePlan.serviceProvisionYearMonth.year}></font>
+                        <font th:text=${servicePlan.serviceProvisionYearMonth.yearMonth.year}></font>
                     </td>
                     <td colspan="1">
                         <font>年</font>
                     </td>
                     <td colspan="1">
-                        <font th:text=${servicePlan.serviceProvisionYearMonth.monthValue}></font>
+                        <font th:text=${servicePlan.serviceProvisionYearMonth.yearMonth.monthValue}></font>
                     </td>
                     <td colspan="2">
                         <font>月分</font>
@@ -304,8 +304,11 @@
                     <td colspan="1" rowspan="1" class="collapse-on">
                         <font>日付</font>
                     </td>
-                    <td colspan="1" rowspan="1" th:each="day : ${#numbers.sequence(1, 31)}" class="collapse-on">
-                        <font th:text=${day}></font>
+                    <td colspan="1" rowspan="1" th:each="day : ${servicePlan.serviceProvisionYearMonth.getMapDayToDayOfWeek()}" class="collapse-on">
+                        <font th:text=${day.key}></font>
+                    </td>
+                    <td colspan="1" rowspan="1" th:each="day : ${#numbers.sequence(servicePlan.serviceProvisionYearMonth.getMapDayToDayOfWeek().size()+1, 31)}" class="collapse-on">
+                        <!-- 31日までの穴埋め -->
                     </td>
                     <td colspan="2" rowspan="2" class="collapse-on">
                         <font>合計</font>
@@ -315,8 +318,11 @@
                     <td colspan="1" rowspan="1" class="collapse-on">
                         <font>曜日</font>
                     </td>
-                    <td colspan="1" rowspan="1" th:each="day : ${#numbers.sequence(1, 31)}" class="collapse-on">
-                        <font th:text=${day}></font>
+                    <td colspan="1" rowspan="1" th:each="day : ${servicePlan.serviceProvisionYearMonth.getMapDayToDayOfWeek()}" class="collapse-on">
+                        <font th:text=${day.value}></font>
+                    </td>
+                    <td colspan="1" rowspan="1" th:each="day : ${#numbers.sequence(servicePlan.serviceProvisionYearMonth.getMapDayToDayOfWeek().size()+1, 31)}" class="collapse-on">
+                        <!-- 31日までの穴埋め -->
                     </td>
                 </tr>
                 <div th:each="providedService : ${servicePlan.providedServices}">

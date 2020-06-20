@@ -1,5 +1,6 @@
 package com.tatsuaki.carestandardform.domain.serviceplan
 
+import com.tatsuaki.carestandardform.domain.ServiceProvisionYearMonth
 import com.tatsuaki.carestandardform.domain.model.*
 import com.tatsuaki.carestandardform.util.JapaneseDate
 import org.springframework.web.multipart.MultipartFile
@@ -9,7 +10,7 @@ import java.time.LocalTime
 import java.time.YearMonth
 
 class ServicePlan(
-    val serviceProvisionYearMonth: YearMonth,
+    val serviceProvisionYearMonth: ServiceProvisionYearMonth,
     val creationDate: LocalDate,
     val insure: Insure,
     val careManager: CareManager,

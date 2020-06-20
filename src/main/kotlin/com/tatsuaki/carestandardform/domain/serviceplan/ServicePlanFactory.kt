@@ -1,5 +1,6 @@
 package com.tatsuaki.carestandardform.domain.serviceplan
 
+import com.tatsuaki.carestandardform.domain.ServiceProvisionYearMonth
 import com.tatsuaki.carestandardform.domain.model.*
 import com.tatsuaki.carestandardform.domain.model.csv.InsuredPersonAppendixCsvLine
 import com.tatsuaki.carestandardform.domain.model.csv.ServicePlanCsvLine
@@ -64,8 +65,14 @@ class ServicePlanFactory {
             it.value.stream().forEach { eachDay ->
                 providedTime.addPlan(
                     ProvidedTime.Time(
-                        LocalTime.of(eachDay.serviceStartTime.substring(0, 2).toInt(), eachDay.serviceStartTime.substring(2, 4).toInt()),
-                        LocalTime.of(eachDay.serviceEndTime.substring(0, 2).toInt(), eachDay.serviceEndTime.substring(2, 4).toInt())
+                        LocalTime.of(
+                            eachDay.serviceStartTime.substring(0, 2).toInt(),
+                            eachDay.serviceStartTime.substring(2, 4).toInt()
+                        ),
+                        LocalTime.of(
+                            eachDay.serviceEndTime.substring(0, 2).toInt(),
+                            eachDay.serviceEndTime.substring(2, 4).toInt()
+                        )
                     ),
                     LocalDate.parse(eachDay.serviceDate, DateTimeFormatter.ofPattern("yyyyMMdd")).dayOfMonth
                 )
@@ -99,9 +106,11 @@ class ServicePlanFactory {
         }
 
         return ServicePlan(
-            YearMonth.parse(
-                insuredPersonAppendixCsvLine.serviceYearMonth,
-                DateTimeFormatter.ofPattern("yyyyMM")
+            ServiceProvisionYearMonth(
+                YearMonth.parse(
+                    insuredPersonAppendixCsvLine.serviceYearMonth,
+                    DateTimeFormatter.ofPattern("yyyyMM")
+                )
             ),
             LocalDate.parse(
                 servicePlanCsvLines.get(0).creationDate,
