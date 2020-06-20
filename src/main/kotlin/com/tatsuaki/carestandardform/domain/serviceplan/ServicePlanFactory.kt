@@ -124,7 +124,7 @@ class ServicePlanFactory {
             insuredPerson,
             LocalDate.of(2019, 12, 30), // TODO どこの項目を入れるか確認
             insuredPersonAppendixCsvLine.stayDaysPreviousMonth.toInt(),
-            providedServices
+            ProvidedServices(providedServices)
         )
     }
 }

@@ -325,7 +325,7 @@
                         <!-- 31日までの穴埋め -->
                     </td>
                 </tr>
-                <div th:each="providedService : ${servicePlan.providedServices}">
+                <div th:each="providedService : ${servicePlan.providedServices.list}">
                     <div th:each="planResult : ${providedService.providedTime.planResults}">
                         <tr>
                             <td colspan="3" rowspan="1" class="collapse-on">
@@ -363,6 +363,37 @@
                         </tr>
                     </div>
                 </div>
+
+                <div th:each="noUse : ${#numbers.sequence(servicePlan.providedServices.countProvidedServiceKind()+1, 13)}">
+                    <!-- 13行までの穴埋め -->
+                    <tr>
+                        <td colspan="3" rowspan="1" class="collapse-on">
+                        </td>
+                        <td colspan="5" rowspan="2" class="collapse-on">
+                        </td>
+                        <td colspan="5" rowspan="2" class="collapse-on">
+                        </td>
+                        <td colspan="1" rowspan="1" class="collapse-on">
+                            <font>予定</font>
+                        </td>
+                        <td colspan="1" rowspan="1" th:each="day : ${#numbers.sequence(1, 31)}" class="collapse-on">
+                        </td>
+                        <td colspan="2" rowspan="1" class="collapse-on">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" rowspan="1" class="collapse-on">
+                        </td>
+                        <td colspan="1" rowspan="1" class="collapse-on">
+                            <font>実績</font>
+                        </td>
+                        <td colspan="1" rowspan="1" th:each="day : ${#numbers.sequence(1, 31)}" class="collapse-on">
+                        </td>
+                        <td colspan="2" rowspan="1" class="collapse-on">
+                        </td>
+                    </tr>
+                </div>
+
             </tbody>
         </table>
     </div>

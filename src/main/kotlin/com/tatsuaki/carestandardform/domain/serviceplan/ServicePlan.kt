@@ -17,5 +17,5 @@ class ServicePlan(
     val insuredPerson: InsuredPerson,
     val notificationDate: LocalDate,
     val shortStayUseDaysOfPreviousMonth: Int,
-    val providedServices: List<ProvidedService>
+    val providedServices: ProvidedServices
 )

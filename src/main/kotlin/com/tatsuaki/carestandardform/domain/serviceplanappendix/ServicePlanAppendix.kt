@@ -13,7 +13,7 @@ class ServicePlanAppendix {
     val serviceProvisionYearMonth: ServiceProvisionYearMonth
     val creationDate: LocalDate
     val insuredPerson: InsuredPerson
-    val providedServices: List<ProvidedService>
+    val providedServices: ProvidedServices
     val limitDivisionUnitNumber: Int
     val totalUnitNumber: TotalUnitNumber
     val kindUnitNumberManagements: Map<CareServiceKind, KindUnitNumberManagement>
@@ -44,36 +44,89 @@ class ServicePlanAppendix {
             LocalTime.of(10, 0),
             LocalTime.of(12, 0)
         )
-        this.providedServices = listOf(
-            ProvidedService(
-                CareService("通所介護１", "131111", 132, 90, 119, 488, 30, 458, 58, 400, BigDecimal(10.0), 4880, 90, 4392, 488, 488),
-                Office("とある通所介護事業所", "1234567890", "03-1234-5678"),
-                ProvidedTime()
-                    .addPlan(time, 1)
-                    .addPlan(time, 3)
-                    .addPlan(time, 5)
-                    .addResult(time, 1)
-                    .addResult(time, 5)
-            ),
-            ProvidedService(
-                CareService("通所介護２", "131111", 132, 90, 119, 488, 30, 458, 58, 400, BigDecimal(10.0), 4880, 90, 4392, 488, 488),
-                Office("とある通所介護事業所", "1234567890", "03-1234-5678"),
-                ProvidedTime()
-                    .addPlan(time, 2)
-                    .addPlan(time, 4)
-                    .addPlan(time, 6)
-                    .addResult(time, 2)
-                    .addResult(time, 4)
-            ),
-            ProvidedService(
-                CareService("通所介護３", "131111", 132, 90, 119, 488, 30, 458, 58, 400, BigDecimal(10.0), 4880, 90, 4392, 488, 488),
-                Office("とある通所介護事業所", "1234567890", "03-1234-5678"),
-                ProvidedTime()
-                    .addPlan(time, 3)
-                    .addPlan(time, 6)
-                    .addPlan(time, 9)
-                    .addResult(time, 3)
-                    .addResult(time, 9)
+        this.providedServices = ProvidedServices(
+            listOf(
+                ProvidedService(
+                    CareService(
+                        "通所介護１",
+                        "131111",
+                        132,
+                        90,
+                        119,
+                        488,
+                        30,
+                        458,
+                        58,
+                        400,
+                        BigDecimal(10.0),
+                        4880,
+                        90,
+                        4392,
+                        488,
+                        488
+                    ),
+                    Office("とある通所介護事業所", "1234567890", "03-1234-5678"),
+                    ProvidedTime()
+                        .addPlan(time, 1)
+                        .addPlan(time, 3)
+                        .addPlan(time, 5)
+                        .addResult(time, 1)
+                        .addResult(time, 5)
+                ),
+                ProvidedService(
+                    CareService(
+                        "通所介護２",
+                        "131111",
+                        132,
+                        90,
+                        119,
+                        488,
+                        30,
+                        458,
+                        58,
+                        400,
+                        BigDecimal(10.0),
+                        4880,
+                        90,
+                        4392,
+                        488,
+                        488
+                    ),
+                    Office("とある通所介護事業所", "1234567890", "03-1234-5678"),
+                    ProvidedTime()
+                        .addPlan(time, 2)
+                        .addPlan(time, 4)
+                        .addPlan(time, 6)
+                        .addResult(time, 2)
+                        .addResult(time, 4)
+                ),
+                ProvidedService(
+                    CareService(
+                        "通所介護３",
+                        "131111",
+                        132,
+                        90,
+                        119,
+                        488,
+                        30,
+                        458,
+                        58,
+                        400,
+                        BigDecimal(10.0),
+                        4880,
+                        90,
+                        4392,
+                        488,
+                        488
+                    ),
+                    Office("とある通所介護事業所", "1234567890", "03-1234-5678"),
+                    ProvidedTime()
+                        .addPlan(time, 3)
+                        .addPlan(time, 6)
+                        .addPlan(time, 9)
+                        .addResult(time, 3)
+                        .addResult(time, 9)
+                )
             )
         )
         this.limitDivisionUnitNumber = 16390
