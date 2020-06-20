@@ -26,6 +26,10 @@ class InputFileController() {
             ServicePlanCsvLineFactory().create(servicePlanFile)
         )
         model.addAttribute("servicePlan", servicePlans[0]) // TODO 複数行対応
+
+        val servicePlanAppendix = ServicePlanAppendix()
+        model.addAttribute("servicePlanAppendix", servicePlanAppendix) // TODO 複数行対応
+
         return "servicePlan"
     }
 

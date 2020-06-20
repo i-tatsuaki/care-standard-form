@@ -183,7 +183,7 @@
                 <font>単位数</font>
             </td>
         </tr>
-        <div th:each="providedService : ${servicePlanAppendix.providedServices}">
+        <div th:each="providedService : ${servicePlanAppendix.providedServices.list}">
             <div th:each="planResult : ${providedService.providedTime.planResults}">
                 <tr>
                     <td colspan="5">

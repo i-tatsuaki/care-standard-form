@@ -32,6 +32,17 @@ body {
   border:1px solid #333;
 }
 
+#table-service-plan-appendix table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+#table-service-plan-appendix font {
+  font-size: 10px;
+}
+#table-service-plan-appendix .collapse-on {
+  border:1px solid #333;
+}
+
 /* input */
 .custom-file {
   overflow: hidden;
