@@ -60,6 +60,6 @@ class ServicePlanCsvLine (
 
     fun getProvidedServiceKey() : String {
         return csvVersion + insureNumber + insuredNumber + serviceYearMonth +
-                serviceStartTime + serviceEndTime + serviceCode + serviceOfficeCode + numberOfSatellite
+                serviceCode + serviceOfficeCode + numberOfSatellite
     }
 }
