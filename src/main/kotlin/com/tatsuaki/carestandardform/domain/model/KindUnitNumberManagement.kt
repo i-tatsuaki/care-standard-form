@@ -1,7 +1,8 @@
 package com.tatsuaki.carestandardform.domain.model
 
 class KindUnitNumberManagement(
-    val baseUnitNumber: Int,
-    val totalUnitNumber: Int,
-    val overUnitNumber: Int
+    val serviceKindCode: String,
+    val baseUnitNumber: String,
+    val totalUnitNumber: String,
+    val overUnitNumber: String
 )

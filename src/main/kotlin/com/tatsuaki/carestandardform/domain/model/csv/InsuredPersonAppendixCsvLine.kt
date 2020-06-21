@@ -23,47 +23,47 @@ class InsuredPersonAppendixCsvLine (
     val careLevel: String
     val creditLimit: String
 
-    val serviceDivision1: String
+    val serviceKindCode1: String
     val creditLimit1: String
     val totalUnit1: String
     val unitOverCreditLimit1: String
 
-    val serviceDivision2: String
+    val serviceKindCode2: String
     val creditLimit2: String
     val totalUnit2: String
     val unitOverCreditLimit2: String
 
-    val serviceDivision3: String
+    val serviceKindCode3: String
     val creditLimit3: String
     val totalUnit3: String
     val unitOverCreditLimit3: String
 
-    val serviceDivision4: String
+    val serviceKindCode4: String
     val creditLimit4: String
     val totalUnit4: String
     val unitOverCreditLimit4: String
 
-    val serviceDivision5: String
+    val serviceKindCode5: String
     val creditLimit5: String
     val totalUnit5: String
     val unitOverCreditLimit5: String
 
-    val serviceDivision6: String
+    val serviceKindCode6: String
     val creditLimit6: String
     val totalUnit6: String
     val unitOverCreditLimit6: String
 
-    val serviceDivision7: String
+    val serviceKindCode7: String
     val creditLimit7: String
     val totalUnit7: String
     val unitOverCreditLimit7: String
 
-    val serviceDivision8: String
+    val serviceKindCode8: String
     val creditLimit8: String
     val totalUnit8: String
     val unitOverCreditLimit8: String
 
-    val serviceDivision9: String
+    val serviceKindCode9: String
     val creditLimit9: String
     val totalUnit9: String
     val unitOverCreditLimit9: String
@@ -99,47 +99,47 @@ class InsuredPersonAppendixCsvLine (
         careLevel = csvLine[17]
         creditLimit = csvLine[18]
 
-        serviceDivision1 = csvLine[19]
+        serviceKindCode1 = csvLine[19]
         creditLimit1 = csvLine[20]
         totalUnit1 = csvLine[21]
         unitOverCreditLimit1 = csvLine[22]
 
-        serviceDivision2 = csvLine[23]
+        serviceKindCode2 = csvLine[23]
         creditLimit2 = csvLine[24]
         totalUnit2 = csvLine[25]
         unitOverCreditLimit2 = csvLine[26]
 
-        serviceDivision3 = csvLine[27]
+        serviceKindCode3 = csvLine[27]
         creditLimit3 = csvLine[28]
         totalUnit3 = csvLine[29]
         unitOverCreditLimit3 = csvLine[30]
 
-        serviceDivision4 = csvLine[31]
+        serviceKindCode4 = csvLine[31]
         creditLimit4 = csvLine[32]
         totalUnit4 = csvLine[33]
         unitOverCreditLimit4 = csvLine[34]
 
-        serviceDivision5 = csvLine[35]
+        serviceKindCode5 = csvLine[35]
         creditLimit5 = csvLine[36]
         totalUnit5 = csvLine[37]
         unitOverCreditLimit5 = csvLine[38]
 
-        serviceDivision6 = csvLine[39]
+        serviceKindCode6 = csvLine[39]
         creditLimit6 = csvLine[40]
         totalUnit6 = csvLine[41]
         unitOverCreditLimit6 = csvLine[42]
 
-        serviceDivision7 = csvLine[43]
+        serviceKindCode7 = csvLine[43]
         creditLimit7 = csvLine[44]
         totalUnit7 = csvLine[45]
         unitOverCreditLimit7 = csvLine[46]
 
-        serviceDivision8 = csvLine[47]
+        serviceKindCode8 = csvLine[47]
         creditLimit8 = csvLine[48]
         totalUnit8 = csvLine[49]
         unitOverCreditLimit8 = csvLine[50]
 
-        serviceDivision9 = csvLine[51]
+        serviceKindCode9 = csvLine[51]
         creditLimit9 = csvLine[52]
         totalUnit9 = csvLine[53]
         unitOverCreditLimit9 = csvLine[54]

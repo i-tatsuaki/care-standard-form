@@ -8,8 +8,6 @@ import com.tatsuaki.carestandardform.domain.serviceplanappendix.ServicePlanAppen
 import com.tatsuaki.carestandardform.domain.serviceplanappendix.TotalUnitNumber
 import com.tatsuaki.carestandardform.domain.serviceplanappendix.UserCountShortStay
 import com.tatsuaki.carestandardform.util.JapaneseDate
-import java.math.BigDecimal
-import java.math.MathContext
 import java.time.LocalDate
 import java.time.LocalTime
 import java.time.YearMonth
@@ -101,6 +99,17 @@ class ServicePlanAppendixFactory {
             )
         }
 
+        val kindUnitNumberManagements = mutableListOf<KindUnitNumberManagement>()
+        kindUnitNumberManagements.add(KindUnitNumberManagement(insuredPersonAppendixCsvLine.serviceKindCode1, insuredPersonAppendixCsvLine.creditLimit1, insuredPersonAppendixCsvLine.totalUnit1, insuredPersonAppendixCsvLine.unitOverCreditLimit1))
+        kindUnitNumberManagements.add(KindUnitNumberManagement(insuredPersonAppendixCsvLine.serviceKindCode2, insuredPersonAppendixCsvLine.creditLimit2, insuredPersonAppendixCsvLine.totalUnit2, insuredPersonAppendixCsvLine.unitOverCreditLimit2))
+        kindUnitNumberManagements.add(KindUnitNumberManagement(insuredPersonAppendixCsvLine.serviceKindCode3, insuredPersonAppendixCsvLine.creditLimit3, insuredPersonAppendixCsvLine.totalUnit3, insuredPersonAppendixCsvLine.unitOverCreditLimit3))
+        kindUnitNumberManagements.add(KindUnitNumberManagement(insuredPersonAppendixCsvLine.serviceKindCode4, insuredPersonAppendixCsvLine.creditLimit4, insuredPersonAppendixCsvLine.totalUnit4, insuredPersonAppendixCsvLine.unitOverCreditLimit4))
+        kindUnitNumberManagements.add(KindUnitNumberManagement(insuredPersonAppendixCsvLine.serviceKindCode5, insuredPersonAppendixCsvLine.creditLimit5, insuredPersonAppendixCsvLine.totalUnit5, insuredPersonAppendixCsvLine.unitOverCreditLimit5))
+        kindUnitNumberManagements.add(KindUnitNumberManagement(insuredPersonAppendixCsvLine.serviceKindCode6, insuredPersonAppendixCsvLine.creditLimit6, insuredPersonAppendixCsvLine.totalUnit6, insuredPersonAppendixCsvLine.unitOverCreditLimit6))
+        kindUnitNumberManagements.add(KindUnitNumberManagement(insuredPersonAppendixCsvLine.serviceKindCode7, insuredPersonAppendixCsvLine.creditLimit7, insuredPersonAppendixCsvLine.totalUnit7, insuredPersonAppendixCsvLine.unitOverCreditLimit7))
+        kindUnitNumberManagements.add(KindUnitNumberManagement(insuredPersonAppendixCsvLine.serviceKindCode8, insuredPersonAppendixCsvLine.creditLimit8, insuredPersonAppendixCsvLine.totalUnit8, insuredPersonAppendixCsvLine.unitOverCreditLimit8))
+        kindUnitNumberManagements.add(KindUnitNumberManagement(insuredPersonAppendixCsvLine.serviceKindCode9, insuredPersonAppendixCsvLine.creditLimit9, insuredPersonAppendixCsvLine.totalUnit9, insuredPersonAppendixCsvLine.unitOverCreditLimit9))
+
         return ServicePlanAppendix(
             // TODO 仮実装
             ServiceProvisionYearMonth(
@@ -118,24 +127,8 @@ class ServicePlanAppendixFactory {
             insuredPersonAppendixCsvLine.creditLimit.toInt(),
             TotalUnitNumber(1, 2, 3, 4, 5, 6, 7, 8, 9),
             // TODO TotalUnitNumberは情報が無い
-            mapOf(
-                CareServiceKind.HOME_VISIT_CARE to KindUnitNumberManagement(1, 2, 3),
-                CareServiceKind.HOME_VISIT_BATHING_CARE to KindUnitNumberManagement(4, 5, 6),
-                CareServiceKind.HOME_VISIT_NURSING_CARE to KindUnitNumberManagement(7, 8, 9),
-                CareServiceKind.HOME_VISIT_REHABILITATION to KindUnitNumberManagement(10, 11, 12),
-                CareServiceKind.DAY_CARE to KindUnitNumberManagement(13, 14, 15),
-                CareServiceKind.DAY_CARE_FOR_DEMENTIA to KindUnitNumberManagement(16, 17, 18),
-                CareServiceKind.LIFE_CARE_FOR_DEMENTIA to KindUnitNumberManagement(19, 20, 21),
-                CareServiceKind.DAY_REHABILITATION to KindUnitNumberManagement(22, 23, 24),
-                CareServiceKind.RENTAL_CARE_EQUIPMENT to KindUnitNumberManagement(25, 26, 27),
-                CareServiceKind.SHORT_TERM_LIFE_CARE to KindUnitNumberManagement(28, 29, 30),
-                CareServiceKind.SHORT_TERM_MEDICAL_CARE to KindUnitNumberManagement(31, 32, 33),
-                CareServiceKind.NIGHTLY_HOME_VISIT_CARE to KindUnitNumberManagement(34, 35, 36),
-                CareServiceKind.MULTIFUNCTIONAL_HOME_CARE to KindUnitNumberManagement(37, 38, 39),
-                CareServiceKind.REGULAR_PATROL to KindUnitNumberManagement(40, 41, 42),
-                CareServiceKind.COMPOSITE_SERVICE to KindUnitNumberManagement(43, 44, 45)
-            ),
-            KindUnitNumberManagement(46, 47, 48),
+            kindUnitNumberManagements,
+            TotalUnitNumberManagement(46, 47, 48),
             UserCountShortStay(5, 10, 15)
         )
     }

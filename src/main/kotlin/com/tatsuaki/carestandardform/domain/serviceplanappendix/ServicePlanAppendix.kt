@@ -15,7 +15,7 @@ class ServicePlanAppendix (
     val providedServices: ProvidedServices,
     val limitDivisionUnitNumber: Int,
     val totalUnitNumber: TotalUnitNumber,
-    val kindUnitNumberManagements: Map<CareServiceKind, KindUnitNumberManagement>,
-    val totalKindUnitNumberManagement: KindUnitNumberManagement,
+    val kindUnitNumberManagements: List<KindUnitNumberManagement>,
+    val totalUnitNumberManagement: TotalUnitNumberManagement,
     val useCountShortStay: UserCountShortStay
 )

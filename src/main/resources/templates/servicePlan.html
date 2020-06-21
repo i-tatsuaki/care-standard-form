@@ -577,67 +577,108 @@
                 </td>
             </tr>
             <div th:each="providedService : ${servicePlanAppendix.providedServices.list}">
-                <div th:each="planResult : ${providedService.providedTime.planResults}">
-                    <tr>
-                        <td colspan="5" class="collapse-on">
-                            <font th:text=${providedService.office.name}></font>
-                        </td>
-                        <td colspan="4" class="collapse-on">
-                            <font th:text=${providedService.office.number}></font>
-                        </td>
-                        <td colspan="5" class="collapse-on">
-                            <font th:text=${providedService.careService.name}></font>
-                        </td>
-                        <td colspan="2" class="collapse-on">
-                            <font th:text=${providedService.careService.code}></font>
-                        </td>
-                        <td colspan="2" class="collapse-on">
-                            <font th:text=${providedService.careService.unitNumber}></font>
-                        </td>
-                        <td colspan="2" class="collapse-on">
-                            <font th:text=${providedService.careService.discountRate}></font>
-                        </td>
-                        <td colspan="2" class="collapse-on">
-                            <font th:text=${providedService.careService.discountedUnitNumber}></font>
-                        </td>
-                        <td colspan="2" class="collapse-on">
-                            <font th:text=${providedService.providedTime.getPlanTotalCount()}></font>
-                        </td>
-                        <td colspan="3" class="collapse-on">
-                            <font th:text=${providedService.careService.totalUnitNumber}></font>
-                        </td>
-                        <td colspan="3" class="collapse-on">
-                            <font th:text=${providedService.careService.overKindUnitNumber}></font>
-                        </td>
-                        <td colspan="3" class="collapse-on">
-                            <font th:text=${providedService.careService.kindUnitNumber}></font>
-                        </td>
-                        <td colspan="3" class="collapse-on">
-                            <font th:text=${providedService.careService.overDivisionUnitNumber}></font>
-                        </td>
-                        <td colspan="3" class="collapse-on">
-                            <font th:text=${providedService.careService.divisionUnitNumber}></font>
-                        </td>
-                        <td colspan="2" class="collapse-on">
-                            <font th:text=${providedService.careService.unitPrice}></font>
-                        </td>
-                        <td colspan="3" class="collapse-on">
-                            <font th:text=${providedService.careService.totalInsuranceDemand}></font>
-                        </td>
-                        <td colspan="2" class="collapse-on">
-                            <font th:text=${providedService.careService.benefitsRate}></font>
-                        </td>
-                        <td colspan="3" class="collapse-on">
-                            <font th:text=${providedService.careService.paidInsuranceDemandFromInsurance}></font>
-                        </td>
-                        <td colspan="3" class="collapse-on">
-                            <font th:text=${providedService.careService.paidInsuranceDemandFromInsuredPerson}></font>
-                        </td>
-                        <td colspan="3" class="collapse-on">
-                            <font th:text=${providedService.careService.totalInsuredPersonDemand}></font>
-                        </td>
-                    </tr>
-                </div>
+                <tr>
+                    <td colspan="5" class="collapse-on">
+                        <font th:text=${providedService.office.name}></font>
+                    </td>
+                    <td colspan="4" class="collapse-on">
+                        <font th:text=${providedService.office.number}></font>
+                    </td>
+                    <td colspan="5" class="collapse-on">
+                        <font th:text=${providedService.careService.name}></font>
+                    </td>
+                    <td colspan="2" class="collapse-on">
+                        <font th:text=${providedService.careService.code}></font>
+                    </td>
+                    <td colspan="2" class="collapse-on">
+                        <font th:text=${providedService.careService.unitNumber}></font>
+                    </td>
+                    <td colspan="2" class="collapse-on">
+                        <font th:text=${providedService.careService.discountRate}></font>
+                    </td>
+                    <td colspan="2" class="collapse-on">
+                        <font th:text=${providedService.careService.discountedUnitNumber}></font>
+                    </td>
+                    <td colspan="2" class="collapse-on">
+                        <font th:text=${providedService.providedTime.getPlanTotalCount()}></font>
+                    </td>
+                    <td colspan="3" class="collapse-on">
+                        <font th:text=${providedService.careService.totalUnitNumber}></font>
+                    </td>
+                    <td colspan="3" class="collapse-on">
+                        <font th:text=${providedService.careService.overKindUnitNumber}></font>
+                    </td>
+                    <td colspan="3" class="collapse-on">
+                        <font th:text=${providedService.careService.kindUnitNumber}></font>
+                    </td>
+                    <td colspan="3" class="collapse-on">
+                        <font th:text=${providedService.careService.overDivisionUnitNumber}></font>
+                    </td>
+                    <td colspan="3" class="collapse-on">
+                        <font th:text=${providedService.careService.divisionUnitNumber}></font>
+                    </td>
+                    <td colspan="2" class="collapse-on">
+                        <font th:text=${providedService.careService.unitPrice}></font>
+                    </td>
+                    <td colspan="3" class="collapse-on">
+                        <font th:text=${providedService.careService.totalInsuranceDemand}></font>
+                    </td>
+                    <td colspan="2" class="collapse-on">
+                        <font th:text=${providedService.careService.benefitsRate}></font>
+                    </td>
+                    <td colspan="3" class="collapse-on">
+                        <font th:text=${providedService.careService.paidInsuranceDemandFromInsurance}></font>
+                    </td>
+                    <td colspan="3" class="collapse-on">
+                        <font th:text=${providedService.careService.paidInsuranceDemandFromInsuredPerson}></font>
+                    </td>
+                    <td colspan="3" class="collapse-on">
+                        <font th:text=${providedService.careService.totalInsuredPersonDemand}></font>
+                    </td>
+                </tr>
+            </div>
+            <div th:each="noUse : ${#numbers.sequence(servicePlan.providedServices.list.size()+1, 13)}">
+                <!-- 13行までの穴埋め -->
+                <tr>
+                    <td colspan="5" class="collapse-on">
+                    </td>
+                    <td colspan="4" class="collapse-on">
+                    </td>
+                    <td colspan="5" class="collapse-on">
+                    </td>
+                    <td colspan="2" class="collapse-on">
+                    </td>
+                    <td colspan="2" class="collapse-on">
+                    </td>
+                    <td colspan="2" class="collapse-on">
+                    </td>
+                    <td colspan="2" class="collapse-on">
+                    </td>
+                    <td colspan="2" class="collapse-on">
+                    </td>
+                    <td colspan="3" class="collapse-on">
+                    </td>
+                    <td colspan="3" class="collapse-on">
+                    </td>
+                    <td colspan="3" class="collapse-on">
+                    </td>
+                    <td colspan="3" class="collapse-on">
+                    </td>
+                    <td colspan="3" class="collapse-on">
+                    </td>
+                    <td colspan="2" class="collapse-on">
+                    </td>
+                    <td colspan="3" class="collapse-on">
+                    </td>
+                    <td colspan="2" class="collapse-on">
+                    </td>
+                    <td colspan="3" class="collapse-on">
+                    </td>
+                    <td colspan="3" class="collapse-on">
+                    </td>
+                    <td colspan="3" class="collapse-on">
+                    </td>
+                </tr>
             </div>
             <tr>
                 <td colspan="14" class="collapse-on">
@@ -727,224 +768,196 @@
             </tr>
             <tr>
                 <td colspan="9" class="collapse-on">
-                    <font>訪問介護</font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[0].serviceKindCode}></font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_CARE].baseUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[0].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_CARE].totalUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[0].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_CARE].overUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[0].overUnitNumber}></font>
                 </td>
                 <td colspan="9" class="collapse-on">
-                    <font>福祉用具貸与</font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[1].serviceKindCode}></font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).RENTAL_CARE_EQUIPMENT].baseUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[1].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).RENTAL_CARE_EQUIPMENT].totalUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[1].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).RENTAL_CARE_EQUIPMENT].overUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[1].overUnitNumber}></font>
                 </td>
                 <td colspan="15" class="collapse-on">
                 </td>
             </tr>
             <tr>
                 <td colspan="9" class="collapse-on">
-                    <font>訪問入浴介護</font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[2].serviceKindCode}></font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_BATHING_CARE].baseUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[2].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_BATHING_CARE].totalUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[2].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_BATHING_CARE].overUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[2].overUnitNumber}></font>
                 </td>
                 <td colspan="9" class="collapse-on">
-                    <font>短期入所生活介護</font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[3].serviceKindCode}></font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).SHORT_TERM_LIFE_CARE].baseUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[3].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).SHORT_TERM_LIFE_CARE].totalUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[3].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).SHORT_TERM_LIFE_CARE].overUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[3].overUnitNumber}></font>
                 </td>
                 <td colspan="15" class="collapse-on">
                 </td>
             </tr>
             <tr>
                 <td colspan="9" class="collapse-on">
-                    <font>訪問看護</font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[4].serviceKindCode}></font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_NURSING_CARE].baseUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[4].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_NURSING_CARE].totalUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[4].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_NURSING_CARE].overUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[4].overUnitNumber}></font>
                 </td>
                 <td colspan="9" class="collapse-on">
-                    <font>短期入所療養介護</font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[5].serviceKindCode}></font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).SHORT_TERM_MEDICAL_CARE].baseUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[5].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).SHORT_TERM_MEDICAL_CARE].totalUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[5].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).SHORT_TERM_MEDICAL_CARE].overUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[5].overUnitNumber}></font>
                 </td>
                 <td colspan="15" class="collapse-on">
                 </td>
             </tr>
             <tr>
                 <td colspan="9" class="collapse-on">
-                    <font>訪問リハビリテーション</font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[6].serviceKindCode}></font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_REHABILITATION].baseUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[6].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_REHABILITATION].totalUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[6].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).HOME_VISIT_REHABILITATION].overUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[6].overUnitNumber}></font>
                 </td>
                 <td colspan="9" class="collapse-on">
-                    <font>夜間対応型訪問介護</font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[7].serviceKindCode}></font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).NIGHTLY_HOME_VISIT_CARE].baseUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[7].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).NIGHTLY_HOME_VISIT_CARE].totalUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[7].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).NIGHTLY_HOME_VISIT_CARE].overUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[7].overUnitNumber}></font>
                 </td>
                 <td colspan="15" class="collapse-on">
                 </td>
             </tr>
             <tr>
                 <td colspan="9" class="collapse-on">
-                    <font>通所介護</font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[8].serviceKindCode}></font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).DAY_CARE].baseUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[8].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).DAY_CARE].totalUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[8].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).DAY_CARE].overUnitNumber}></font>
+                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[8].overUnitNumber}></font>
                 </td>
                 <td colspan="9" class="collapse-on">
-                    <font>小規模多機能型居宅介護</font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).MULTIFUNCTIONAL_HOME_CARE].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).MULTIFUNCTIONAL_HOME_CARE].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).MULTIFUNCTIONAL_HOME_CARE].overUnitNumber}></font>
                 </td>
                 <td colspan="15" class="collapse-on">
                 </td>
             </tr>
             <tr>
                 <td colspan="9" class="collapse-on">
-                    <font>認知症対応型通所介護</font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).DAY_CARE_FOR_DEMENTIA].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).DAY_CARE_FOR_DEMENTIA].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).DAY_CARE_FOR_DEMENTIA].overUnitNumber}></font>
                 </td>
                 <td colspan="9" class="collapse-on">
-                    <font>定期巡回・随時対応型訪問介護看護</font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).REGULAR_PATROL].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).REGULAR_PATROL].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).REGULAR_PATROL].overUnitNumber}></font>
                 </td>
                 <td colspan="15" class="collapse-on">
                 </td>
             </tr>
             <tr>
                 <td colspan="9" class="collapse-on">
-                    <font>認知症対応型共同生活介護</font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).LIFE_CARE_FOR_DEMENTIA].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).LIFE_CARE_FOR_DEMENTIA].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).LIFE_CARE_FOR_DEMENTIA].overUnitNumber}></font>
                 </td>
                 <td colspan="9" class="collapse-on">
-                    <font>複合型サービス</font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).COMPOSITE_SERVICE].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).COMPOSITE_SERVICE].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).COMPOSITE_SERVICE].overUnitNumber}></font>
                 </td>
                 <td colspan="15" class="collapse-on">
                 </td>
             </tr>
             <tr>
                 <td colspan="9" class="collapse-on">
-                    <font>通所リハビリテーション</font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).DAY_REHABILITATION].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).DAY_REHABILITATION].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[T(com.tatsuaki.carestandardform.domain.model.CareServiceKind).DAY_REHABILITATION].overUnitNumber}></font>
                 </td>
                 <td colspan="9" class="collapse-on">
-                    <font>合計</font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.totalKindUnitNumberManagement.baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.totalKindUnitNumberManagement.totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.totalKindUnitNumberManagement.overUnitNumber}></font>
                 </td>
                 <td colspan="15" class="collapse-on">
                 </td>
