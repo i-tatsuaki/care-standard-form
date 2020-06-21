@@ -481,14 +481,14 @@
                     <font>作成年月日</font>
                 </td>
                 <td colspan="9" rowspan="1" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.creationDate.year}></font><font>年</font><font th:text=${servicePlanAppendix.creationDate.monthValue}></font><font>月</font><font th:text=${servicePlanAppendix.creationDate.dayOfMonth}></font><font>日</font>
+                    <font th:text=${servicePlan.creationDate.year}></font><font>年</font><font th:text=${servicePlan.creationDate.monthValue}></font><font>月</font><font th:text=${servicePlan.creationDate.dayOfMonth}></font><font>日</font>
                 </td>
             </tr>
             <tr>
                 <td colspan="5" rowspan="1" class="collapse-on">
                 </td>
                 <td colspan="9" rowspan="1" class="collapse-on">
-                    <font>(</font><font th:text=${servicePlanAppendix.creationDate.monthValue}></font><font>月分)</font>
+                    <font>(</font><font th:text=${servicePlan.creationDate.monthValue}></font><font>月分)</font>
                 </td>
             </tr>
             <tr>
@@ -501,7 +501,7 @@
                     <font>被保険者番号：</font>
                 </td>
                 <td colspan="6" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.insuredPerson.insureLicense.number}></font>
+                    <font th:text=${servicePlan.insuredPerson.insureLicense.number}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
                 </td>
@@ -509,7 +509,7 @@
                     <font>利用者名:</font>
                 </td>
                 <td colspan="9" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.insuredPerson.name}></font>
+                    <font th:text=${servicePlan.insuredPerson.name}></font>
                 </td>
             </tr>
             <tr>
@@ -576,7 +576,7 @@
                     <font>単位数</font>
                 </td>
             </tr>
-            <div th:each="providedService : ${servicePlanAppendix.providedServices.list}">
+            <div th:each="providedService : ${servicePlan.providedServices.list}">
                 <tr>
                     <td colspan="5" class="collapse-on">
                         <font th:text=${providedService.office.name}></font>
@@ -687,43 +687,43 @@
                     <font>区分支給限度</font><br><font>基準額（単位）</font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.limitDivisionUnitNumber}></font>
+                    <font th:text=${servicePlan.limitDivisionUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
                     <font>合計</font>
                 </td>
                 <td colspan="3" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.totalUnitNumber.totalUnitNumber}>488</font>
+                    <font th:text=${servicePlan.totalUnitNumber.totalUnitNumber}>488</font>
                 </td>
                 <td colspan="3" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.totalUnitNumber.overKindUnitNumber}></font>
+                    <font th:text=${servicePlan.totalUnitNumber.overKindUnitNumber}></font>
                 </td>
                 <td colspan="3" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.totalUnitNumber.kindUnitNumber}></font>
+                    <font th:text=${servicePlan.totalUnitNumber.kindUnitNumber}></font>
                 </td>
                 <td colspan="3" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.totalUnitNumber.overDivisionUnitNumber}></font>
+                    <font th:text=${servicePlan.totalUnitNumber.overDivisionUnitNumber}></font>
                 </td>
                 <td colspan="3" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.totalUnitNumber.divisionUnitNumber}></font>
+                    <font th:text=${servicePlan.totalUnitNumber.divisionUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
                     <font></font>
                 </td>
                 <td colspan="3" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.totalUnitNumber.totalInsuranceDemand}></font>
+                    <font th:text=${servicePlan.totalUnitNumber.totalInsuranceDemand}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
                     <font></font>
                 </td>
                 <td colspan="3" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.totalUnitNumber.paidInsuranceDemandFromInsurance}></font>
+                    <font th:text=${servicePlan.totalUnitNumber.paidInsuranceDemandFromInsurance}></font>
                 </td>
                 <td colspan="3" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.totalUnitNumber.paidInsuranceDemandFromInsuredPerson}></font>
+                    <font th:text=${servicePlan.totalUnitNumber.paidInsuranceDemandFromInsuredPerson}></font>
                 </td>
                 <td colspan="3" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.totalUnitNumber.totalInsuredPersonDemand}></font>
+                    <font th:text=${servicePlan.totalUnitNumber.totalInsuredPersonDemand}></font>
                 </td>
             </tr>
             <tr>
@@ -768,128 +768,128 @@
             </tr>
             <tr>
                 <td colspan="9" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[0].serviceKindCode}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[0].serviceKindCode}></font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[0].baseUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[0].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[0].totalUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[0].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[0].overUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[0].overUnitNumber}></font>
                 </td>
                 <td colspan="9" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[1].serviceKindCode}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[1].serviceKindCode}></font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[1].baseUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[1].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[1].totalUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[1].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[1].overUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[1].overUnitNumber}></font>
                 </td>
                 <td colspan="15" class="collapse-on">
                 </td>
             </tr>
             <tr>
                 <td colspan="9" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[2].serviceKindCode}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[2].serviceKindCode}></font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[2].baseUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[2].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[2].totalUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[2].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[2].overUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[2].overUnitNumber}></font>
                 </td>
                 <td colspan="9" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[3].serviceKindCode}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[3].serviceKindCode}></font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[3].baseUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[3].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[3].totalUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[3].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[3].overUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[3].overUnitNumber}></font>
                 </td>
                 <td colspan="15" class="collapse-on">
                 </td>
             </tr>
             <tr>
                 <td colspan="9" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[4].serviceKindCode}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[4].serviceKindCode}></font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[4].baseUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[4].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[4].totalUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[4].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[4].overUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[4].overUnitNumber}></font>
                 </td>
                 <td colspan="9" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[5].serviceKindCode}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[5].serviceKindCode}></font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[5].baseUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[5].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[5].totalUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[5].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[5].overUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[5].overUnitNumber}></font>
                 </td>
                 <td colspan="15" class="collapse-on">
                 </td>
             </tr>
             <tr>
                 <td colspan="9" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[6].serviceKindCode}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[6].serviceKindCode}></font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[6].baseUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[6].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[6].totalUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[6].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[6].overUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[6].overUnitNumber}></font>
                 </td>
                 <td colspan="9" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[7].serviceKindCode}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[7].serviceKindCode}></font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[7].baseUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[7].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[7].totalUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[7].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[7].overUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[7].overUnitNumber}></font>
                 </td>
                 <td colspan="15" class="collapse-on">
                 </td>
             </tr>
             <tr>
                 <td colspan="9" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[8].serviceKindCode}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[8].serviceKindCode}></font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[8].baseUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[8].baseUnitNumber}></font>
                 </td>
                 <td colspan="2" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[8].totalUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[8].totalUnitNumber}></font>
                 </td>
                 <td colspan="4" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.kindUnitNumberManagements[8].overUnitNumber}></font>
+                    <font th:text=${servicePlan.kindUnitNumberManagements[8].overUnitNumber}></font>
                 </td>
                 <td colspan="9" class="collapse-on">
                 </td>
@@ -992,13 +992,13 @@
             </tr>
             <tr>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.useCountShortStay.previousMonthCount}></font>
+                    <font th:text=${servicePlan.useCountShortStay.previousMonthCount}></font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.useCountShortStay.thisMonthCount}></font>
+                    <font th:text=${servicePlan.useCountShortStay.thisMonthCount}></font>
                 </td>
                 <td colspan="5" class="collapse-on">
-                    <font th:text=${servicePlanAppendix.useCountShortStay.accumulateCount}></font>
+                    <font th:text=${servicePlan.useCountShortStay.accumulateCount}></font>
                 </td>
                 <td colspan="40">
                 </td>

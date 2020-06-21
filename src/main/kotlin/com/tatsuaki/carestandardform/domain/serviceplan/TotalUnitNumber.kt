@@ -1,4 +1,4 @@
-package com.tatsuaki.carestandardform.domain.serviceplanappendix
+package com.tatsuaki.carestandardform.domain.serviceplan
 
 class TotalUnitNumber (
     val totalUnitNumber: Int,

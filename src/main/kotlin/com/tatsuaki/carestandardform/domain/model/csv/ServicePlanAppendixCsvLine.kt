@@ -82,4 +82,8 @@ class ServicePlanAppendixCsvLine (
                 && this.serviceYearMonth.equals(insuredPersonAppendixCsvLine.serviceYearMonth)
     }
 
+    fun getProvidedServiceKey() : String {
+        return csvVersion + insureNumber + insuredNumber + serviceYearMonth +
+                serviceCode + serviceOfficeCode + numberOfSatellite
+    }
 }

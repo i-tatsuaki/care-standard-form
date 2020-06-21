@@ -1,6 +1,6 @@
 package com.tatsuaki.carestandardform.domain.servicePlanAppendix
 
-import com.tatsuaki.carestandardform.domain.serviceplanappendix.TotalUnitNumber
+import com.tatsuaki.carestandardform.domain.serviceplan.TotalUnitNumber
 import org.junit.Test
 import kotlin.test.assertEquals
 
@@ -8,7 +8,8 @@ class TotalUnitNumberTest {
     @Test
     fun getMethodTest() {
         // given
-        val totalUnitNumberTest = TotalUnitNumber(1, 2, 3, 4, 5, 6, 7, 8, 9)
+        val totalUnitNumberTest =
+            TotalUnitNumber(1, 2, 3, 4, 5, 6, 7, 8, 9)
 
         // expect
         assertEquals(1, totalUnitNumberTest.totalUnitNumber)

@@ -1,6 +1,6 @@
 package com.tatsuaki.carestandardform.domain.servicePlanAppendix
 
-import com.tatsuaki.carestandardform.domain.serviceplanappendix.UserCountShortStay
+import com.tatsuaki.carestandardform.domain.serviceplan.UserCountShortStay
 import org.junit.Test
 import kotlin.test.assertEquals
 

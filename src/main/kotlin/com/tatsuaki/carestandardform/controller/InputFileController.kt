@@ -3,9 +3,7 @@ package com.tatsuaki.carestandardform.controller
 import com.tatsuaki.carestandardform.domain.model.csv.InsuredPersonAppendixCsvLineFactory
 import com.tatsuaki.carestandardform.domain.model.csv.ServicePlanAppendixCsvLineFactory
 import com.tatsuaki.carestandardform.domain.model.csv.ServicePlanCsvLineFactory
-import com.tatsuaki.carestandardform.domain.serviceplan.ServicePlanAppendixFactory
 import com.tatsuaki.carestandardform.domain.serviceplan.ServicePlanFactory
-import com.tatsuaki.carestandardform.domain.serviceplanappendix.ServicePlanAppendix
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
@@ -29,16 +27,11 @@ class InputFileController() {
 
         val servicePlans = ServicePlanFactory().createServicePlans(
             insuredPersonAppendixCsvLine,
-            servicePlanCsvLine
-        )
-        model.addAttribute("servicePlan", servicePlans[0]) // TODO 複数行対応
-
-        val servicePlanAppendix = ServicePlanAppendixFactory().createServicePlanAppendixes(
-            insuredPersonAppendixCsvLine,
+            servicePlanCsvLine,
             servicePlanAppendixCsvLine
         )
-        model.addAttribute("servicePlanAppendix", servicePlanAppendix[0]) // TODO 複数行対応
 
+        model.addAttribute("servicePlan", servicePlans[0]) // TODO 複数行対応
         return "servicePlan"
     }
 

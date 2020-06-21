@@ -3,9 +3,9 @@ package com.tatsuaki.carestandardform.domain.serviceplan
 import com.tatsuaki.carestandardform.domain.ServiceProvisionYearMonth
 import com.tatsuaki.carestandardform.domain.model.*
 import com.tatsuaki.carestandardform.domain.model.csv.InsuredPersonAppendixCsvLine
+import com.tatsuaki.carestandardform.domain.model.csv.ServicePlanAppendixCsvLine
 import com.tatsuaki.carestandardform.domain.model.csv.ServicePlanCsvLine
 import com.tatsuaki.carestandardform.util.JapaneseDate
-import java.math.BigDecimal
 import java.time.LocalDate
 import java.time.LocalTime
 import java.time.YearMonth
@@ -17,7 +17,8 @@ import kotlin.streams.toList
 class ServicePlanFactory {
     fun createServicePlans(
         insuredPersonAppendixCsvLines: ArrayList<InsuredPersonAppendixCsvLine>,
-        servicePlanLines: ArrayList<ServicePlanCsvLine>
+        servicePlanLines: ArrayList<ServicePlanCsvLine>,
+        servicePlanCsvAppendixLines: ArrayList<ServicePlanAppendixCsvLine>
     ): List<ServicePlan> {
         val servicePlans: ArrayList<ServicePlan> = arrayListOf()
         insuredPersonAppendixCsvLines.stream().forEach { insuredPersonAppendixCsvLine ->
@@ -25,14 +26,18 @@ class ServicePlanFactory {
             val targetServicePlans = servicePlanLines.stream().filter {
                 it.isCorrespond(insuredPersonAppendixCsvLine)
             }.toList()
-            servicePlans.add(create(insuredPersonAppendixCsvLine, targetServicePlans))
+            val targetServicePlanAppendixes = servicePlanCsvAppendixLines.stream().filter {
+                it.isCorrespond(insuredPersonAppendixCsvLine)
+            }.toList()
+            servicePlans.add(create(insuredPersonAppendixCsvLine, targetServicePlans, targetServicePlanAppendixes))
         }
         return servicePlans
     }
 
     private fun create(
         insuredPersonAppendixCsvLine: InsuredPersonAppendixCsvLine,
-        servicePlanCsvLines: List<ServicePlanCsvLine>
+        servicePlanCsvLines: List<ServicePlanCsvLine>,
+        servicePlanAppendixCsvLines: List<ServicePlanAppendixCsvLine>
     ): ServicePlan {
         val insuredPerson = InsuredPerson(
             insuredPersonAppendixCsvLine.name,
@@ -59,10 +64,10 @@ class ServicePlanFactory {
         )
 
         val providedServices = arrayListOf<ProvidedService>()
-        serviceProvidedMap.forEach {
-
+        serviceProvidedMap.forEach {servicePlanCsvLineMap ->
+            val servicePlanAppendixCsvLine = servicePlanAppendixCsvLines.first { it.getProvidedServiceKey().equals(servicePlanCsvLineMap.key) }
             val providedTime = ProvidedTime()
-            it.value.stream().forEach { eachDay ->
+            servicePlanCsvLineMap.value.stream().forEach { eachDay ->
                 providedTime.addPlan(
                     ProvidedTime.Time(
                         LocalTime.of(
@@ -82,28 +87,39 @@ class ServicePlanFactory {
                 ProvidedService(
                     CareService(
                         "通所介護１", // TODO どこから取得するか（masterが必要そう）
-                        it.value.get(0).serviceCode,
-                        it.value.get(0).unitNumber.toInt(),
-                        90, // TODO 7票が必要
-                        119, // TODO 7票が必要
-                        488, // TODO 7票が必要
-                        30, // TODO 7票が必要
-                        458, // TODO 7票が必要
-                        58, // TODO 7票が必要
-                        400, // TODO 7票が必要
-                        "10.00", // TODO 7票が必要
-                        4880, // TODO 7票が必要
-                        90, // TODO 7票が必要
-                        4392, // TODO 7票が必要
-                        488, // TODO 7票が必要
-                        488 // TODO 7票が必要
+                        servicePlanAppendixCsvLine.serviceCode,
+                        servicePlanAppendixCsvLine.unitNumber.toInt(),
+                        servicePlanAppendixCsvLine.discountRate.toInt(),
+                        servicePlanAppendixCsvLine.discountedUnitNumber.toInt(),
+                        servicePlanAppendixCsvLine.totalUnitNumber.toInt(),
+                        servicePlanAppendixCsvLine.overKindUnitNumber.toInt(),
+                        servicePlanAppendixCsvLine.kindUnitNumber.toInt(),
+                        servicePlanAppendixCsvLine.overDivisionUnitNumber.toInt(),
+                        servicePlanAppendixCsvLine.divisionUnitNumber.toInt(),
+                        servicePlanAppendixCsvLine.unitPrice,
+                        servicePlanAppendixCsvLine.totalInsuranceDemand.toInt(),
+                        servicePlanAppendixCsvLine.benefitsRate.toInt(),
+                        servicePlanAppendixCsvLine.paidInsuranceDemandFromInsurance.toInt(),
+                        servicePlanAppendixCsvLine.paidInsuranceDemandFromInsuredPerson.toInt(),
+                        servicePlanAppendixCsvLine.totalInsuredPersonDemand.toInt()
                     ),
-                    Office(it.value.get(0).serviceOfficeName, it.value.get(0).serviceOfficeCode, "03-1234-5678"),
+                    Office(servicePlanCsvLineMap.value.get(0).serviceOfficeName, servicePlanCsvLineMap.value.get(0).serviceOfficeCode, "03-1234-5678"),
                     // TODO サービス事業所の電話番号はどこから取得するか
                     providedTime
                 )
             )
         }
+
+        val kindUnitNumberManagements = mutableListOf<KindUnitNumberManagement>()
+        kindUnitNumberManagements.add(KindUnitNumberManagement(insuredPersonAppendixCsvLine.serviceKindCode1, insuredPersonAppendixCsvLine.creditLimit1, insuredPersonAppendixCsvLine.totalUnit1, insuredPersonAppendixCsvLine.unitOverCreditLimit1))
+        kindUnitNumberManagements.add(KindUnitNumberManagement(insuredPersonAppendixCsvLine.serviceKindCode2, insuredPersonAppendixCsvLine.creditLimit2, insuredPersonAppendixCsvLine.totalUnit2, insuredPersonAppendixCsvLine.unitOverCreditLimit2))
+        kindUnitNumberManagements.add(KindUnitNumberManagement(insuredPersonAppendixCsvLine.serviceKindCode3, insuredPersonAppendixCsvLine.creditLimit3, insuredPersonAppendixCsvLine.totalUnit3, insuredPersonAppendixCsvLine.unitOverCreditLimit3))
+        kindUnitNumberManagements.add(KindUnitNumberManagement(insuredPersonAppendixCsvLine.serviceKindCode4, insuredPersonAppendixCsvLine.creditLimit4, insuredPersonAppendixCsvLine.totalUnit4, insuredPersonAppendixCsvLine.unitOverCreditLimit4))
+        kindUnitNumberManagements.add(KindUnitNumberManagement(insuredPersonAppendixCsvLine.serviceKindCode5, insuredPersonAppendixCsvLine.creditLimit5, insuredPersonAppendixCsvLine.totalUnit5, insuredPersonAppendixCsvLine.unitOverCreditLimit5))
+        kindUnitNumberManagements.add(KindUnitNumberManagement(insuredPersonAppendixCsvLine.serviceKindCode6, insuredPersonAppendixCsvLine.creditLimit6, insuredPersonAppendixCsvLine.totalUnit6, insuredPersonAppendixCsvLine.unitOverCreditLimit6))
+        kindUnitNumberManagements.add(KindUnitNumberManagement(insuredPersonAppendixCsvLine.serviceKindCode7, insuredPersonAppendixCsvLine.creditLimit7, insuredPersonAppendixCsvLine.totalUnit7, insuredPersonAppendixCsvLine.unitOverCreditLimit7))
+        kindUnitNumberManagements.add(KindUnitNumberManagement(insuredPersonAppendixCsvLine.serviceKindCode8, insuredPersonAppendixCsvLine.creditLimit8, insuredPersonAppendixCsvLine.totalUnit8, insuredPersonAppendixCsvLine.unitOverCreditLimit8))
+        kindUnitNumberManagements.add(KindUnitNumberManagement(insuredPersonAppendixCsvLine.serviceKindCode9, insuredPersonAppendixCsvLine.creditLimit9, insuredPersonAppendixCsvLine.totalUnit9, insuredPersonAppendixCsvLine.unitOverCreditLimit9))
 
         return ServicePlan(
             ServiceProvisionYearMonth(
@@ -124,7 +140,14 @@ class ServicePlanFactory {
             insuredPerson,
             LocalDate.of(2019, 12, 30), // TODO どこの項目を入れるか確認
             insuredPersonAppendixCsvLine.stayDaysPreviousMonth.toInt(),
-            ProvidedServices(providedServices)
+            ProvidedServices(providedServices),
+            insuredPersonAppendixCsvLine.creditLimit.toInt(),
+            TotalUnitNumber(1, 2, 3, 4, 5, 6, 7, 8, 9),
+            // TODO TotalUnitNumberは情報が無い
+            kindUnitNumberManagements,
+            TotalUnitNumberManagement(46, 47, 48),
+            UserCountShortStay(5, 10, 15)
+            // TODO UserCountShortStayはどこの情報を取るか要検討
         )
     }
 }
