@@ -13,7 +13,7 @@ data class CareService(
     val kindUnitNumber: Int,
     val overDivisionUnitNumber: Int,
     val divisionUnitNumber: Int,
-    val unitPrice: BigDecimal,
+    val unitPrice: String,
     val totalInsuranceDemand: Int,
     val benefitsRate: Int,
     val paidInsuranceDemandFromInsurance: Int,

@@ -14,7 +14,7 @@ class ProvidedServiceTest {
     fun ProvidedServiceGetMethodTest() {
         // given
         val office = Office("とある通所介護事業所", "1234567890", "03-1234-5678")
-        val careService = CareService("通所介護１", "131111", 132, 90, 119, 488, 30, 458, 58, 400, BigDecimal(10.0), 4880, 90, 4392, 488, 488)
+        val careService = CareService("通所介護１", "131111", 132, 90, 119, 488, 30, 458, 58, 400, "10.00", 4880, 90, 4392, 488, 488)
         val providedDate = ProvidedTime()
 
         val providedService = ProvidedService(

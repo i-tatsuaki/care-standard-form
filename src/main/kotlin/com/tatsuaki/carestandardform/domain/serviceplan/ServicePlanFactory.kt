@@ -91,7 +91,7 @@ class ServicePlanFactory {
                         458, // TODO 7票が必要
                         58, // TODO 7票が必要
                         400, // TODO 7票が必要
-                        BigDecimal(10.0), // TODO 7票が必要
+                        "10.00", // TODO 7票が必要
                         4880, // TODO 7票が必要
                         90, // TODO 7票が必要
                         4392, // TODO 7票が必要
