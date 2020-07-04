@@ -88,7 +88,7 @@ class ServicePlanFactory {
             providedServices.add(
                 ProvidedService(
                     CareService(
-                        "通所介護１", // TODO どこから取得するか（masterが必要そう）
+                        "(${servicePlanAppendixCsvLine.serviceCode})", // サービス名はcsvに含まれないため、サービスコードで代替する
                         servicePlanAppendixCsvLine.serviceCode,
                         servicePlanAppendixCsvLine.unitNumber.toInt(),
                         servicePlanAppendixCsvLine.discountRate.toInt(),
