@@ -153,7 +153,6 @@ class ServicePlanFactory {
             TotalUnitNumber("", "", "", "", "", "", "", "", ""),
             // 単位数合計情報はcsvに含まれていないため空白とする
             kindUnitNumberManagements,
-            TotalUnitNumberManagement(46, 47, 48),
             UserCountShortStay(5, 10, 15)
             // TODO UserCountShortStayはどこの情報を取るか要検討
         )

@@ -16,6 +16,5 @@ class ServicePlan(
     val limitDivisionUnitNumber: Int,
     val totalUnitNumber: TotalUnitNumber,
     val kindUnitNumberManagements: List<KindUnitNumberManagement>,
-    val totalUnitNumberManagement: TotalUnitNumberManagement,
     val useCountShortStay: UserCountShortStay
 )
