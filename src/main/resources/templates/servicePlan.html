@@ -59,7 +59,7 @@
             </colgroup>
             <tbody>
                 <tr>
-                    <td colspan="3" class="collapse-on">
+                    <td colspan="3">
                         <font>第６票</font>
                     </td>
                     <td colspan="44">
@@ -70,25 +70,16 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="5" class="collapse-on">
+                    <td colspan="3">
                         <font>認定済み</font>
                     </td>
-                    <td colspan="8">
+                    <td colspan="10">
                     </td>
-                    <td colspan="3">
-                        <font th:text=${servicePlan.serviceProvisionYearMonth.yearMonth.year}></font>
-                    </td>
-                    <td colspan="1">
-                        <font>年</font>
-                    </td>
-                    <td colspan="1">
-                        <font th:text=${servicePlan.serviceProvisionYearMonth.yearMonth.monthValue}></font>
-                    </td>
-                    <td colspan="2">
-                        <font>月分</font>
-                    </td>
-                    <td colspan="13">
-                        <font>サービス提供票</font>
+                    <td colspan="20">
+                        <span th:text=${servicePlan.serviceProvisionYearMonth.yearMonth.year}>xxxx</span>
+                        年
+                        <span th:text=${servicePlan.serviceProvisionYearMonth.yearMonth.monthValue}>xx</span>
+                        月分 サービス提供票
                     </td>
                     <td colspan="4">
                     </td>
@@ -231,7 +222,9 @@
                     <td colspan="3" rowspan="3" class="collapse-on">
                         <font>限度額</font><br><font>適用期間</font>
                     </td>
-                    <td colspan="6" rowspan="1" class="collapse-on">
+                    <td colspan="6" rowspan="3" class="collapse-on">
+                        <span th:text=${servicePlan.insuredPerson.insureLicense.creditLimitFrom.year}>xxxx</span>年<span th:text=${servicePlan.insuredPerson.insureLicense.creditLimitFrom.monthValue}></span>月から<br>
+                        <span th:text=${servicePlan.insuredPerson.insureLicense.creditLimitTo.year}>xxxx</span>年<span th:text=${servicePlan.insuredPerson.insureLicense.creditLimitTo.monthValue}></span>月まで
                     </td>
                     <td colspan="3" rowspan="3" class="collapse-on">
                         <font>前月までの</font><br><font>短期入所</font><br><font>利用日数</font>
@@ -242,7 +235,7 @@
                 </tr>
                 <tr>
                     <td colspan="1" rowspan="2" class="collapse-on">
-                        <font th:text=${servicePlan.insuredPerson.birthDate.year}></font>
+                        <font th:text=${servicePlan.insuredPerson.birthDate.getEraYear()}></font>
                     </td>
                     <td colspan="1" rowspan="2" class="collapse-on">
                         <font>年</font>
@@ -260,13 +253,10 @@
                         <font>日</font>
                     </td>
                     <td colspan="3" rowspan="1" class="collapse-on">
-                        <font>前回<br></font><font>要介護状態区分</font>
+                        <font>前回要介護状態区分</font>
                     </td>
                     <td colspan="7" rowspan="1" class="collapse-on">
                         <font th:text=${servicePlan.insuredPerson.insureLicense.previousCareLevel}></font>
-                    </td>
-                    <td colspan="6" rowspan="1" class="collapse-on">
-                        <font th:text=${servicePlan.insuredPerson.insureLicense.creditLimitFrom.year}></font><font>年</font><font th:text=${servicePlan.insuredPerson.insureLicense.creditLimitFrom.monthValue}></font><font>月から</font>
                     </td>
                  </tr>
                 <tr>
@@ -275,9 +265,6 @@
                     </td>
                     <td colspan="7" rowspan="1" class="collapse-on">
                         <font th:text=${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate.year}></font><font>年</font><font th:text=${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate.monthValue}></font><font>月</font><font th:text=${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate.dayOfMonth}></font><font>日</font>
-                    </td>
-                    <td colspan="6" rowspan="1" class="collapse-on">
-                        <font th:text=${servicePlan.insuredPerson.insureLicense.creditLimitTo.year}></font><font>年</font><font th:text=${servicePlan.insuredPerson.insureLicense.creditLimitTo.monthValue}></font><font>月まで</font>
                     </td>
                     <td colspan="2" rowspan="1" class="collapse-on">
                         <font>日</font>
@@ -396,7 +383,6 @@
                         </td>
                     </tr>
                 </div>
-
             </tbody>
         </table>
     </div>
@@ -462,57 +448,31 @@
             </colgroup>
             <tbody>
             <tr>
-                <td colspan="3" class="collapse-on">
-                    <font>第７票</font>
+                <td colspan="2">
+                    第７票
                 </td>
-                <td colspan="52">
+                <td colspan="14">
                 </td>
-            </tr>
-            <tr>
-                <td colspan="55">
+                <td colspan="19">
+                    <font>サービス提供票別表(<span th:text=${servicePlan.creationDate.monthValue}>xx</span>月分)</font>
                 </td>
-            </tr>
-            <tr>
-                <td colspan="18" rowspan="2" class="collapse-on">
+                <td colspan="10">
                 </td>
-                <td colspan="19" rowspan="2" class="collapse-on">
-                    <font>サービス提供票別表</font>
-                </td>
-                <td colspan="4" rowspan="2" class="collapse-on">
-                </td>
-                <td colspan="5" rowspan="1" class="collapse-on">
-                    <font>作成年月日</font>
-                </td>
-                <td colspan="9" rowspan="1" class="collapse-on">
-                    <font th:text=${servicePlan.creationDate.year}></font><font>年</font><font th:text=${servicePlan.creationDate.monthValue}></font><font>月</font><font th:text=${servicePlan.creationDate.dayOfMonth}></font><font>日</font>
+                <td colspan="8">
+                    <font>作成年月日：<span th:text=${servicePlan.creationDate.year}>xxxx</span>年<span th:text=${servicePlan.creationDate.monthValue}>xx</span>月<span th:text=${servicePlan.creationDate.dayOfMonth}>xx</span>日</font>
                 </td>
             </tr>
             <tr>
-                <td colspan="5" rowspan="1" class="collapse-on">
-                </td>
-                <td colspan="9" rowspan="1" class="collapse-on">
-                    <font>(</font><font th:text=${servicePlan.creationDate.monthValue}></font><font>月分)</font>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="9" class="collapse-on">
+                <td colspan="9">
                     <font>区分支給限度管理・利用者負担計算</font>
                 </td>
-                <td colspan="18" class="collapse-on">
+                <td colspan="32">
                 </td>
-                <td colspan="6" class="collapse-on">
-                    <font>被保険者番号：</font>
+                <td colspan="6">
+                    <font>被保険者番号：<span th:text=${servicePlan.insuredPerson.insureLicense.number}>xxxxxxxxxx</span></font>
                 </td>
-                <td colspan="6" class="collapse-on">
-                    <font th:text=${servicePlan.insuredPerson.insureLicense.number}></font>
-                </td>
-                <td colspan="2" class="collapse-on">
-                </td>
-                <td colspan="5" class="collapse-on">
-                    <font>利用者名:</font>
-                </td>
-                <td colspan="9" class="collapse-on">
-                    <font th:text=${servicePlan.insuredPerson.name}></font>
+                <td colspan="8">
+                    <font>利用者名：<span th:text=${servicePlan.insuredPerson.name}></span></font>
                 </td>
             </tr>
             <tr>
@@ -541,16 +501,16 @@
                     <font>サービス</font><br><font>単位/金額</font>
                 </td>
                 <td colspan="3" rowspan="2" class="collapse-on">
-                    <font>種類支給限度</font><br><font>基準を超える</font><br><font>単位数</font>
+                    <font>種類支給限度<br>基準を超える<br>単位数</font>
                 </td>
                 <td colspan="3" rowspan="2" class="collapse-on">
-                    <font>種類支給限度</font><br><font>基準内単位数</font>
+                    <font>種類支給限度<br>基準内単位数</font>
                 </td>
                 <td colspan="3" rowspan="2" class="collapse-on">
-                    <font>区分支給限度</font><br><font>基準を超える</font><br><font>単位数</font>
+                    <font>区分支給限度<br>基準を超える<br>単位数</font>
                 </td>
                 <td colspan="3" rowspan="2" class="collapse-on">
-                    <font>区分支給限度</font><br><font>基準内単位数</font>
+                    <font>区分支給限度<br>基準内単位数</font>
                 </td>
                 <td colspan="2" rowspan="2" class="collapse-on">
                     <font>単位数</font><br><font>単価</font>
@@ -737,8 +697,9 @@
                 <td colspan="9">
                     <font>種類別支給限度額管理</font>
                 </td>
-                <td colspan="46">
-                    <font></font>
+                <td colspan="31">
+                </td>
+                <td colspan="15">
                 </td>
             </tr>
             <tr>
@@ -966,7 +927,9 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="55">
+                <td colspan="40">
+                </td>
+                <td colspan="15">
                 </td>
             </tr>
             <tr>
@@ -977,7 +940,9 @@
                 <td colspan="9">
                     <font>要介護認定期間中の短期入所利用日数</font>
                 </td>
-                <td colspan="46">
+                <td colspan="6">
+                </td>
+                <td colspan="40">
                 </td>
             </tr>
             <tr>

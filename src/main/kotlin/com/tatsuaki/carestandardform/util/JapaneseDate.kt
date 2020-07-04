@@ -23,4 +23,9 @@ data class JapaneseDate(val date: LocalDate) {
         val eraFormatter = DateTimeFormatter.ofPattern("G")
         return eraFormatter.format(japaneseDate)
     }
+
+    fun getEraYear(): String {
+        val japaneseDate = JapaneseDate.from(date)
+        return DateTimeFormatter.ofPattern("y").format(japaneseDate)
+    }
 }

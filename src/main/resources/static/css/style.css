@@ -1,9 +1,14 @@
+html {
+  height: 100%;
+}
+
 /* body */
 body {
   font-family: "Open Sans", sans-serif;
   font-size: .1vw;
   white-space: nowrap;
   line-height: 1.25;
+  height: 200%
 }
 
 /* header */
@@ -23,18 +28,39 @@ body {
 }
 
 /* table */
+#table-service-plan {
+  height: 50%;
+}
+
 #table-service-plan table {
   border-collapse: collapse;
   table-layout: fixed;
+}
+
+#table-service-plan td {
+  text-align: center;
 }
 
 #table-service-plan .collapse-on {
   border:1px solid #333;
 }
 
+#table-service-plan-appendix {
+  height: 50%;
+}
+
 #table-service-plan-appendix table {
   border-collapse: collapse;
   table-layout: fixed;
+  height: 100%;
+}
+
+#table-service-plan-appendix tr {
+  height: 1%;
+}
+
+#table-service-plan-appendix td {
+  text-align: center;
 }
 
 #table-service-plan-appendix .collapse-on {
