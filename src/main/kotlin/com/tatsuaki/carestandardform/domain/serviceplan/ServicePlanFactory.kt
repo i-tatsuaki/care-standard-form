@@ -137,11 +137,14 @@ class ServicePlanFactory {
                 servicePlanCsvLines.get(0).creationDate,
                 DateTimeFormatter.ofPattern("yyyyMMdd")
             ),
-            Insure(insuredPersonAppendixCsvLine.insureNumber, ""), // TODO 保険者名をどこから取得するか
+            Insure(insuredPersonAppendixCsvLine.insureNumber, "(${insuredPersonAppendixCsvLine.insureNumber})"), // 保険者名はcsvから取得できないため保険者番号を代替とする
             CareManager(
                 servicePlanCsvLines.get(0).creationPersonName,
-                Office("", insuredPersonAppendixCsvLine.agreementOffice, "")
-            ), // TODO ケアマネ事業所名、ケアマネ電話番号はどこから取得するか
+                Office(
+                    servicePlanAppendixCsvLines[0].creationOfficeName,
+                    insuredPersonAppendixCsvLine.agreementOffice,
+                    "") // 居宅介護支援事業所の電話番号はcsvから取得できないため空白とする
+            ),
             insuredPerson,
             LocalDate.of(2019, 12, 30), // TODO どこの項目を入れるか確認
             insuredPersonAppendixCsvLine.stayDaysPreviousMonth.toInt(),
