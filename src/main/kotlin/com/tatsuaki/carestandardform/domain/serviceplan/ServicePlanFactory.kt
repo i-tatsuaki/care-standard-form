@@ -105,8 +105,11 @@ class ServicePlanFactory {
                         servicePlanAppendixCsvLine.paidInsuranceDemandFromInsuredPerson.toInt(),
                         servicePlanAppendixCsvLine.totalInsuredPersonDemand.toInt()
                     ),
-                    Office(servicePlanCsvLineMap.value.get(0).serviceOfficeName, servicePlanCsvLineMap.value.get(0).serviceOfficeCode, "03-1234-5678"),
-                    // TODO サービス事業所の電話番号はどこから取得するか
+                    Office(
+                        servicePlanCsvLineMap.value.get(0).serviceOfficeName,
+                        servicePlanCsvLineMap.value.get(0).serviceOfficeCode,
+                        "" // サービス事業所の電話番号はcsvに含まれていないため空白とする
+                    ),
                     providedTime
                 )
             )
