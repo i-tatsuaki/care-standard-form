@@ -10,7 +10,7 @@ class ServicePlan(
     val insure: Insure,
     val careManager: CareManager,
     val insuredPerson: InsuredPerson,
-    val notificationDate: LocalDate,
+    val notificationDate: String,
     val shortStayUseDaysOfPreviousMonth: Int,
     val providedServices: ProvidedServices,
     val limitDivisionUnitNumber: Int,

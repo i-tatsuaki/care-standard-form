@@ -146,7 +146,7 @@ class ServicePlanFactory {
                     "") // 居宅介護支援事業所の電話番号はcsvから取得できないため空白とする
             ),
             insuredPerson,
-            LocalDate.of(2019, 12, 30), // TODO どこの項目を入れるか確認
+            "", // 届出年月日はcsvに含まれていないため空白とする
             insuredPersonAppendixCsvLine.stayDaysPreviousMonth.toInt(),
             ProvidedServices(providedServices),
             insuredPersonAppendixCsvLine.creditLimit.toInt(),
