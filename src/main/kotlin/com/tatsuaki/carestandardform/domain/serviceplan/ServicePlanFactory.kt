@@ -150,8 +150,8 @@ class ServicePlanFactory {
             insuredPersonAppendixCsvLine.stayDaysPreviousMonth.toInt(),
             ProvidedServices(providedServices),
             insuredPersonAppendixCsvLine.creditLimit.toInt(),
-            TotalUnitNumber(1, 2, 3, 4, 5, 6, 7, 8, 9),
-            // TODO TotalUnitNumberは情報が無い
+            TotalUnitNumber("", "", "", "", "", "", "", "", ""),
+            // 単位数合計情報はcsvに含まれていないため空白とする
             kindUnitNumberManagements,
             TotalUnitNumberManagement(46, 47, 48),
             UserCountShortStay(5, 10, 15)

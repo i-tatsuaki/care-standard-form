@@ -9,18 +9,18 @@ class TotalUnitNumberTest {
     fun getMethodTest() {
         // given
         val totalUnitNumberTest =
-            TotalUnitNumber(1, 2, 3, 4, 5, 6, 7, 8, 9)
+            TotalUnitNumber("1", "2","3", "4", "5", "6", "7", "8", "9")
 
         // expect
-        assertEquals(1, totalUnitNumberTest.totalUnitNumber)
-        assertEquals(2, totalUnitNumberTest.overKindUnitNumber)
-        assertEquals(3, totalUnitNumberTest.kindUnitNumber)
-        assertEquals(4, totalUnitNumberTest.overDivisionUnitNumber)
-        assertEquals(5, totalUnitNumberTest.divisionUnitNumber)
-        assertEquals(6, totalUnitNumberTest.totalInsuranceDemand)
-        assertEquals(7, totalUnitNumberTest.paidInsuranceDemandFromInsurance)
-        assertEquals(8, totalUnitNumberTest.paidInsuranceDemandFromInsuredPerson)
-        assertEquals(9, totalUnitNumberTest.totalInsuredPersonDemand)
+        assertEquals("1", totalUnitNumberTest.totalUnitNumber)
+        assertEquals("2", totalUnitNumberTest.overKindUnitNumber)
+        assertEquals("3", totalUnitNumberTest.kindUnitNumber)
+        assertEquals("4", totalUnitNumberTest.overDivisionUnitNumber)
+        assertEquals("5", totalUnitNumberTest.divisionUnitNumber)
+        assertEquals("6", totalUnitNumberTest.totalInsuranceDemand)
+        assertEquals("7", totalUnitNumberTest.paidInsuranceDemandFromInsurance)
+        assertEquals("8", totalUnitNumberTest.paidInsuranceDemandFromInsuredPerson)
+        assertEquals("9", totalUnitNumberTest.totalInsuredPersonDemand)
 
     }
 }
