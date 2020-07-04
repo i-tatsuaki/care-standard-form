@@ -47,8 +47,10 @@ class ServicePlanFactory {
             InsureLicense(
                 insuredPersonAppendixCsvLine.insuredNumber,
                 CareLevel.fromDivision(insuredPersonAppendixCsvLine.careLevel),
-                "要介護1", // TODO どこの項目を入れるか確認
-                LocalDate.of(2019, 11, 30), // TODO どこの項目を入れるか確認
+                CareLevel.fromDivision(insuredPersonAppendixCsvLine.previousCareLevel),
+                LocalDate.parse(
+                    insuredPersonAppendixCsvLine.careLevelChangedDate, DateTimeFormatter.ofPattern("yyyyMMdd"))
+                ,
                 insuredPersonAppendixCsvLine.creditLimit.toInt(),
                 LocalDate.parse(
                     insuredPersonAppendixCsvLine.creditLimitApplyStartDate, DateTimeFormatter.ofPattern("yyyyMMdd")

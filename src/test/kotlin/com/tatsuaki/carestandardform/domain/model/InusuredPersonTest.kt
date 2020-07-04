@@ -18,7 +18,7 @@ class InusuredPersonTest {
             InsureLicense(
                 "H123456789",
                 CareLevel.要介護１,
-                "要支援1",
+                CareLevel.要支援１,
                 LocalDate.of(2019, 12, 1),
                 12345,
                 LocalDate.of(2019, 12, 2),
@@ -33,7 +33,7 @@ class InusuredPersonTest {
         assertEquals(LocalDate.of(1988, 12, 22), insuredPerson.birthDate.date)
         assertEquals("H123456789", insuredPerson.insureLicense.number)
         assertEquals(CareLevel.要介護１, insuredPerson.insureLicense.careLevel)
-        assertEquals("要支援1", insuredPerson.insureLicense.previousCareLevel)
+        assertEquals(CareLevel.要支援１, insuredPerson.insureLicense.previousCareLevel)
         assertEquals(LocalDate.of(2019, 12, 1), insuredPerson.insureLicense.careLevelUpdateDate)
         assertEquals(12345, insuredPerson.insureLicense.creditLimit)
         assertEquals(LocalDate.of(2019, 12, 2), insuredPerson.insureLicense.creditLimitFrom)

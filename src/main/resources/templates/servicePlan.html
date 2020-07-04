@@ -259,8 +259,8 @@
                     <td colspan="1" rowspan="2" class="collapse-on">
                         <font>日</font>
                     </td>
-                    <td colspan="3" rowspan="2" class="collapse-on">
-                        <font>変更後<br></font><font>要介護状態区分</font><br><font>変更日</font>
+                    <td colspan="3" rowspan="1" class="collapse-on">
+                        <font>前回<br></font><font>要介護状態区分</font>
                     </td>
                     <td colspan="7" rowspan="1" class="collapse-on">
                         <font th:text=${servicePlan.insuredPerson.insureLicense.previousCareLevel}></font>
@@ -270,6 +270,9 @@
                     </td>
                  </tr>
                 <tr>
+                    <td colspan="3" rowspan="1" class="collapse-on">
+                        <font>変更日</font>
+                    </td>
                     <td colspan="7" rowspan="1" class="collapse-on">
                         <font th:text=${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate.year}></font><font>年</font><font th:text=${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate.monthValue}></font><font>月</font><font th:text=${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate.dayOfMonth}></font><font>日</font>
                     </td>
