@@ -1,6 +1,8 @@
 /* body */
 body {
   font-family: "Open Sans", sans-serif;
+  font-size: .1vw;
+  white-space: nowrap;
   line-height: 1.25;
 }
 
@@ -25,9 +27,7 @@ body {
   border-collapse: collapse;
   table-layout: fixed;
 }
-#table-service-plan font {
-  font-size: 10px;
-}
+
 #table-service-plan .collapse-on {
   border:1px solid #333;
 }
@@ -36,9 +36,7 @@ body {
   border-collapse: collapse;
   table-layout: fixed;
 }
-#table-service-plan-appendix font {
-  font-size: 10px;
-}
+
 #table-service-plan-appendix .collapse-on {
   border:1px solid #333;
 }
