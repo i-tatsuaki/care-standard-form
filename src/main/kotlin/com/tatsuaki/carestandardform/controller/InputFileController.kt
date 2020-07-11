@@ -31,7 +31,7 @@ class InputFileController() {
             servicePlanAppendixCsvLine
         )
 
-        model.addAttribute("servicePlan", servicePlans[0]) // TODO 複数行対応
+        model.addAttribute("servicePlans", servicePlans)
         return "servicePlan"
     }
 

@@ -6,6 +6,12 @@
     <title>提供票</title>
 </head>
 <body>
+<div>
+    <select id="select-service-plan" name="select-service-plan">
+        <option th:each="servicePlan, stat : ${servicePlans}" th:value="${stat.index}">[[${servicePlan.insuredPerson.name}]]</option>
+    </select>
+</div>
+<div class="output-area" th:each="servicePlan, stat : ${servicePlans}" th:id="'output-' + ${stat.index}">
     <div id="table-service-plan">
         <table>
             <colgroup>
@@ -974,5 +980,7 @@
             </tbody>
         </table>
     </div>
+</div>
+<script src="/script/servicePlan.js"></script>
 </body>
 </html>
