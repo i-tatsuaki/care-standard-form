@@ -9,8 +9,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.0.0
       - name: Change Locale
-        run: sudo apt-get install language-pack-ja
-        run: sudo update-locale LANG=ja_JP.UTF-8
+        run: |
+          sudo apt-get install language-pack-ja
+          sudo update-locale LANG=ja_JP.UTF-8
       - name: config JRE
         uses: actions/setup-java@v1
         with:
