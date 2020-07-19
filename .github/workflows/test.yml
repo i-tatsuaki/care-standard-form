@@ -3,8 +3,11 @@ on: push
 
 jobs:
   build:
-    name: Greeting
+    name: Execute Test
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, World!"
-
+      - name: Checkout
+        uses: actions/checkout@v2.0.0
+      - name: Execute
+        run: mvn test
+      
