@@ -3,7 +3,7 @@ html {
 }
 
 /* body */
-body {
+body.service-plan-body {
   font-family: "Open Sans", sans-serif;
   font-size: .1vw;
   white-space: nowrap;
