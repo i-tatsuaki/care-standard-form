@@ -217,7 +217,7 @@
                         <font>要介護状態区分</font>
                     </td>
                     <td colspan="7" rowspan="1" class="collapse-on">
-                        <font th:text=${servicePlan.insuredPerson.insureLicense.careLevel.name()}></font>
+                        <font th:text="${servicePlan.insuredPerson.insureLicense.careLevel} ? ${servicePlan.insuredPerson.insureLicense.careLevel.name()}"></font>
                     </td>
                     <td colspan="4" rowspan="3" class="collapse-on">
                         <font>区分支給</font><br><font>限度基準額</font>
@@ -229,8 +229,8 @@
                         <font>限度額</font><br><font>適用期間</font>
                     </td>
                     <td colspan="6" rowspan="3" class="collapse-on">
-                        <span th:text=${servicePlan.insuredPerson.insureLicense.creditLimitFrom.year}>xxxx</span>年<span th:text=${servicePlan.insuredPerson.insureLicense.creditLimitFrom.monthValue}></span>月から<br>
-                        <span th:text=${servicePlan.insuredPerson.insureLicense.creditLimitTo.year}>xxxx</span>年<span th:text=${servicePlan.insuredPerson.insureLicense.creditLimitTo.monthValue}></span>月まで
+                        <span th:text="${servicePlan.insuredPerson.insureLicense.creditLimitFrom} ? ${servicePlan.insuredPerson.insureLicense.creditLimitFrom.year}">xxxx</span>年<span th:text="${servicePlan.insuredPerson.insureLicense.creditLimitFrom} ? ${servicePlan.insuredPerson.insureLicense.creditLimitFrom.monthValue}"></span>月から<br>
+                        <span th:text="${servicePlan.insuredPerson.insureLicense.creditLimitTo} ? ${servicePlan.insuredPerson.insureLicense.creditLimitTo.year}">xxxx</span>年<span th:text="${servicePlan.insuredPerson.insureLicense.creditLimitTo} ? ${servicePlan.insuredPerson.insureLicense.creditLimitTo.monthValue}"></span>月まで
                     </td>
                     <td colspan="3" rowspan="3" class="collapse-on">
                         <font>前月までの</font><br><font>短期入所</font><br><font>利用日数</font>
@@ -270,7 +270,7 @@
                         <font>変更日</font>
                     </td>
                     <td colspan="7" rowspan="1" class="collapse-on">
-                        <font th:text=${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate.year}></font><font>年</font><font th:text=${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate.monthValue}></font><font>月</font><font th:text=${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate.dayOfMonth}></font><font>日</font>
+                        <font th:text="${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate} ? ${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate.year}"></font><font>年</font><font th:text="${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate} ? ${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate.monthValue}"></font><font>月</font><font th:text="${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate} ? ${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate.dayOfMonth}"></font><font>日</font>
                     </td>
                     <td colspan="2" rowspan="1" class="collapse-on">
                         <font>日</font>

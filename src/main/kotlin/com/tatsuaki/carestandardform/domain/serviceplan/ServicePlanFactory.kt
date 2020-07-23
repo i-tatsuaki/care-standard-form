@@ -46,16 +46,16 @@ class ServicePlanFactory {
             JapaneseDate(LocalDate.parse(insuredPersonAppendixCsvLine.birth, DateTimeFormatter.ofPattern("yyyyMMdd"))),
             InsureLicense(
                 insuredPersonAppendixCsvLine.insuredNumber,
-                CareLevel.fromDivision(insuredPersonAppendixCsvLine.careLevel),
-                CareLevel.fromDivision(insuredPersonAppendixCsvLine.previousCareLevel),
-                LocalDate.parse(
+                if (insuredPersonAppendixCsvLine.careLevel.equals("")) null else CareLevel.fromDivision(insuredPersonAppendixCsvLine.careLevel),
+                if (insuredPersonAppendixCsvLine.previousCareLevel.equals("")) null else CareLevel.fromDivision(insuredPersonAppendixCsvLine.previousCareLevel),
+                if (insuredPersonAppendixCsvLine.careLevelChangedDate.equals("")) null else LocalDate.parse(
                     insuredPersonAppendixCsvLine.careLevelChangedDate, DateTimeFormatter.ofPattern("yyyyMMdd"))
                 ,
-                insuredPersonAppendixCsvLine.creditLimit.toInt(),
-                LocalDate.parse(
+                if (insuredPersonAppendixCsvLine.previousCareLevel.equals("")) null else insuredPersonAppendixCsvLine.creditLimit.toInt(),
+                if (insuredPersonAppendixCsvLine.creditLimitApplyStartDate.equals("")) null else LocalDate.parse(
                     insuredPersonAppendixCsvLine.creditLimitApplyStartDate, DateTimeFormatter.ofPattern("yyyyMMdd")
                 ),
-                LocalDate.parse(
+                if (insuredPersonAppendixCsvLine.creditLimitApplyEndDate.equals("")) null else LocalDate.parse(
                     insuredPersonAppendixCsvLine.creditLimitApplyEndDate, DateTimeFormatter.ofPattern("yyyyMMdd")
                 )
             )
@@ -91,19 +91,19 @@ class ServicePlanFactory {
                         "(${servicePlanAppendixCsvLine.serviceCode})", // サービス名はcsvに含まれないため、サービスコードで代替する
                         servicePlanAppendixCsvLine.serviceCode,
                         servicePlanAppendixCsvLine.unitNumber.toInt(),
-                        servicePlanAppendixCsvLine.discountRate.toInt(),
-                        servicePlanAppendixCsvLine.discountedUnitNumber.toInt(),
-                        servicePlanAppendixCsvLine.totalUnitNumber.toInt(),
-                        servicePlanAppendixCsvLine.overKindUnitNumber.toInt(),
-                        servicePlanAppendixCsvLine.kindUnitNumber.toInt(),
-                        servicePlanAppendixCsvLine.overDivisionUnitNumber.toInt(),
-                        servicePlanAppendixCsvLine.divisionUnitNumber.toInt(),
+                        if (servicePlanAppendixCsvLine.discountRate.equals("")) null else servicePlanAppendixCsvLine.discountRate.toInt(),
+                        if (servicePlanAppendixCsvLine.discountedUnitNumber.equals("")) null else servicePlanAppendixCsvLine.discountedUnitNumber.toInt(),
+                        if (servicePlanAppendixCsvLine.totalUnitNumber.equals("")) null else servicePlanAppendixCsvLine.totalUnitNumber.toInt(),
+                        if (servicePlanAppendixCsvLine.overKindUnitNumber.equals("")) null else servicePlanAppendixCsvLine.overKindUnitNumber.toInt(),
+                        if (servicePlanAppendixCsvLine.kindUnitNumber.equals("")) null else servicePlanAppendixCsvLine.kindUnitNumber.toInt(),
+                        if (servicePlanAppendixCsvLine.overDivisionUnitNumber.equals("")) null else servicePlanAppendixCsvLine.overDivisionUnitNumber.toInt(),
+                        if (servicePlanAppendixCsvLine.divisionUnitNumber.equals("")) null else servicePlanAppendixCsvLine.divisionUnitNumber.toInt(),
                         servicePlanAppendixCsvLine.unitPrice,
-                        servicePlanAppendixCsvLine.totalInsuranceDemand.toInt(),
-                        servicePlanAppendixCsvLine.benefitsRate.toInt(),
-                        servicePlanAppendixCsvLine.paidInsuranceDemandFromInsurance.toInt(),
-                        servicePlanAppendixCsvLine.paidInsuranceDemandFromInsuredPerson.toInt(),
-                        servicePlanAppendixCsvLine.totalInsuredPersonDemand.toInt()
+                        if (servicePlanAppendixCsvLine.totalInsuranceDemand.equals("")) null else servicePlanAppendixCsvLine.totalInsuranceDemand.toInt(),
+                        if (servicePlanAppendixCsvLine.benefitsRate.equals("")) null else servicePlanAppendixCsvLine.benefitsRate.toInt(),
+                        if (servicePlanAppendixCsvLine.paidInsuranceDemandFromInsurance.equals("")) null else servicePlanAppendixCsvLine.paidInsuranceDemandFromInsurance.toInt(),
+                        if (servicePlanAppendixCsvLine.paidInsuranceDemandFromInsuredPerson.equals("")) null else servicePlanAppendixCsvLine.paidInsuranceDemandFromInsuredPerson.toInt(),
+                        if (servicePlanAppendixCsvLine.totalInsuredPersonDemand.equals("")) null else servicePlanAppendixCsvLine.totalInsuredPersonDemand.toInt()
                     ),
                     Office(
                         servicePlanCsvLineMap.value.get(0).serviceOfficeName,
@@ -147,16 +147,16 @@ class ServicePlanFactory {
             ),
             insuredPerson,
             "", // 届出年月日はcsvに含まれていないため空白とする
-            insuredPersonAppendixCsvLine.stayDaysPreviousMonth.toInt(),
+            if (insuredPersonAppendixCsvLine.stayDaysPreviousMonth.equals("")) null else insuredPersonAppendixCsvLine.stayDaysPreviousMonth.toInt(),
             ProvidedServices(providedServices),
-            insuredPersonAppendixCsvLine.creditLimit.toInt(),
+            if (insuredPersonAppendixCsvLine.creditLimit.equals("")) null else insuredPersonAppendixCsvLine.creditLimit.toInt(),
             TotalUnitNumber("", "", "", "", "", "", "", "", ""),
             // 単位数合計情報はcsvに含まれていないため空白とする
             kindUnitNumberManagements,
             UserCountShortStay(
-                servicePlanAppendixCsvLines[0].useCountShortStayPreviousMonth.toInt(),
-                servicePlanAppendixCsvLines[0].useCountShortStayThisMonth.toInt(),
-                servicePlanAppendixCsvLines[0].accumulateUseCountShortStay.toInt()
+                if (servicePlanAppendixCsvLines[0].useCountShortStayPreviousMonth.equals("")) null else servicePlanAppendixCsvLines[0].useCountShortStayPreviousMonth.toInt(),
+                if (servicePlanAppendixCsvLines[0].useCountShortStayThisMonth.equals("")) null else servicePlanAppendixCsvLines[0].useCountShortStayThisMonth.toInt(),
+                if (servicePlanAppendixCsvLines[0].accumulateUseCountShortStay.equals("")) null else servicePlanAppendixCsvLines[0].accumulateUseCountShortStay.toInt()
             )
         )
     }
