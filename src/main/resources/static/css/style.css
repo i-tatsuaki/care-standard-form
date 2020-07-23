@@ -20,6 +20,16 @@ body {
   padding-top: 70px;
 }
 
+/* selector */
+.user-selector {
+  margin: 10px;
+  height: 10%;
+}
+
+.user-select-button {
+    max-height: 100%;
+}
+
 /* block */
 .main-block {
   padding-top: 20px;
