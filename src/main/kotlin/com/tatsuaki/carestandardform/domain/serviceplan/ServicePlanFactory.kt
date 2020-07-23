@@ -141,7 +141,7 @@ class ServicePlanFactory {
             CareManager(
                 servicePlanCsvLines.get(0).creationPersonName,
                 Office(
-                    servicePlanAppendixCsvLines[0].creationOfficeName,
+                    servicePlanAppendixCsvLines[0].serviceOfficeName,
                     insuredPersonAppendixCsvLine.agreementOffice,
                     "") // 居宅介護支援事業所の電話番号はcsvから取得できないため空白とする
             ),

@@ -73,7 +73,6 @@ class InsuredPersonAppendixCsvLine (
     val stayAccumulationDays: String
     val previousCareLevel: String
     val agreementOffice: String
-    val registrationDate: String
     val updatedOffice: String
     val identification: String
     val serviceYearMonth: String
@@ -148,10 +147,9 @@ class InsuredPersonAppendixCsvLine (
         stayAccumulationDays = csvLine[57]
         previousCareLevel = csvLine[58]
         agreementOffice = csvLine[59]
-        registrationDate = csvLine[60]
-        updatedOffice = csvLine[61]
-        identification = csvLine[62]
-        serviceYearMonth = csvLine[63]
+        updatedOffice = csvLine[60]
+        identification = csvLine[61]
+        serviceYearMonth = csvLine[62]
     }
 
 }

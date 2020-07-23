@@ -41,7 +41,7 @@ class ServicePlanAppendixCsvLineFactoryTest {
         val result = ServicePlanAppendixCsvLineFactory().create(inputFile)
 
         // then
-        assertEquals("ケアマネ事業所", result[0].creationOfficeName)
+        assertEquals("ケアマネ事業所", result[0].serviceOfficeName)
     }
 
     @Test
@@ -60,7 +60,7 @@ class ServicePlanAppendixCsvLineFactoryTest {
         val result = ServicePlanAppendixCsvLineFactory().create(inputFile)
 
         // then
-        assertEquals("ケアマネ,事業所", result[1].creationOfficeName)
+        assertEquals("ケアマネ,事業所", result[1].serviceOfficeName)
     }
 
     private fun createCsvLine() : String {
