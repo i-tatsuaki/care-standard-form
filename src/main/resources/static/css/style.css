@@ -3,7 +3,7 @@ html {
 }
 
 /* body */
-body {
+body.service-plan-body {
   font-family: "Open Sans", sans-serif;
   font-size: .1vw;
   white-space: nowrap;
@@ -20,6 +20,15 @@ body {
   padding-top: 70px;
 }
 
+/* selector */
+.user-selector {
+  margin: 3% 0 0 3%;
+}
+
+.user-select-button {
+    max-height: 100%;
+}
+
 /* block */
 .main-block {
   padding-top: 20px;
@@ -33,6 +42,7 @@ body {
   top 0;
   left 0;
   display: none;
+  margin: 3%;
 }
 
 /* table */

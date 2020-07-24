@@ -8,7 +8,7 @@ class ServicePlanAppendixCsvLine (
     val insuredNumber: String
     val creationDate: String
     val serviceYearMonth: String
-    val creationOfficeName: String
+    val serviceOfficeName: String
     val serviceOfficeCode: String
     val numberOfSatellite: String
     val serviceCode: String
@@ -34,7 +34,6 @@ class ServicePlanAppendixCsvLine (
     val isOverThirty: String
     val dummyOfficeCode: String
     val inputOfficeCode: String
-    val registrationDate: String
     val updateOfficeCode: String
     val identification: String
 
@@ -44,7 +43,7 @@ class ServicePlanAppendixCsvLine (
         insuredNumber = csvLine[2]
         creationDate = csvLine[3]
         serviceYearMonth = csvLine[4]
-        creationOfficeName = csvLine[5]
+        serviceOfficeName = csvLine[5]
         serviceOfficeCode = csvLine[6]
         numberOfSatellite = csvLine[7]
         serviceCode = csvLine[8]
@@ -70,9 +69,8 @@ class ServicePlanAppendixCsvLine (
         isOverThirty = csvLine[28]
         dummyOfficeCode = csvLine[29]
         inputOfficeCode = csvLine[30]
-        registrationDate = csvLine[31]
-        updateOfficeCode = csvLine[32]
-        identification = csvLine[33]
+        updateOfficeCode = csvLine[31]
+        identification = csvLine[32]
     }
 
     fun isCorrespond(insuredPersonAppendixCsvLine: InsuredPersonAppendixCsvLine) : Boolean {

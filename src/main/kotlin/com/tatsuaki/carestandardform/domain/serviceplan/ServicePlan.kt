@@ -11,9 +11,9 @@ class ServicePlan(
     val careManager: CareManager,
     val insuredPerson: InsuredPerson,
     val notificationDate: String,
-    val shortStayUseDaysOfPreviousMonth: Int,
+    val shortStayUseDaysOfPreviousMonth: Int?,
     val providedServices: ProvidedServices,
-    val limitDivisionUnitNumber: Int,
+    val limitDivisionUnitNumber: Int?,
     val totalUnitNumber: TotalUnitNumber,
     val kindUnitNumberManagements: List<KindUnitNumberManagement>,
     val useCountShortStay: UserCountShortStay

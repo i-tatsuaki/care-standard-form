@@ -4,13 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <title>提供票</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
-<div>
-    <select id="select-service-plan" name="select-service-plan">
-        <option th:each="servicePlan, stat : ${servicePlans}" th:value="${stat.index}">[[${servicePlan.insuredPerson.name}]]</option>
-    </select>
+<body class="service-plan-body">
+
+<div class="user-selector dropdown drop-hover">
+    <button class="user-select-button btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+        利用者を選択
+    </button>
+    <ul class="dropdown-menu">
+        <th:block th:each="servicePlan, stat : ${servicePlans}">
+            <li>
+                <a class="dropdown-item user-select" href="javascript:void(0);" th:data-value=${stat.index}>[[${servicePlan.insuredPerson.name}]]</a>
+            </li>
+        </th:block>
+    </ul>
 </div>
+
 <div class="output-area" th:each="servicePlan, stat : ${servicePlans}" th:id="'output-' + ${stat.index}">
     <div id="table-service-plan">
         <table>
@@ -217,7 +228,7 @@
                         <font>要介護状態区分</font>
                     </td>
                     <td colspan="7" rowspan="1" class="collapse-on">
-                        <font th:text=${servicePlan.insuredPerson.insureLicense.careLevel.name()}></font>
+                        <font th:text="${servicePlan.insuredPerson.insureLicense.careLevel} ? ${servicePlan.insuredPerson.insureLicense.careLevel.name()}"></font>
                     </td>
                     <td colspan="4" rowspan="3" class="collapse-on">
                         <font>区分支給</font><br><font>限度基準額</font>
@@ -229,8 +240,8 @@
                         <font>限度額</font><br><font>適用期間</font>
                     </td>
                     <td colspan="6" rowspan="3" class="collapse-on">
-                        <span th:text=${servicePlan.insuredPerson.insureLicense.creditLimitFrom.year}>xxxx</span>年<span th:text=${servicePlan.insuredPerson.insureLicense.creditLimitFrom.monthValue}></span>月から<br>
-                        <span th:text=${servicePlan.insuredPerson.insureLicense.creditLimitTo.year}>xxxx</span>年<span th:text=${servicePlan.insuredPerson.insureLicense.creditLimitTo.monthValue}></span>月まで
+                        <span th:text="${servicePlan.insuredPerson.insureLicense.creditLimitFrom} ? ${servicePlan.insuredPerson.insureLicense.creditLimitFrom.year}">xxxx</span>年<span th:text="${servicePlan.insuredPerson.insureLicense.creditLimitFrom} ? ${servicePlan.insuredPerson.insureLicense.creditLimitFrom.monthValue}"></span>月から<br>
+                        <span th:text="${servicePlan.insuredPerson.insureLicense.creditLimitTo} ? ${servicePlan.insuredPerson.insureLicense.creditLimitTo.year}">xxxx</span>年<span th:text="${servicePlan.insuredPerson.insureLicense.creditLimitTo} ? ${servicePlan.insuredPerson.insureLicense.creditLimitTo.monthValue}"></span>月まで
                     </td>
                     <td colspan="3" rowspan="3" class="collapse-on">
                         <font>前月までの</font><br><font>短期入所</font><br><font>利用日数</font>
@@ -270,7 +281,7 @@
                         <font>変更日</font>
                     </td>
                     <td colspan="7" rowspan="1" class="collapse-on">
-                        <font th:text=${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate.year}></font><font>年</font><font th:text=${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate.monthValue}></font><font>月</font><font th:text=${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate.dayOfMonth}></font><font>日</font>
+                        <font th:text="${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate} ? ${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate.year}"></font><font>年</font><font th:text="${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate} ? ${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate.monthValue}"></font><font>月</font><font th:text="${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate} ? ${servicePlan.insuredPerson.insureLicense.careLevelUpdateDate.dayOfMonth}"></font><font>日</font>
                     </td>
                     <td colspan="2" rowspan="1" class="collapse-on">
                         <font>日</font>
@@ -321,8 +332,8 @@
                         <!-- 31日までの穴埋め -->
                     </td>
                 </tr>
-                <div th:each="providedService : ${servicePlan.providedServices.list}">
-                    <div th:each="planResult : ${providedService.providedTime.planResults}">
+                <th:block th:each="providedService : ${servicePlan.providedServices.list}">
+                    <th:block th:each="planResult : ${providedService.providedTime.planResults}">
                         <tr>
                             <td colspan="3" rowspan="1" class="collapse-on">
                                 <font th:text=${planResult.key.from}></font><font>〜</font>
@@ -357,10 +368,10 @@
                                 <font th:text=${planResult.value.getResultDays().size()}></font>
                             </td>
                         </tr>
-                    </div>
-                </div>
+                    </th:block>
+                </th:block>
 
-                <div th:each="noUse : ${#numbers.sequence(servicePlan.providedServices.countProvidedServiceKind()+1, 13)}">
+                <th:block th:each="noUse : ${#numbers.sequence(servicePlan.providedServices.countProvidedServiceKind()+1, 13)}">
                     <!-- 13行までの穴埋め -->
                     <tr>
                         <td colspan="3" rowspan="1" class="collapse-on">
@@ -388,7 +399,7 @@
                         <td colspan="2" rowspan="1" class="collapse-on">
                         </td>
                     </tr>
-                </div>
+                </th:block>
             </tbody>
         </table>
     </div>
@@ -545,7 +556,7 @@
                     <font>単位数</font>
                 </td>
             </tr>
-            <div th:each="providedService : ${servicePlan.providedServices.list}">
+            <th:block th:each="providedService : ${servicePlan.providedServices.list}">
                 <tr>
                     <td colspan="5" class="collapse-on">
                         <font th:text=${providedService.office.name}></font>
@@ -605,8 +616,8 @@
                         <font th:text=${providedService.careService.totalInsuredPersonDemand}></font>
                     </td>
                 </tr>
-            </div>
-            <div th:each="noUse : ${#numbers.sequence(servicePlan.providedServices.list.size()+1, 13)}">
+            </th:block>
+            <th:block th:each="noUse : ${#numbers.sequence(servicePlan.providedServices.list.size()+1, 13)}">
                 <!-- 13行までの穴埋め -->
                 <tr>
                     <td colspan="5" class="collapse-on">
@@ -648,7 +659,7 @@
                     <td colspan="3" class="collapse-on">
                     </td>
                 </tr>
-            </div>
+            </th:block>
             <tr>
                 <td colspan="14" class="collapse-on">
                 </td>
@@ -981,6 +992,10 @@
         </table>
     </div>
 </div>
+
 <script src="/script/servicePlan.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

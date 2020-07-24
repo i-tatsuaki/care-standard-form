@@ -71,7 +71,6 @@ class InsuredPersonAppendixCsvLineTest {
                     "30",
                     "13",
                     "2222233333",
-                    "20200106",
                     "2222244444",
                     "1",
                     "202002"
@@ -139,7 +138,6 @@ class InsuredPersonAppendixCsvLineTest {
         assertEquals("30", insuredPersonAppendixCsvLine.stayAccumulationDays)
         assertEquals("13", insuredPersonAppendixCsvLine.previousCareLevel)
         assertEquals("2222233333", insuredPersonAppendixCsvLine.agreementOffice)
-        assertEquals("20200106", insuredPersonAppendixCsvLine.registrationDate)
         assertEquals("2222244444", insuredPersonAppendixCsvLine.updatedOffice)
         assertEquals("1", insuredPersonAppendixCsvLine.identification)
         assertEquals("202002", insuredPersonAppendixCsvLine.serviceYearMonth)
