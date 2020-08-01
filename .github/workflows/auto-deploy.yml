@@ -15,4 +15,12 @@ jobs:
           java-package: jdk
       - name: Execute
         run: mvn test
-      
+  deploy:
+    name: Echo Test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    needs: build
+    steps:
+      - name: echo test
+        run: echo "test"
+
