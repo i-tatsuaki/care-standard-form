@@ -18,7 +18,7 @@ jobs:
   build:
     name: Create Artifact
     # if: github.ref == 'refs/heads/master'
-    # needs: test
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -39,7 +39,7 @@ jobs:
     name: Echo Test
     runs-on: ubuntu-latest
     # if: github.ref == 'refs/heads/master'
-    # needs: build
+    needs: build
     steps:
       - name: Install SSH key
         run: |
