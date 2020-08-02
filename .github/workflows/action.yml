@@ -51,8 +51,9 @@ jobs:
           name: care-standard-form.jar
           path: target
       - name: Upload Application
-        run: scp -i ~/secret_key -oStrictHostKeyChecking=no target/care-standard-form-1.0-SNAPSHOT.jar ${{ secrets.AWS_EC2_1_USER }}@${{ secrets.AWS_EC2_1_HOST }}:~/
-        run: scp -i ~/secret_key -oStrictHostKeyChecking=no target/care-standard-form-1.0-SNAPSHOT.jar ${{ secrets.AWS_EC2_2_USER }}@${{ secrets.AWS_EC2_2_HOST }}:~/
+        run: |
+          scp -i ~/secret_key -oStrictHostKeyChecking=no target/care-standard-form-1.0-SNAPSHOT.jar ${{ secrets.AWS_EC2_1_USER }}@${{ secrets.AWS_EC2_1_HOST }}:~/
+          scp -i ~/secret_key -oStrictHostKeyChecking=no target/care-standard-form-1.0-SNAPSHOT.jar ${{ secrets.AWS_EC2_2_USER }}@${{ secrets.AWS_EC2_2_HOST }}:~/
       - name: Checkout
         uses: actions/checkout@v2.0.0
       - name: Upload Tools
