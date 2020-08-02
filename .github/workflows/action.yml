@@ -1,4 +1,4 @@
-name: test
+name: action
 on: push
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
         run: mvn test
   build:
     name: Create Artifact
-    # if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master'
     needs: test
     runs-on: ubuntu-latest
     steps:
@@ -36,9 +36,9 @@ jobs:
           name: care-standard-form.jar
           path: target/care-standard-form-1.0-SNAPSHOT.jar
   deploy:
-    name: Echo Test
+    name: Deploy and Restart Application
     runs-on: ubuntu-latest
-    # if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master'
     needs: build
     steps:
       - name: Install SSH key
