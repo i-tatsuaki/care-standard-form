@@ -314,7 +314,7 @@
                     <td colspan="1" rowspan="1" th:each="day : ${servicePlan.serviceProvisionYearMonth.getMapDayToDayOfWeek()}" class="collapse-on">
                         <font th:text=${day.key}></font>
                     </td>
-                    <td colspan="1" rowspan="1" th:each="day : ${#numbers.sequence(servicePlan.serviceProvisionYearMonth.getMapDayToDayOfWeek().size()+1, 31)}" class="collapse-on">
+                    <td colspan="1" rowspan="1" th:unless="${servicePlan.serviceProvisionYearMonth.getMapDayToDayOfWeek().size()}==31" th:each="day : ${#numbers.sequence(servicePlan.serviceProvisionYearMonth.getMapDayToDayOfWeek().size()+1, 31)}" class="collapse-on">
                         <!-- 31日までの穴埋め -->
                     </td>
                     <td colspan="2" rowspan="2" class="collapse-on">
@@ -328,7 +328,7 @@
                     <td colspan="1" rowspan="1" th:each="day : ${servicePlan.serviceProvisionYearMonth.getMapDayToDayOfWeek()}" class="collapse-on">
                         <font th:text=${day.value}></font>
                     </td>
-                    <td colspan="1" rowspan="1" th:each="day : ${#numbers.sequence(servicePlan.serviceProvisionYearMonth.getMapDayToDayOfWeek().size()+1, 31)}" class="collapse-on">
+                    <td colspan="1" rowspan="1" th:unless="${servicePlan.serviceProvisionYearMonth.getMapDayToDayOfWeek().size()}==31" th:each="day : ${#numbers.sequence(servicePlan.serviceProvisionYearMonth.getMapDayToDayOfWeek().size()+1, 31)}" class="collapse-on">
                         <!-- 31日までの穴埋め -->
                     </td>
                 </tr>
