@@ -33,12 +33,12 @@ class ProvidedServiceTest {
     fun ProvidedDateTest() {
         // given
         val time = ProvidedTime.Time(
-            LocalTime.of(10, 0),
-            LocalTime.of(12, 0)
+            "1000",
+            "1200"
         )
         val nonServiceTime = ProvidedTime.Time(
-            LocalTime.of(10, 0),
-            LocalTime.of(11, 0)
+            "9999",
+            "9999"
         )
         val providedDate = ProvidedTime()
             .addPlan(time, 1)
