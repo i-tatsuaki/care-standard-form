@@ -7,11 +7,10 @@ import com.tatsuaki.carestandardform.domain.model.csv.ServicePlanAppendixCsvLine
 import com.tatsuaki.carestandardform.domain.model.csv.ServicePlanCsvLine
 import com.tatsuaki.carestandardform.util.JapaneseDate
 import java.time.LocalDate
-import java.time.LocalTime
 import java.time.YearMonth
 import java.time.format.DateTimeFormatter
 import java.util.*
-import java.util.stream.Collectors
+import java.util.stream.Collectors.groupingBy
 import kotlin.streams.toList
 
 class ServicePlanFactory {
@@ -61,9 +60,10 @@ class ServicePlanFactory {
             )
         )
 
-        val serviceProvidedMap = servicePlanCsvLines.stream().collect(
-            Collectors.groupingBy(ServicePlanCsvLine::getProvidedServiceKey)
-        )
+        val serviceProvidedMap = servicePlanCsvLines.stream()
+            .collect(
+                groupingBy(ServicePlanCsvLine::getProvidedServiceKey)
+            ).toSortedMap()
 
         val providedServices = arrayListOf<ProvidedService>()
         serviceProvidedMap.forEach {servicePlanCsvLineMap ->
