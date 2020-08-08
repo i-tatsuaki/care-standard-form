@@ -50,8 +50,8 @@ class ProvidedTime() {
     }
 
     class Time(
-        val from: LocalTime,
-        val to: LocalTime
+        val from: String,
+        val to: String
     ) {
         override fun equals(other: Any?): Boolean {
             when (other is Time) {
