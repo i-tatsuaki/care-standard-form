@@ -40,7 +40,7 @@ jobs:
       - name: Create Docker Image
         run: docker build -t care-standard-form .
       - name: Push to AWS ECR
-        run: \
+        run: |
           aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin ${{ secrets.AWS_ECR_REPOSITORY }}
           docker tag care-standard-form:latest ${{ secrets.AWS_ECR_REPOSITORY }}/care-standard-form:latest
           docker push ${{ secrets.AWS_ECR_REPOSITORY }}/care-standard-form:latest
