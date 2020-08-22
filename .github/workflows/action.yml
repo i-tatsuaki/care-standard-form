@@ -56,5 +56,6 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ECR_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_ECR_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-1
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v1
