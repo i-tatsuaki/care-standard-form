@@ -19,7 +19,7 @@ jobs:
   build:
     name: Create Artifact
     # if: github.ref == 'refs/heads/master'
-    needs: test
+    # needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
