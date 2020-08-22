@@ -17,7 +17,7 @@ jobs:
       - name: Execute
         run: mvn test
   build:
-    name: Create Artifact
+    name: Push to AWS ECR
     # if: github.ref == 'refs/heads/master'
     # needs: test
     runs-on: ubuntu-latest
@@ -31,31 +31,16 @@ jobs:
           java-package: jdk
       - name: Package
         run: mvn clean package
-      - name: Upload
-        uses: actions/upload-artifact@v1
-        with:
-          name: care-standard-form.jar
-          path: target/care-standard-form-1.0-SNAPSHOT.jar
-  deploy:
-    name: Deploy and Restart Application
-    runs-on: ubuntu-latest
-    # if: github.ref == 'refs/heads/master'
-    needs: build
-    steps:
-      - name: Install SSH key
-        run: |
-          echo "${{ secrets.AWS_EC2_KEY }}" > ~/secret_key
-          chmod 600 ~/secret_key
-      - name: Download Artifact
-        uses: actions/download-artifact@v1
-        with:
-          name: care-standard-form.jar
-          path: target
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ECR_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_ECR_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-1
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v1
+      - name: Create Docker Image
+        run: docker build -t care-standard-form .
+      - name: Push to AWS ECR
+        run: \
+          aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin ${{ secrets.AWS_ECR_REPOSITORY }}
+          docker tag care-standard-form:latest ${{ secrets.AWS_ECR_REPOSITORY }}/care-standard-form:latest
+          docker push ${{ secrets.AWS_ECR_REPOSITORY }}/care-standard-form:latest
