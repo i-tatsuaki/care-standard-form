@@ -4,7 +4,6 @@ on: push
 jobs:
   test:
     name: Execute Test
-    if: github.ref == 'refs/heads/master' # test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,8 +17,8 @@ jobs:
         run: mvn test
   build:
     name: Push to AWS ECR
-    # if: github.ref == 'refs/heads/master'
-    # needs: test
+    if: github.ref == 'refs/heads/master'
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
