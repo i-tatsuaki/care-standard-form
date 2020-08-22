@@ -4,6 +4,7 @@ on: push
 jobs:
   test:
     name: Execute Test
+    if: github.ref == 'refs/heads/master' # test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
