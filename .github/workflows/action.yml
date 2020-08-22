@@ -50,31 +50,5 @@ jobs:
         with:
           name: care-standard-form.jar
           path: target
-      - name: Upload Application
-        run: |
-          scp -i ~/secret_key -oStrictHostKeyChecking=no target/care-standard-form-1.0-SNAPSHOT.jar ${{ secrets.AWS_EC2_1_USER }}@${{ secrets.AWS_EC2_1_HOST }}:~/
-          scp -i ~/secret_key -oStrictHostKeyChecking=no target/care-standard-form-1.0-SNAPSHOT.jar ${{ secrets.AWS_EC2_2_USER }}@${{ secrets.AWS_EC2_2_HOST }}:~/
-      - name: Checkout
-        uses: actions/checkout@v2.0.0
-      - name: Upload Tools
-        run: |
-          scp -i ~/secret_key -oStrictHostKeyChecking=no tool/start.sh ${{ secrets.AWS_EC2_1_USER }}@${{ secrets.AWS_EC2_1_HOST }}:~/
-          scp -i ~/secret_key -oStrictHostKeyChecking=no tool/stop.sh ${{ secrets.AWS_EC2_1_USER }}@${{ secrets.AWS_EC2_1_HOST }}:~/
-          scp -i ~/secret_key -oStrictHostKeyChecking=no tool/start.sh ${{ secrets.AWS_EC2_2_USER }}@${{ secrets.AWS_EC2_2_HOST }}:~/
-          scp -i ~/secret_key -oStrictHostKeyChecking=no tool/stop.sh ${{ secrets.AWS_EC2_2_USER }}@${{ secrets.AWS_EC2_2_HOST }}:~/
-      - name: Stop Application Host1
-        run: ssh -i ~/secret_key -oStrictHostKeyChecking=no ${{ secrets.AWS_EC2_1_USER }}@${{ secrets.AWS_EC2_1_HOST }} "sh stop.sh"
-      - name: Wait Stop Application Host1
-        run: sleep 1m
-      - name: Start Application Host1
-        run: ssh -i ~/secret_key -oStrictHostKeyChecking=no ${{ secrets.AWS_EC2_1_USER }}@${{ secrets.AWS_EC2_1_HOST }} "sh start.sh"
-      - name: Wait Start Application Host1
-        run: sleep 3m
-      - name: Stop Application Host2
-        run: ssh -i ~/secret_key -oStrictHostKeyChecking=no ${{ secrets.AWS_EC2_2_USER }}@${{ secrets.AWS_EC2_2_HOST }} "sh stop.sh"
-      - name: Wait Stop Application Host2
-        run: sleep 1m
-      - name: Start Application Host2
-        run: ssh -i ~/secret_key -oStrictHostKeyChecking=no ${{ secrets.AWS_EC2_2_USER }}@${{ secrets.AWS_EC2_2_HOST }} "sh start.sh"
-      - name: Wait Start Application Host2
-        run: sleep 3m
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v1
