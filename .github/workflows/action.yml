@@ -16,7 +16,7 @@ jobs:
       - name: Execute
         run: mvn test
   build:
-    name: Create Artifact
+    name: Push to AWS ECR
     if: github.ref == 'refs/heads/master'
     needs: test
     runs-on: ubuntu-latest
@@ -30,51 +30,16 @@ jobs:
           java-package: jdk
       - name: Package
         run: mvn clean package
-      - name: Upload
-        uses: actions/upload-artifact@v1
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
         with:
-          name: care-standard-form.jar
-          path: target/care-standard-form-1.0-SNAPSHOT.jar
-  deploy:
-    name: Deploy and Restart Application
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
-    needs: build
-    steps:
-      - name: Install SSH key
+          aws-access-key-id: ${{ secrets.AWS_ECR_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_ECR_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-1
+      - name: Create Docker Image
+        run: docker build -t care-standard-form .
+      - name: Push to AWS ECR
         run: |
-          echo "${{ secrets.AWS_EC2_KEY }}" > ~/secret_key
-          chmod 600 ~/secret_key
-      - name: Download Artifact
-        uses: actions/download-artifact@v1
-        with:
-          name: care-standard-form.jar
-          path: target
-      - name: Upload Application
-        run: |
-          scp -i ~/secret_key -oStrictHostKeyChecking=no target/care-standard-form-1.0-SNAPSHOT.jar ${{ secrets.AWS_EC2_1_USER }}@${{ secrets.AWS_EC2_1_HOST }}:~/
-          scp -i ~/secret_key -oStrictHostKeyChecking=no target/care-standard-form-1.0-SNAPSHOT.jar ${{ secrets.AWS_EC2_2_USER }}@${{ secrets.AWS_EC2_2_HOST }}:~/
-      - name: Checkout
-        uses: actions/checkout@v2.0.0
-      - name: Upload Tools
-        run: |
-          scp -i ~/secret_key -oStrictHostKeyChecking=no tool/start.sh ${{ secrets.AWS_EC2_1_USER }}@${{ secrets.AWS_EC2_1_HOST }}:~/
-          scp -i ~/secret_key -oStrictHostKeyChecking=no tool/stop.sh ${{ secrets.AWS_EC2_1_USER }}@${{ secrets.AWS_EC2_1_HOST }}:~/
-          scp -i ~/secret_key -oStrictHostKeyChecking=no tool/start.sh ${{ secrets.AWS_EC2_2_USER }}@${{ secrets.AWS_EC2_2_HOST }}:~/
-          scp -i ~/secret_key -oStrictHostKeyChecking=no tool/stop.sh ${{ secrets.AWS_EC2_2_USER }}@${{ secrets.AWS_EC2_2_HOST }}:~/
-      - name: Stop Application Host1
-        run: ssh -i ~/secret_key -oStrictHostKeyChecking=no ${{ secrets.AWS_EC2_1_USER }}@${{ secrets.AWS_EC2_1_HOST }} "sh stop.sh"
-      - name: Wait Stop Application Host1
-        run: sleep 1m
-      - name: Start Application Host1
-        run: ssh -i ~/secret_key -oStrictHostKeyChecking=no ${{ secrets.AWS_EC2_1_USER }}@${{ secrets.AWS_EC2_1_HOST }} "sh start.sh"
-      - name: Wait Start Application Host1
-        run: sleep 3m
-      - name: Stop Application Host2
-        run: ssh -i ~/secret_key -oStrictHostKeyChecking=no ${{ secrets.AWS_EC2_2_USER }}@${{ secrets.AWS_EC2_2_HOST }} "sh stop.sh"
-      - name: Wait Stop Application Host2
-        run: sleep 1m
-      - name: Start Application Host2
-        run: ssh -i ~/secret_key -oStrictHostKeyChecking=no ${{ secrets.AWS_EC2_2_USER }}@${{ secrets.AWS_EC2_2_HOST }} "sh start.sh"
-      - name: Wait Start Application Host2
-        run: sleep 3m
+          aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin ${{ secrets.AWS_ECR_REPOSITORY }}
+          docker tag care-standard-form:latest ${{ secrets.AWS_ECR_REPOSITORY }}/care-standard-form:latest
+          docker push ${{ secrets.AWS_ECR_REPOSITORY }}/care-standard-form:latest
